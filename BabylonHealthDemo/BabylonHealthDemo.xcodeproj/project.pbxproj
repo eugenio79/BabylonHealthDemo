@@ -19,11 +19,11 @@
 		BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81781DEAF56000B41A49 /* FakePostListView.swift */; };
 		BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817A1DEAF5B900B41A49 /* PostListController.swift */; };
 		BA3B817D1DEAFA3100B41A49 /* PostListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817C1DEAFA3100B41A49 /* PostListLoadingView.swift */; };
-		BA3B81801DEAFF1100B41A49 /* PostListRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817F1DEAFF1100B41A49 /* PostListRemoteService.swift */; };
-		BA3B81831DEAFFE400B41A49 /* RestPostListRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81821DEAFFE400B41A49 /* RestPostListRemoteService.swift */; };
-		BA3B81851DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81841DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift */; };
+		BA3B81801DEAFF1100B41A49 /* PostRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817F1DEAFF1100B41A49 /* PostRemoteService.swift */; };
+		BA3B81831DEAFFE400B41A49 /* RestPostRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81821DEAFFE400B41A49 /* RestPostRemoteService.swift */; };
+		BA3B81851DEB003A00B41A49 /* RestPostRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81841DEB003A00B41A49 /* RestPostRemoteServiceTests.swift */; };
 		BA3B81881DEB02A700B41A49 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81871DEB02A700B41A49 /* Post.swift */; };
-		BAB48C181DEB41430039FB96 /* StubPostListRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C171DEB41430039FB96 /* StubPostListRemoteService.swift */; };
+		BAB48C181DEB41430039FB96 /* StubPostRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C171DEB41430039FB96 /* StubPostRemoteService.swift */; };
 		BAB48C1B1DEB5CF70039FB96 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C1A1DEB5CF70039FB96 /* PostDetailViewController.swift */; };
 		BAB48C211DEB66710039FB96 /* PostDetailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C201DEB66710039FB96 /* PostDetailHandler.swift */; };
 		BAB48C231DEB66810039FB96 /* PostDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C221DEB66810039FB96 /* PostDetailController.swift */; };
@@ -32,7 +32,6 @@
 		BAB48C2A1DEB67A60039FB96 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C291DEB67A60039FB96 /* Address.swift */; };
 		BAB48C2C1DEB67DC0039FB96 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C2B1DEB67DC0039FB96 /* Geolocation.swift */; };
 		BAB48C2E1DEB68380039FB96 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C2D1DEB68380039FB96 /* Company.swift */; };
-		BAB48C311DEB68BD0039FB96 /* PostDetailRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C301DEB68BD0039FB96 /* PostDetailRemoteService.swift */; };
 		BAB48C351DEB68FD0039FB96 /* PostParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C331DEB68FD0039FB96 /* PostParser.swift */; };
 		BAB48C361DEB68FD0039FB96 /* SwiftyJSONPostParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C341DEB68FD0039FB96 /* SwiftyJSONPostParser.swift */; };
 		BAB48C391DEB69690039FB96 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C381DEB69690039FB96 /* Comment.swift */; };
@@ -74,11 +73,11 @@
 		BA3B81781DEAF56000B41A49 /* FakePostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakePostListView.swift; sourceTree = "<group>"; };
 		BA3B817A1DEAF5B900B41A49 /* PostListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListController.swift; sourceTree = "<group>"; };
 		BA3B817C1DEAFA3100B41A49 /* PostListLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLoadingView.swift; sourceTree = "<group>"; };
-		BA3B817F1DEAFF1100B41A49 /* PostListRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListRemoteService.swift; sourceTree = "<group>"; };
-		BA3B81821DEAFFE400B41A49 /* RestPostListRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostListRemoteService.swift; sourceTree = "<group>"; };
-		BA3B81841DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostListRemoteServiceTests.swift; sourceTree = "<group>"; };
+		BA3B817F1DEAFF1100B41A49 /* PostRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRemoteService.swift; sourceTree = "<group>"; };
+		BA3B81821DEAFFE400B41A49 /* RestPostRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostRemoteService.swift; sourceTree = "<group>"; };
+		BA3B81841DEB003A00B41A49 /* RestPostRemoteServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostRemoteServiceTests.swift; sourceTree = "<group>"; };
 		BA3B81871DEB02A700B41A49 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		BAB48C171DEB41430039FB96 /* StubPostListRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubPostListRemoteService.swift; sourceTree = "<group>"; };
+		BAB48C171DEB41430039FB96 /* StubPostRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubPostRemoteService.swift; sourceTree = "<group>"; };
 		BAB48C1A1DEB5CF70039FB96 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		BAB48C201DEB66710039FB96 /* PostDetailHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailHandler.swift; sourceTree = "<group>"; };
 		BAB48C221DEB66810039FB96 /* PostDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailController.swift; sourceTree = "<group>"; };
@@ -87,7 +86,6 @@
 		BAB48C291DEB67A60039FB96 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		BAB48C2B1DEB67DC0039FB96 /* Geolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geolocation.swift; sourceTree = "<group>"; };
 		BAB48C2D1DEB68380039FB96 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
-		BAB48C301DEB68BD0039FB96 /* PostDetailRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailRemoteService.swift; sourceTree = "<group>"; };
 		BAB48C331DEB68FD0039FB96 /* PostParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostParser.swift; sourceTree = "<group>"; };
 		BAB48C341DEB68FD0039FB96 /* SwiftyJSONPostParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONPostParser.swift; sourceTree = "<group>"; };
 		BAB48C381DEB69690039FB96 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -210,8 +208,8 @@
 		BA3B817E1DEAFE8B00B41A49 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BA3B817F1DEAFF1100B41A49 /* PostListRemoteService.swift */,
-				BA3B81821DEAFFE400B41A49 /* RestPostListRemoteService.swift */,
+				BA3B817F1DEAFF1100B41A49 /* PostRemoteService.swift */,
+				BA3B81821DEAFFE400B41A49 /* RestPostRemoteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -219,8 +217,8 @@
 		BA3B81811DEAFFA100B41A49 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BA3B81841DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift */,
-				BAB48C171DEB41430039FB96 /* StubPostListRemoteService.swift */,
+				BA3B81841DEB003A00B41A49 /* RestPostRemoteServiceTests.swift */,
+				BAB48C171DEB41430039FB96 /* StubPostRemoteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,6 +243,7 @@
 		BAB48C1C1DEB66500039FB96 /* PostDetail */ = {
 			isa = PBXGroup;
 			children = (
+				BAB48C4E1DEB70FA0039FB96 /* Services */,
 				BAB48C451DEB6CC40039FB96 /* Parsers */,
 				BAB48C1D1DEB66500039FB96 /* Controllers */,
 				BAB48C1E1DEB66500039FB96 /* Views */,
@@ -290,7 +289,6 @@
 		BAB48C2F1DEB689F0039FB96 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BAB48C301DEB68BD0039FB96 /* PostDetailRemoteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -330,6 +328,13 @@
 				BAB48C4C1DEB6D190039FB96 /* SwiftyJSONCommentParserTests.swift */,
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		BAB48C4E1DEB70FA0039FB96 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BAD726E11DE3964D00E83F32 = {
@@ -602,7 +607,7 @@
 				BAD7272A1DE39A3100E83F32 /* PostListViewController.swift in Sources */,
 				BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */,
 				BAB48C2C1DEB67DC0039FB96 /* Geolocation.swift in Sources */,
-				BA3B81831DEAFFE400B41A49 /* RestPostListRemoteService.swift in Sources */,
+				BA3B81831DEAFFE400B41A49 /* RestPostRemoteService.swift in Sources */,
 				BA3B81881DEB02A700B41A49 /* Post.swift in Sources */,
 				BAB48C2A1DEB67A60039FB96 /* Address.swift in Sources */,
 				BA3B817D1DEAFA3100B41A49 /* PostListLoadingView.swift in Sources */,
@@ -613,8 +618,7 @@
 				BA3B81701DEAF1E500B41A49 /* NetworkManager.swift in Sources */,
 				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
-				BAB48C311DEB68BD0039FB96 /* PostDetailRemoteService.swift in Sources */,
-				BA3B81801DEAFF1100B41A49 /* PostListRemoteService.swift in Sources */,
+				BA3B81801DEAFF1100B41A49 /* PostRemoteService.swift in Sources */,
 				BAB48C411DEB6A2F0039FB96 /* SwiftyJSONCommentParser.swift in Sources */,
 				BAB48C361DEB68FD0039FB96 /* SwiftyJSONPostParser.swift in Sources */,
 				BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */,
@@ -632,13 +636,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB48C4D1DEB6D190039FB96 /* SwiftyJSONCommentParserTests.swift in Sources */,
-				BAB48C181DEB41430039FB96 /* StubPostListRemoteService.swift in Sources */,
+				BAB48C181DEB41430039FB96 /* StubPostRemoteService.swift in Sources */,
 				BAB48C4B1DEB6D0B0039FB96 /* SwiftyJSONUserParserTests.swift in Sources */,
 				BAB48C441DEB6C970039FB96 /* SwiftyJSONPostParserTests.swift in Sources */,
 				BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */,
 				BA3B81721DEAF30100B41A49 /* StubNetworkManager.swift in Sources */,
 				BA3B81761DEAF49300B41A49 /* PostListControllerTests.swift in Sources */,
-				BA3B81851DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift in Sources */,
+				BA3B81851DEB003A00B41A49 /* RestPostRemoteServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

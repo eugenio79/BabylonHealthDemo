@@ -12,9 +12,9 @@ import Foundation
 protocol PostListHandler: class {
   
   var view: PostListLayout { get set }
-  var remoteService: PostListRemoteService { get set }
+  var remoteService: PostRemoteService { get set }
   
-  init(view: PostListLayout, remoteService: PostListRemoteService)
+  init(view: PostListLayout, remoteService: PostRemoteService)
   
   /// Usually invoked by the view to let the controller know when the view is ready
   /// This should be called on UI thread

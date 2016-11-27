@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     let postParser = SwiftyJSONPostParser()
-    let remoteService = RestPostListRemoteService(networking: networking, postParser: postParser)
+    let remoteService = RestPostRemoteService(networking: networking, postParser: postParser)
     let controller = PostListController(view: postListView, remoteService: remoteService)
     postListView.controller = controller
   }

@@ -1,5 +1,5 @@
 //
-//  StubPostListRemoteService.swift
+//  StubPostRemoteService.swift
 //  BabylonHealthDemo
 //
 //  Created by Giuseppe Morana on 27/11/2016.
@@ -9,9 +9,9 @@
 import Foundation
 @testable import BabylonHealthDemo
 
-class StubPostListRemoteService: PostListRemoteService {
+class StubPostRemoteService: PostRemoteService {
   
-  fileprivate var fakeFetchResult: PostListRemoteFetchResult?
+  fileprivate var fakeFetchResult: PostRemoteFetchResult?
   
   required init(networking: Networking, postParser: PostParser) {
     // do nothing, 'cause I'll ignore them
@@ -23,7 +23,7 @@ class StubPostListRemoteService: PostListRemoteService {
     self.init(networking: network, postParser: parser)
   }
   
-  func fetch(completion: @escaping (PostListRemoteFetchResult) -> Void) {
+  func fetch(completion: @escaping (PostRemoteFetchResult) -> Void) {
     if let fetchResult = fakeFetchResult {
       completion(fetchResult)
     }
@@ -31,9 +31,9 @@ class StubPostListRemoteService: PostListRemoteService {
 }
 
 // MARK: - Stub methods
-extension StubPostListRemoteService {
+extension StubPostRemoteService {
   
-  func setFetchResult(_ result: PostListRemoteFetchResult) {
+  func setFetchResult(_ result: PostRemoteFetchResult) {
     fakeFetchResult = result
   }
 }

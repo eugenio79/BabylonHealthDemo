@@ -1,5 +1,5 @@
 //
-//  PostListRemoteService.swift
+//  PostRemoteService.swift
 //  BabylonHealthDemo
 //
 //  Created by Giuseppe Morana on 27/11/2016.
@@ -8,23 +8,18 @@
 
 import Foundation
 
-//enum PostListRemoteFetchError {
-//  case offline
-//  case generic
-//}
-
-enum PostListRemoteFetchResult {
+enum PostRemoteFetchResult {
   case success(postList: [Post])
-  case failure  //(error: PostListRemoteFetchError)
+  case failure
 }
 
 /// This will be the link between the post list controller
 /// and each remote service it needs
-protocol PostListRemoteService {
+protocol PostRemoteService {
   
   init(networking: Networking, postParser: PostParser)
   
   /// Tries to fetch the post list from the network
   /// In a real world environment, I'd use pagination
-  func fetch(completion: @escaping (PostListRemoteFetchResult) -> Void)
+  func fetch(completion: @escaping (PostRemoteFetchResult) -> Void)
 }

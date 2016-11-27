@@ -1,5 +1,5 @@
 //
-//  RestPostListRemoteServiceTests.swift
+//  RestPostRemoteServiceTests.swift
 //  BabylonHealthDemo
 //
 //  Created by Giuseppe Morana on 27/11/2016.
@@ -9,31 +9,7 @@
 import XCTest
 @testable import BabylonHealthDemo
 
-class RestPostListRemoteServiceTests: XCTestCase {
-    
-  // TODO: remove me
-  func DISABLED_test_networkManager_removeMe() {
-    
-    let network = NetworkManager()
-    let url = URL(string: "http://jsonplaceholder.typicode.com/posts")!
-    let request = HttpGetRequest(url: url)
-    
-    let asyncExpectation = expectation(description: "Waiting for fetch completion")
-    
-    network.httpGet(request: request) { response in
-      switch response {
-      case .failure(let error):
-        print("error: \(error)")
-      case .success(let data):
-        print("success \(data)")
-      }
-      asyncExpectation.fulfill()
-    }
-    
-    waitForExpectations(timeout: 10.1) { error in
-      XCTAssertNil(error, "Timeout")
-    }
-  }
+class RestPostRemoteServiceTests: XCTestCase {
   
   func test_givenNoNetwork_whenFetch_expectFailure() {
     
@@ -43,9 +19,9 @@ class RestPostListRemoteServiceTests: XCTestCase {
     
     let parser = SwiftyJSONPostParser()
     
-    let service = RestPostListRemoteService(networking: network, postParser: parser)
+    let service = RestPostRemoteService(networking: network, postParser: parser)
     
-    var fetchResult: PostListRemoteFetchResult?
+    var fetchResult: PostRemoteFetchResult?
     
     // WHEN
     let asyncExpectation = expectation(description: "Waiting for fetch completion")
@@ -85,9 +61,9 @@ class RestPostListRemoteServiceTests: XCTestCase {
     
     let parser = SwiftyJSONPostParser()
     
-    let service = RestPostListRemoteService(networking: network, postParser: parser)
+    let service = RestPostRemoteService(networking: network, postParser: parser)
     
-    var fetchResult: PostListRemoteFetchResult?
+    var fetchResult: PostRemoteFetchResult?
     
     // WHEN
     let asyncExpectation = expectation(description: "Waiting for fetch completion")

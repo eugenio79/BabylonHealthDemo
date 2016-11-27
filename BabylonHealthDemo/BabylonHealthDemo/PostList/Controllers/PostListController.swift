@@ -11,10 +11,10 @@ import Foundation
 class PostListController: PostListHandler {
   
   unowned var view: PostListLayout
-  var remoteService: PostListRemoteService
+  var remoteService: PostRemoteService
   var posts: [Post] = []
   
-  required init(view: PostListLayout, remoteService: PostListRemoteService) {
+  required init(view: PostListLayout, remoteService: PostRemoteService) {
     self.view = view
     self.remoteService = remoteService
   }
