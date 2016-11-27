@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum PostListRemoteFetchError {
-  case offline
-  case generic
-}
+//enum PostListRemoteFetchError {
+//  case offline
+//  case generic
+//}
 
 enum PostListRemoteFetchResult {
   case success(postList: [Post])
-  case failure(error: PostListRemoteFetchError)
+  case failure  //(error: PostListRemoteFetchError)
 }
 
 /// This will be the link between the post list controller

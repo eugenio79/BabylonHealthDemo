@@ -73,12 +73,11 @@ class RestPostListRemoteServiceTests: XCTestCase {
   }
  */
   
-  // disabled waiting for network class to be implemented first
-  func DISABLED_test_givenNoNetwork_whenFetch_expectOfflineError() {
+  func test_givenNoNetwork_whenFetch_expectFailure() {
     
     // GIVEN
     let network = StubNetworkManager()
-    network.setOnline(status: false)
+    network.setResponse(.failure)
     
     let service = RestPostListRemoteService(networking: network)
     
@@ -101,8 +100,8 @@ class RestPostListRemoteServiceTests: XCTestCase {
     
     if let fetchResult = fetchResult {
       switch fetchResult {
-      case .failure(let error):
-        XCTAssertEqual(error, .offline)
+      case .failure:
+        XCTAssertTrue(true, "Should fail")
       case .success:
         XCTAssertTrue(false, "Should fail")
       }

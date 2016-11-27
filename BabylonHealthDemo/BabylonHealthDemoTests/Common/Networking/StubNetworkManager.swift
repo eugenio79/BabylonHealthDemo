@@ -13,6 +13,7 @@ class StubNetworkManager: Networking {
   
   fileprivate var online = false
   fileprivate var didTriedToConnect = false
+  fileprivate var httpResponse: HttpGetResponse?
   
   required init() {
     // do nothing
@@ -23,14 +24,22 @@ class StubNetworkManager: Networking {
   }
   
   func httpGet(request: HttpGetRequest, completion: @escaping (HttpGetResponse) -> Void) {
-    // TODO: not implemented yet
+    if let response = httpResponse {
+      completion(response)
+    }
   }
 }
 
 // MARK: - Stub methods
 extension StubNetworkManager {
   
+  /// setting fake online status
   func setOnline(status: Bool) {
     online = status
+  }
+  
+  /// setting stub response to httpGet
+  func setResponse(_ response: HttpGetResponse) {
+    httpResponse = response
   }
 }

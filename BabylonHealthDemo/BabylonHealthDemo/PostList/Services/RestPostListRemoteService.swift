@@ -11,6 +11,9 @@ import Foundation
 /// Implement restful services
 class RestPostListRemoteService: PostListRemoteService {
   
+  // Warning: in order to work with http I had to change ATS settings
+  static private let urlString = "http://jsonplaceholder.typicode.com/posts"
+  
   var networking: Networking
   
   required init(networking: Networking) {
@@ -18,6 +21,24 @@ class RestPostListRemoteService: PostListRemoteService {
   }
   
   func fetch(completion: @escaping (PostListRemoteFetchResult) -> Void) {
-    // TODO: implement it
+    
+    let request = HttpGetRequest(url: URL(string: RestPostListRemoteService.urlString)!)
+    networking.httpGet(request: request) { response in
+      
+      var fetchResult: PostListRemoteFetchResult?
+      
+      switch response {
+      case .failure:
+        fetchResult = PostListRemoteFetchResult.failure
+        
+        // TODO: implement success case
+      default:
+        break
+      }
+      
+      if let fetchResult = fetchResult {
+        completion(fetchResult)
+      }
+    }
   }
 }
