@@ -12,23 +12,25 @@ class PostListViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var loadingView: PostListLoadingView!
+  
+  // declared here, 'cause I can't declare a store property into PostListLayout extension
+  var controller: PostListHandler?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    controller?.viewDidLoad()
   }
 }
 
 extension PostListViewController: PostListLayout {
   
   func showLoading(_ show: Bool) {
-    DispatchQueue.main.async { [weak self] in
-      if show {
-        self?.loadingView.show()
-      } else {
-        self?.loadingView.hide()
-      }
-    }
+    show ? loadingView.show() : loadingView.hide()
+  }
+  
+  func reload() {
+    tableView.reloadData()
   }
 }
 
@@ -36,15 +38,16 @@ extension PostListViewController: PostListLayout {
 extension PostListViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 2
+    return controller?.postCount() ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: PostListCell.reuseIdentifier, for: indexPath) as! PostListCell
     
-    cell.titleLabel.text = "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
-    cell.contentLabel.text = "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    if let post = controller?.post(at: indexPath.row) {
+      cell.update(with: post)
+    }
     
     return cell
   }

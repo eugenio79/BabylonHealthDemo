@@ -12,6 +12,11 @@ import Foundation
 /// I treat ViewControllers as View
 protocol PostListLayout {
   
+  var controller: PostListHandler? { get set }
+  
   /// If param is true, it should display a loading view (false should hide it)
   func showLoading(_ show: Bool)
+  
+  /// It'll refresh the UI
+  func reload()
 }

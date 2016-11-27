@@ -11,14 +11,49 @@ import Foundation
 class PostListController: PostListHandler {
   
   var view: PostListLayout
-  var networking: Networking
+  var remoteService: PostListRemoteService
+  var posts: [Post] = []
   
-  required init(view: PostListLayout, networking: Networking) {
+  required init(view: PostListLayout, remoteService: PostListRemoteService) {
     self.view = view
-    self.networking = networking
+    self.remoteService = remoteService
   }
   
   func viewDidLoad() {
-    view.showLoading(true)
+    
+    self.view.showLoading(true)
+    
+    remoteService.fetch { [weak self] result in
+      
+      guard let strongSelf = self else { return }
+      
+      switch result {
+      case .failure:
+        // TODO: I'd check if I've offline data
+        break
+      case .success(let postList):
+        
+        strongSelf.posts = postList
+        
+        DispatchQueue.main.async {
+          strongSelf.view.reload()
+        }
+      }
+      
+      // no matter if success or failure, hide the loading
+      DispatchQueue.main.async {
+        strongSelf.view.showLoading(false)
+      }
+    }
   }
+  
+  func postCount() -> Int {
+    return posts.count
+  }
+  
+  func post(at index: Int) -> Post? {
+    guard posts.indices.contains(index) else { return nil }
+    return posts[index]
+  }
+  
 }

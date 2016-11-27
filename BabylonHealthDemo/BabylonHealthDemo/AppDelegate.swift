@@ -17,13 +17,28 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  var networking: Networking!
+  var networking: Networking! // I'd take a ref, in order to don't let deallocate it
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     networking = NetworkManager()
     
+    // IMHO a ViewController is a View in the MVC
+    guard let postListView = postListView() else {
+      return true
+    }
+    
+    let postParser = SwiftyJSONPostParser()
+    let remoteService = RestPostListRemoteService(networking: networking, postParser: postParser)
+    let controller = PostListController(view: postListView, remoteService: remoteService)
+    postListView.controller = controller
+    
     return true
+  }
+  
+  func postListView() -> PostListViewController? {
+    let navigationController = window?.rootViewController as! UINavigationController
+    return navigationController.topViewController as? PostListViewController
   }
 
   func applicationWillResignActive(_ application: UIApplication) {

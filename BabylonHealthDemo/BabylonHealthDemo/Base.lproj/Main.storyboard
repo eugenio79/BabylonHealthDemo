@@ -82,7 +82,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="K9h-eL-Msu"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bV7-na-Mzx" userLabel="loadingView" customClass="PostListLoadingView" customModule="BabylonHealthDemo" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bV7-na-Mzx" userLabel="loadingView" customClass="PostListLoadingView" customModule="BabylonHealthDemo" customModuleProvider="target">
                                 <rect key="frame" x="123" y="286.5" width="129" height="94"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="WYr-iP-oT0" userLabel="indicator">

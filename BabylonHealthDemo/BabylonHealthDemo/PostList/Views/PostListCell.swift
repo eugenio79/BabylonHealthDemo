@@ -17,17 +17,8 @@ class PostListCell: UITableViewCell {
   // MARK: - Properties
   static let reuseIdentifier = "PostListCell"
   
-  // MARK: - Lifecycle
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
+  func update(with post: Post) {
+    titleLabel.text = post.title
+    contentLabel.text = post.body
   }
-  
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
-  }
-  
 }
