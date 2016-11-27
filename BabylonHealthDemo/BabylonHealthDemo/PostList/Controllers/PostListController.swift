@@ -10,7 +10,7 @@ import Foundation
 
 class PostListController: PostListHandler {
   
-  var view: PostListLayout
+  unowned var view: PostListLayout
   var remoteService: PostListRemoteService
   var posts: [Post] = []
   

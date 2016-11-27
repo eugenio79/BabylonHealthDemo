@@ -10,7 +10,7 @@ import Foundation
 
 /// The View that will present the list of the posts should conform to this protocol
 /// I treat ViewControllers as View
-protocol PostListLayout {
+protocol PostListLayout: class {
   
   var controller: PostListHandler? { get set }
   

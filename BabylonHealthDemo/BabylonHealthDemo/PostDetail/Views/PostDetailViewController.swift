@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK - Lifecycle
 class PostDetailViewController: UIViewController {
   
   @IBOutlet weak var authorLabel: UILabel!
@@ -20,4 +21,9 @@ class PostDetailViewController: UIViewController {
     
     // Do any additional setup after loading the view.
   }
+}
+
+// MARK - PostDetailLayout
+extension PostDetailViewController: PostDetailLayout {
+  
 }
