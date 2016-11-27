@@ -25,5 +25,6 @@ protocol PostListRemoteService {
   init(networking: Networking, postParser: PostParser)
   
   /// Tries to fetch the post list from the network
+  /// In a real world environment, I'd use pagination
   func fetch(completion: @escaping (PostListRemoteFetchResult) -> Void)
 }

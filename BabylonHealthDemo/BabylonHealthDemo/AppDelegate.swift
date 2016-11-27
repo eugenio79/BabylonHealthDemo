@@ -22,18 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     networking = NetworkManager()
+    //configurePostListView()
+    
+    return true
+  }
+  
+  func configurePostListView() {
     
     // IMHO a ViewController is a View in the MVC
     guard let postListView = postListView() else {
-      return true
+      return
     }
     
     let postParser = SwiftyJSONPostParser()
     let remoteService = RestPostListRemoteService(networking: networking, postParser: postParser)
     let controller = PostListController(view: postListView, remoteService: remoteService)
     postListView.controller = controller
-    
-    return true
   }
   
   func postListView() -> PostListViewController? {

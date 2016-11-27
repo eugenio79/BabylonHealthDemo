@@ -27,6 +27,7 @@
 		BAB48C131DEB36FE0039FB96 /* SwiftyJSONPostParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C121DEB36FE0039FB96 /* SwiftyJSONPostParser.swift */; };
 		BAB48C161DEB37AB0039FB96 /* SwiftyJSONPostParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C151DEB37AB0039FB96 /* SwiftyJSONPostParserTests.swift */; };
 		BAB48C181DEB41430039FB96 /* StubPostListRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C171DEB41430039FB96 /* StubPostListRemoteService.swift */; };
+		BAB48C1B1DEB5CF70039FB96 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C1A1DEB5CF70039FB96 /* PostDetailViewController.swift */; };
 		BAD726EE1DE3964D00E83F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */; };
 		BAD726F31DE3964D00E83F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F11DE3964D00E83F32 /* Main.storyboard */; };
 		BAD726F81DE3964D00E83F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F71DE3964D00E83F32 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		BAB48C121DEB36FE0039FB96 /* SwiftyJSONPostParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONPostParser.swift; sourceTree = "<group>"; };
 		BAB48C151DEB37AB0039FB96 /* SwiftyJSONPostParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONPostParserTests.swift; sourceTree = "<group>"; };
 		BAB48C171DEB41430039FB96 /* StubPostListRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubPostListRemoteService.swift; sourceTree = "<group>"; };
+		BAB48C1A1DEB5CF70039FB96 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		BAD726EA1DE3964D00E83F32 /* BabylonHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD726F21DE3964D00E83F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -211,6 +213,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BAB48C191DEB5CDD0039FB96 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BAB48C1A1DEB5CF70039FB96 /* PostDetailViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BAD726E11DE3964D00E83F32 = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +287,7 @@
 		BAD727241DE399FB00E83F32 /* PostDetail */ = {
 			isa = PBXGroup;
 			children = (
+				BAB48C191DEB5CDD0039FB96 /* Views */,
 			);
 			path = PostDetail;
 			sourceTree = "<group>";
@@ -468,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3B81691DEAEBB500B41A49 /* PostListHandler.swift in Sources */,
+				BAB48C1B1DEB5CF70039FB96 /* PostDetailViewController.swift in Sources */,
 				BAD7272A1DE39A3100E83F32 /* PostListViewController.swift in Sources */,
 				BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */,
 				BA3B81831DEAFFE400B41A49 /* RestPostListRemoteService.swift in Sources */,
