@@ -23,6 +23,9 @@
 		BA3B81831DEAFFE400B41A49 /* RestPostListRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81821DEAFFE400B41A49 /* RestPostListRemoteService.swift */; };
 		BA3B81851DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81841DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift */; };
 		BA3B81881DEB02A700B41A49 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81871DEB02A700B41A49 /* Post.swift */; };
+		BAB48C111DEB36A60039FB96 /* PostParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C101DEB36A60039FB96 /* PostParser.swift */; };
+		BAB48C131DEB36FE0039FB96 /* SwiftyJSONPostParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C121DEB36FE0039FB96 /* SwiftyJSONPostParser.swift */; };
+		BAB48C161DEB37AB0039FB96 /* SwiftyJSONPostParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C151DEB37AB0039FB96 /* SwiftyJSONPostParserTests.swift */; };
 		BAD726EE1DE3964D00E83F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */; };
 		BAD726F31DE3964D00E83F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F11DE3964D00E83F32 /* Main.storyboard */; };
 		BAD726F81DE3964D00E83F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F71DE3964D00E83F32 /* Assets.xcassets */; };
@@ -58,6 +61,9 @@
 		BA3B81821DEAFFE400B41A49 /* RestPostListRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostListRemoteService.swift; sourceTree = "<group>"; };
 		BA3B81841DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostListRemoteServiceTests.swift; sourceTree = "<group>"; };
 		BA3B81871DEB02A700B41A49 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		BAB48C101DEB36A60039FB96 /* PostParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostParser.swift; sourceTree = "<group>"; };
+		BAB48C121DEB36FE0039FB96 /* SwiftyJSONPostParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONPostParser.swift; sourceTree = "<group>"; };
+		BAB48C151DEB37AB0039FB96 /* SwiftyJSONPostParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONPostParserTests.swift; sourceTree = "<group>"; };
 		BAD726EA1DE3964D00E83F32 /* BabylonHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD726F21DE3964D00E83F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		BA3B81731DEAF48200B41A49 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				BAB48C141DEB378F0039FB96 /* Models */,
 				BA3B81811DEAFFA100B41A49 /* Services */,
 				BA3B81771DEAF53B00B41A49 /* Views */,
 				BA3B81741DEAF48200B41A49 /* Controllers */,
@@ -187,6 +194,16 @@
 			isa = PBXGroup;
 			children = (
 				BA3B81871DEB02A700B41A49 /* Post.swift */,
+				BAB48C101DEB36A60039FB96 /* PostParser.swift */,
+				BAB48C121DEB36FE0039FB96 /* SwiftyJSONPostParser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BAB48C141DEB378F0039FB96 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAB48C151DEB37AB0039FB96 /* SwiftyJSONPostParserTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,9 +474,11 @@
 				BA3B81701DEAF1E500B41A49 /* NetworkManager.swift in Sources */,
 				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
+				BAB48C111DEB36A60039FB96 /* PostParser.swift in Sources */,
 				BA3B81801DEAFF1100B41A49 /* PostListRemoteService.swift in Sources */,
 				BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */,
 				BA3B816C1DEAEED700B41A49 /* Networking.swift in Sources */,
+				BAB48C131DEB36FE0039FB96 /* SwiftyJSONPostParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAB48C161DEB37AB0039FB96 /* SwiftyJSONPostParserTests.swift in Sources */,
 				BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */,
 				BA3B81721DEAF30100B41A49 /* StubNetworkManager.swift in Sources */,
 				BA3B81761DEAF49300B41A49 /* PostListControllerTests.swift in Sources */,

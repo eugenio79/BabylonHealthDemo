@@ -11,18 +11,8 @@ import XCTest
 
 class RestPostListRemoteServiceTests: XCTestCase {
     
-  override func setUp() {
-    super.setUp()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-  }
-  
-  override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    super.tearDown()
-  }
-  
-  /*
-  func test_networkManager_removeMe() {
+  // TODO: remove me
+  func DISABLED_test_networkManager_removeMe() {
     
     let network = NetworkManager()
     let url = URL(string: "http://jsonplaceholder.typicode.com/posts")!
@@ -44,34 +34,16 @@ class RestPostListRemoteServiceTests: XCTestCase {
       XCTAssertNil(error, "Timeout")
     }
   }
- */
   
-  /*
-  func test_learn_nsurlsession_removeMe() {
+  // TODO: remove me
+  func DISABLED_test_parsing_removeMe() {
+    let json = "{ \"people\": [{ \"firstName\": \"Paul\", \"lastName\": \"Hudson\", \"isAlive\": true }, { \"firstName\": \"Angela\", \"lastName\": \"Merkel\", \"isAlive\": true }, { \"firstName\": \"George\", \"lastName\": \"Washington\", \"isAlive\": false } ] }"
     
-    let asyncExpectation = expectation(description: "Waiting for fetch completion")
+    let data = json.data(using: .utf8)
     
-    let defaultSession = URLSession(configuration: .default)
-    let url = URL(string: "http://jsonplaceholder.typicode.com/posts")!
-    let dataTask = defaultSession.dataTask(with: url) { data, response, error in
-      if let error = error {
-        print("\(error)")
-      } else if let httpResponse = response as? HTTPURLResponse {
-        if httpResponse.statusCode == 200 {
-          print("ok")
-        } else {
-          print("error")
-        }
-      }
-      asyncExpectation.fulfill()
-    }
-    dataTask.resume()
-    
-    waitForExpectations(timeout: 10.1) { error in
-      XCTAssertNil(error, "Timeout")
-    }
+    let str = String(data: data!, encoding: .utf8)
+    print("\(str)")
   }
- */
   
   func test_givenNoNetwork_whenFetch_expectFailure() {
     
@@ -106,6 +78,15 @@ class RestPostListRemoteServiceTests: XCTestCase {
         XCTAssertTrue(false, "Should fail")
       }
     }
+  }
+  
+  // TODO: implement it (waiting for parser)
+  func test_givenSuccessfulResponse_whenFetch_expectParsedPosts() {
+    
+    // GIVEN
+//    let network = StubNetworkManager()
+//    
+//    let fakeResponse: HttpGetResponse = .success(data: <#T##Data#>)
   }
   
 }
