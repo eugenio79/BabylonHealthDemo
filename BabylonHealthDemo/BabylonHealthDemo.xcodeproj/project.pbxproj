@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ECD7F61C17B21BA89AF91B9 /* Pods_BabylonHealthDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A3C8B2BE523E31795255C /* Pods_BabylonHealthDemo.framework */; };
 		BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA3B815D1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld */; };
 		BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81601DEADE2500B41A49 /* PostListCell.swift */; };
 		BA3B81641DEAEA2B00B41A49 /* PostListControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81631DEAEA2B00B41A49 /* PostListControllerTests.swift */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A17661B548CA02D8EA9EE576 /* Pods-BabylonHealthDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonHealthDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonHealthDemo/Pods-BabylonHealthDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A8C84CDE1B08468823A36D08 /* Pods-BabylonHealthDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonHealthDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonHealthDemo/Pods-BabylonHealthDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BA3B815E1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 		BA3B81601DEADE2500B41A49 /* PostListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
 		BA3B81631DEAEA2B00B41A49 /* PostListControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListControllerTests.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		BAD727071DE3964E00E83F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD727211DE3992000E83F32 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD727291DE39A3100E83F32 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		EC1A3C8B2BE523E31795255C /* Pods_BabylonHealthDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonHealthDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ECD7F61C17B21BA89AF91B9 /* Pods_BabylonHealthDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28E10F824C8E72A4EB2EAB89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A17661B548CA02D8EA9EE576 /* Pods-BabylonHealthDemo.debug.xcconfig */,
+				A8C84CDE1B08468823A36D08 /* Pods-BabylonHealthDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4D63FF81663A5D5CF22177DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A3C8B2BE523E31795255C /* Pods_BabylonHealthDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA3B81621DEAEA0500B41A49 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +109,8 @@
 				BAD726EC1DE3964D00E83F32 /* BabylonHealthDemo */,
 				BAD727041DE3964D00E83F32 /* BabylonHealthDemoTests */,
 				BAD726EB1DE3964D00E83F32 /* Products */,
+				28E10F824C8E72A4EB2EAB89 /* Pods */,
+				4D63FF81663A5D5CF22177DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAD7270A1DE3964E00E83F32 /* Build configuration list for PBXNativeTarget "BabylonHealthDemo" */;
 			buildPhases = (
+				10F3561A92EB41516E8054E9 /* [CP] Check Pods Manifest.lock */,
 				BAD726E61DE3964D00E83F32 /* Sources */,
 				BAD726E71DE3964D00E83F32 /* Frameworks */,
 				BAD726E81DE3964D00E83F32 /* Resources */,
+				1E6E4EBFEFA79AC28D02E6A6 /* [CP] Embed Pods Frameworks */,
+				48B79FB657388DEF68600C07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,6 +299,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10F3561A92EB41516E8054E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1E6E4EBFEFA79AC28D02E6A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabylonHealthDemo/Pods-BabylonHealthDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48B79FB657388DEF68600C07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabylonHealthDemo/Pods-BabylonHealthDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BAD726E61DE3964D00E83F32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -344,6 +419,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -394,6 +470,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -421,7 +498,9 @@
 		};
 		BAD7270B1DE3964E00E83F32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A17661B548CA02D8EA9EE576 /* Pods-BabylonHealthDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/BabylonHealthDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -433,7 +512,9 @@
 		};
 		BAD7270C1DE3964E00E83F32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8C84CDE1B08468823A36D08 /* Pods-BabylonHealthDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/BabylonHealthDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
