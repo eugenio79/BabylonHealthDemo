@@ -11,4 +11,11 @@ import Foundation
 /// The Controller of the PostListLayout should conform to this protocol
 protocol PostListHandler {
   
+  var view: PostListLayout { get set }
+  var networking: Networking { get set }
+  
+  init(view: PostListLayout, networking: Networking)
+  
+  /// Usually invoked by the view to let the controller know when the view is ready
+  func viewDidLoad()
 }

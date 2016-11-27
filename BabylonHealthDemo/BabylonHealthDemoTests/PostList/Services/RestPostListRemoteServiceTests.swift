@@ -1,5 +1,5 @@
 //
-//  PostListControllerTests.swift
+//  RestPostListRemoteServiceTests.swift
 //  BabylonHealthDemo
 //
 //  Created by Giuseppe Morana on 27/11/2016.
@@ -9,8 +9,8 @@
 import XCTest
 @testable import BabylonHealthDemo
 
-class PostListControllerTests: XCTestCase {
-  
+class RestPostListRemoteServiceTests: XCTestCase {
+    
   override func setUp() {
     super.setUp()
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,18 +21,5 @@ class PostListControllerTests: XCTestCase {
     super.tearDown()
   }
   
-  func test_givenNoNetworkAndNoLocalData_whenViewDidLoad_expectPageToBeBlank() {
-    
-    let networkManager = StubNetworkManager()
-    networkManager.setOnline(status: false)
-    
-    let view = FakePostListView()
-    
-    let controller = PostListController(view: view, networking: networkManager)
-    
-    controller.viewDidLoad()
-    
-    view.didShowLoadingAtLeastOneTime = true
-  }
   
 }

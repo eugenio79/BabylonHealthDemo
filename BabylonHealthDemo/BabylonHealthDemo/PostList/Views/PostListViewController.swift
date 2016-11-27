@@ -11,6 +11,7 @@ import UIKit
 class PostListViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var loadingView: PostListLoadingView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,6 +19,20 @@ class PostListViewController: UIViewController {
   }
 }
 
+extension PostListViewController: PostListLayout {
+  
+  func showLoading(_ show: Bool) {
+    DispatchQueue.main.async { [weak self] in
+      if show {
+        self?.loadingView.show()
+      } else {
+        self?.loadingView.hide()
+      }
+    }
+  }
+}
+
+// MARK: - PostListViewController
 extension PostListViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

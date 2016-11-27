@@ -82,17 +82,52 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="K9h-eL-Msu"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bV7-na-Mzx" userLabel="loadingView" customClass="PostListLoadingView" customModule="BabylonHealthDemo" customModuleProvider="target">
+                                <rect key="frame" x="123" y="286.5" width="129" height="94"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="WYr-iP-oT0" userLabel="indicator">
+                                        <rect key="frame" x="46" y="7.5" width="37" height="37"/>
+                                        <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hay-v4-VTK" userLabel="label">
+                                        <rect key="frame" x="8" y="53" width="101" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="7Fk-y2-51A"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="E1f-Ho-G4G"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hay-v4-VTK" secondAttribute="bottom" constant="20" id="K4q-35-6qN"/>
+                                    <constraint firstItem="WYr-iP-oT0" firstAttribute="top" secondItem="bV7-na-Mzx" secondAttribute="top" constant="8" id="KM6-KV-avP"/>
+                                    <constraint firstAttribute="height" constant="94" id="YSn-9O-FQ2"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hay-v4-VTK" secondAttribute="trailing" constant="20" id="cvH-Ee-G3X"/>
+                                    <constraint firstItem="Hay-v4-VTK" firstAttribute="top" secondItem="WYr-iP-oT0" secondAttribute="bottom" constant="8" id="gqx-0o-1Qk"/>
+                                    <constraint firstItem="Hay-v4-VTK" firstAttribute="leading" secondItem="bV7-na-Mzx" secondAttribute="leading" constant="8" id="nfj-Sj-IxK"/>
+                                    <constraint firstItem="WYr-iP-oT0" firstAttribute="centerX" secondItem="bV7-na-Mzx" secondAttribute="centerX" id="rsQ-bm-07C"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="indicator" destination="WYr-iP-oT0" id="FNI-Cp-JdK"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="jnJ-ew-lx2" secondAttribute="trailing" constant="-16" id="CMh-sM-82t"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jnJ-ew-lx2" secondAttribute="bottom" id="gyL-oJ-Ujx"/>
                             <constraint firstItem="jnJ-ew-lx2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="jOQ-LH-36k"/>
+                            <constraint firstItem="bV7-na-Mzx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ow7-DM-YJS"/>
+                            <constraint firstItem="bV7-na-Mzx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wBK-QG-iRv"/>
                             <constraint firstItem="jnJ-ew-lx2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="wf2-Hw-1X0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QOH-Fp-iX0"/>
                     <connections>
+                        <outlet property="loadingView" destination="bV7-na-Mzx" id="lfw-ky-Egp"/>
                         <outlet property="tableView" destination="jnJ-ew-lx2" id="hwM-hW-SAa"/>
                     </connections>
                 </viewController>

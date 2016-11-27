@@ -10,9 +10,19 @@
 		4ECD7F61C17B21BA89AF91B9 /* Pods_BabylonHealthDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A3C8B2BE523E31795255C /* Pods_BabylonHealthDemo.framework */; };
 		BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA3B815D1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld */; };
 		BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81601DEADE2500B41A49 /* PostListCell.swift */; };
-		BA3B81641DEAEA2B00B41A49 /* PostListControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81631DEAEA2B00B41A49 /* PostListControllerTests.swift */; };
 		BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */; };
 		BA3B81691DEAEBB500B41A49 /* PostListHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81681DEAEBB500B41A49 /* PostListHandler.swift */; };
+		BA3B816C1DEAEED700B41A49 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B816B1DEAEED700B41A49 /* Networking.swift */; };
+		BA3B81701DEAF1E500B41A49 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B816F1DEAF1E500B41A49 /* NetworkManager.swift */; };
+		BA3B81721DEAF30100B41A49 /* StubNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81711DEAF30100B41A49 /* StubNetworkManager.swift */; };
+		BA3B81761DEAF49300B41A49 /* PostListControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81751DEAF49300B41A49 /* PostListControllerTests.swift */; };
+		BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81781DEAF56000B41A49 /* FakePostListView.swift */; };
+		BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817A1DEAF5B900B41A49 /* PostListController.swift */; };
+		BA3B817D1DEAFA3100B41A49 /* PostListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817C1DEAFA3100B41A49 /* PostListLoadingView.swift */; };
+		BA3B81801DEAFF1100B41A49 /* PostListRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817F1DEAFF1100B41A49 /* PostListRemoteService.swift */; };
+		BA3B81831DEAFFE400B41A49 /* RestPostListRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81821DEAFFE400B41A49 /* RestPostListRemoteService.swift */; };
+		BA3B81851DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81841DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift */; };
+		BA3B81881DEB02A700B41A49 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81871DEB02A700B41A49 /* Post.swift */; };
 		BAD726EE1DE3964D00E83F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */; };
 		BAD726F31DE3964D00E83F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F11DE3964D00E83F32 /* Main.storyboard */; };
 		BAD726F81DE3964D00E83F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F71DE3964D00E83F32 /* Assets.xcassets */; };
@@ -35,9 +45,19 @@
 		A8C84CDE1B08468823A36D08 /* Pods-BabylonHealthDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonHealthDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonHealthDemo/Pods-BabylonHealthDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BA3B815E1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 		BA3B81601DEADE2500B41A49 /* PostListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
-		BA3B81631DEAEA2B00B41A49 /* PostListControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListControllerTests.swift; sourceTree = "<group>"; };
 		BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLayout.swift; sourceTree = "<group>"; };
 		BA3B81681DEAEBB500B41A49 /* PostListHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListHandler.swift; sourceTree = "<group>"; };
+		BA3B816B1DEAEED700B41A49 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		BA3B816F1DEAF1E500B41A49 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BA3B81711DEAF30100B41A49 /* StubNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubNetworkManager.swift; sourceTree = "<group>"; };
+		BA3B81751DEAF49300B41A49 /* PostListControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListControllerTests.swift; sourceTree = "<group>"; };
+		BA3B81781DEAF56000B41A49 /* FakePostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakePostListView.swift; sourceTree = "<group>"; };
+		BA3B817A1DEAF5B900B41A49 /* PostListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListController.swift; sourceTree = "<group>"; };
+		BA3B817C1DEAFA3100B41A49 /* PostListLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLoadingView.swift; sourceTree = "<group>"; };
+		BA3B817F1DEAFF1100B41A49 /* PostListRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListRemoteService.swift; sourceTree = "<group>"; };
+		BA3B81821DEAFFE400B41A49 /* RestPostListRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostListRemoteService.swift; sourceTree = "<group>"; };
+		BA3B81841DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostListRemoteServiceTests.swift; sourceTree = "<group>"; };
+		BA3B81871DEB02A700B41A49 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BAD726EA1DE3964D00E83F32 /* BabylonHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD726F21DE3964D00E83F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,21 +106,89 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA3B81621DEAEA0500B41A49 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				BA3B81631DEAEA2B00B41A49 /* PostListControllerTests.swift */,
-			);
-			name = Controllers;
-			path = PostList/Controllers;
-			sourceTree = "<group>";
-		};
 		BA3B81671DEAEB9D00B41A49 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				BA3B81681DEAEBB500B41A49 /* PostListHandler.swift */,
+				BA3B817A1DEAF5B900B41A49 /* PostListController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BA3B816A1DEAEECC00B41A49 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B816B1DEAEED700B41A49 /* Networking.swift */,
+				BA3B816F1DEAF1E500B41A49 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BA3B816D1DEAF1CB00B41A49 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B816E1DEAF1CB00B41A49 /* Networking */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BA3B816E1DEAF1CB00B41A49 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B81711DEAF30100B41A49 /* StubNetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BA3B81731DEAF48200B41A49 /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B81811DEAFFA100B41A49 /* Services */,
+				BA3B81771DEAF53B00B41A49 /* Views */,
+				BA3B81741DEAF48200B41A49 /* Controllers */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
+		BA3B81741DEAF48200B41A49 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B81751DEAF49300B41A49 /* PostListControllerTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BA3B81771DEAF53B00B41A49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B81781DEAF56000B41A49 /* FakePostListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BA3B817E1DEAFE8B00B41A49 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B817F1DEAFF1100B41A49 /* PostListRemoteService.swift */,
+				BA3B81821DEAFFE400B41A49 /* RestPostListRemoteService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BA3B81811DEAFFA100B41A49 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B81841DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BA3B81861DEB028B00B41A49 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B81871DEB02A700B41A49 /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BAD726E11DE3964D00E83F32 = {
@@ -138,7 +226,8 @@
 		BAD727041DE3964D00E83F32 /* BabylonHealthDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				BA3B81621DEAEA0500B41A49 /* Controllers */,
+				BA3B81731DEAF48200B41A49 /* PostList */,
+				BA3B816D1DEAF1CB00B41A49 /* Common */,
 				BAD727071DE3964E00E83F32 /* Info.plist */,
 			);
 			path = BabylonHealthDemoTests;
@@ -159,6 +248,7 @@
 		BAD727231DE399FB00E83F32 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BA3B816A1DEAEECC00B41A49 /* Networking */,
 				BAD7272B1DE3A41E00E83F32 /* Store */,
 			);
 			path = Common;
@@ -174,6 +264,8 @@
 		BAD727251DE399FB00E83F32 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				BA3B81861DEB028B00B41A49 /* Models */,
+				BA3B817E1DEAFE8B00B41A49 /* Services */,
 				BA3B81671DEAEB9D00B41A49 /* Controllers */,
 				BAD727281DE39A3100E83F32 /* Views */,
 			);
@@ -186,6 +278,7 @@
 				BAD727291DE39A3100E83F32 /* PostListViewController.swift */,
 				BA3B81601DEADE2500B41A49 /* PostListCell.swift */,
 				BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */,
+				BA3B817C1DEAFA3100B41A49 /* PostListLoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,9 +448,16 @@
 				BA3B81691DEAEBB500B41A49 /* PostListHandler.swift in Sources */,
 				BAD7272A1DE39A3100E83F32 /* PostListViewController.swift in Sources */,
 				BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */,
+				BA3B81831DEAFFE400B41A49 /* RestPostListRemoteService.swift in Sources */,
+				BA3B81881DEB02A700B41A49 /* Post.swift in Sources */,
+				BA3B817D1DEAFA3100B41A49 /* PostListLoadingView.swift in Sources */,
 				BAD726EE1DE3964D00E83F32 /* AppDelegate.swift in Sources */,
+				BA3B81701DEAF1E500B41A49 /* NetworkManager.swift in Sources */,
+				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
+				BA3B81801DEAFF1100B41A49 /* PostListRemoteService.swift in Sources */,
 				BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */,
+				BA3B816C1DEAEED700B41A49 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +465,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA3B81641DEAEA2B00B41A49 /* PostListControllerTests.swift in Sources */,
+				BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */,
+				BA3B81721DEAF30100B41A49 /* StubNetworkManager.swift in Sources */,
+				BA3B81761DEAF49300B41A49 /* PostListControllerTests.swift in Sources */,
+				BA3B81851DEB003A00B41A49 /* RestPostListRemoteServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

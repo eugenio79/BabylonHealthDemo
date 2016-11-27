@@ -12,4 +12,6 @@ import Foundation
 /// I treat ViewControllers as View
 protocol PostListLayout {
   
+  /// If param is true, it should display a loading view (false should hide it)
+  func showLoading(_ show: Bool)
 }
