@@ -21,6 +21,10 @@ class StubNetworkManager: Networking {
   func isOnline() -> Bool {
     return online
   }
+  
+  func httpGet(request: HttpGetRequest, completion: @escaping (HttpGetResponse) -> Void) {
+    // TODO: not implemented yet
+  }
 }
 
 // MARK: - Stub methods

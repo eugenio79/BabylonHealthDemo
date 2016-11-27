@@ -21,5 +21,92 @@ class RestPostListRemoteServiceTests: XCTestCase {
     super.tearDown()
   }
   
+  /*
+  func test_networkManager_removeMe() {
+    
+    let network = NetworkManager()
+    let url = URL(string: "http://jsonplaceholder.typicode.com/posts")!
+    let request = HttpGetRequest(url: url)
+    
+    let asyncExpectation = expectation(description: "Waiting for fetch completion")
+    
+    network.httpGet(request: request) { response in
+      switch response {
+      case .failure(let error):
+        print("error: \(error)")
+      case .success(let data):
+        print("success \(data)")
+      }
+      asyncExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 10.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+  }
+ */
+  
+  /*
+  func test_learn_nsurlsession_removeMe() {
+    
+    let asyncExpectation = expectation(description: "Waiting for fetch completion")
+    
+    let defaultSession = URLSession(configuration: .default)
+    let url = URL(string: "http://jsonplaceholder.typicode.com/posts")!
+    let dataTask = defaultSession.dataTask(with: url) { data, response, error in
+      if let error = error {
+        print("\(error)")
+      } else if let httpResponse = response as? HTTPURLResponse {
+        if httpResponse.statusCode == 200 {
+          print("ok")
+        } else {
+          print("error")
+        }
+      }
+      asyncExpectation.fulfill()
+    }
+    dataTask.resume()
+    
+    waitForExpectations(timeout: 10.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+  }
+ */
+  
+  // disabled waiting for network class to be implemented first
+  func DISABLED_test_givenNoNetwork_whenFetch_expectOfflineError() {
+    
+    // GIVEN
+    let network = StubNetworkManager()
+    network.setOnline(status: false)
+    
+    let service = RestPostListRemoteService(networking: network)
+    
+    var fetchResult: PostListRemoteFetchResult?
+    
+    // WHEN
+    let asyncExpectation = expectation(description: "Waiting for fetch completion")
+    
+    service.fetch { result in
+      fetchResult = result
+      asyncExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    
+    // EXPECT
+    XCTAssertNotNil(fetchResult)
+    
+    if let fetchResult = fetchResult {
+      switch fetchResult {
+      case .failure(let error):
+        XCTAssertEqual(error, .offline)
+      case .success:
+        XCTAssertTrue(false, "Should fail")
+      }
+    }
+  }
   
 }

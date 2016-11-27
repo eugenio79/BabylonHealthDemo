@@ -343,10 +343,12 @@
 				TargetAttributes = {
 					BAD726E91DE3964D00E83F32 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 737F3CPAC5;
 						ProvisioningStyle = Automatic;
 					};
 					BAD727001DE3964D00E83F32 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 737F3CPAC5;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BAD726E91DE3964D00E83F32;
@@ -605,11 +607,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 737F3CPAC5;
 				INFOPLIST_FILE = "$(SRCROOT)/BabylonHealthDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eugenio79.BabylonHealthDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -619,11 +624,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 737F3CPAC5;
 				INFOPLIST_FILE = "$(SRCROOT)/BabylonHealthDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eugenio79.BabylonHealthDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -633,6 +641,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 737F3CPAC5;
 				INFOPLIST_FILE = BabylonHealthDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eugenio79.BabylonHealthDemoTests;
@@ -649,6 +659,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 737F3CPAC5;
 				INFOPLIST_FILE = BabylonHealthDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eugenio79.BabylonHealthDemoTests;
