@@ -15,25 +15,28 @@ class RestPostListRemoteService: PostListRemoteService {
   static private let urlString = "http://jsonplaceholder.typicode.com/posts"
   
   var networking: Networking
+  var postParser: PostParser
   
-  required init(networking: Networking) {
+  required init(networking: Networking, postParser: PostParser) {
     self.networking = networking
+    self.postParser = postParser
   }
   
   func fetch(completion: @escaping (PostListRemoteFetchResult) -> Void) {
     
     let request = HttpGetRequest(url: URL(string: RestPostListRemoteService.urlString)!)
-    networking.httpGet(request: request) { response in
+    networking.httpGet(request: request) { [weak self] response in
+      
+      guard let strongSelf = self else { return }
       
       var fetchResult: PostListRemoteFetchResult?
       
       switch response {
       case .failure:
         fetchResult = PostListRemoteFetchResult.failure
-        
-        // TODO: implement success case
-      default:
-        break
+      case .success(let data):
+        let posts = strongSelf.postParser.parse(data: data)
+        fetchResult = PostListRemoteFetchResult.success(postList: posts)
       }
       
       if let fetchResult = fetchResult {

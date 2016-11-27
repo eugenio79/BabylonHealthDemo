@@ -22,7 +22,7 @@ enum PostListRemoteFetchResult {
 /// and each remote service it needs
 protocol PostListRemoteService {
   
-  init(networking: Networking)
+  init(networking: Networking, postParser: PostParser)
   
   /// Tries to fetch the post list from the network
   func fetch(completion: @escaping (PostListRemoteFetchResult) -> Void)
