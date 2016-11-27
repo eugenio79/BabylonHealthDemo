@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA3B815D1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld */; };
 		BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81601DEADE2500B41A49 /* PostListCell.swift */; };
+		BA3B81641DEAEA2B00B41A49 /* PostListControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81631DEAEA2B00B41A49 /* PostListControllerTests.swift */; };
+		BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */; };
+		BA3B81691DEAEBB500B41A49 /* PostListHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81681DEAEBB500B41A49 /* PostListHandler.swift */; };
 		BAD726EE1DE3964D00E83F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */; };
 		BAD726F31DE3964D00E83F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F11DE3964D00E83F32 /* Main.storyboard */; };
 		BAD726F81DE3964D00E83F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F71DE3964D00E83F32 /* Assets.xcassets */; };
 		BAD726FB1DE3964D00E83F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F91DE3964D00E83F32 /* LaunchScreen.storyboard */; };
-		BAD727061DE3964E00E83F32 /* BabylonHealthDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD727051DE3964E00E83F32 /* BabylonHealthDemoTests.swift */; };
-		BAD727221DE3992000E83F32 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAD727211DE3992000E83F32 /* Info.plist */; };
 		BAD7272A1DE39A3100E83F32 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD727291DE39A3100E83F32 /* PostListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,13 +32,15 @@
 /* Begin PBXFileReference section */
 		BA3B815E1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 		BA3B81601DEADE2500B41A49 /* PostListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
+		BA3B81631DEAEA2B00B41A49 /* PostListControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListControllerTests.swift; sourceTree = "<group>"; };
+		BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLayout.swift; sourceTree = "<group>"; };
+		BA3B81681DEAEBB500B41A49 /* PostListHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListHandler.swift; sourceTree = "<group>"; };
 		BAD726EA1DE3964D00E83F32 /* BabylonHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD726F21DE3964D00E83F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAD726F71DE3964D00E83F32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		BAD726FA1DE3964D00E83F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAD727011DE3964D00E83F32 /* BabylonHealthDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonHealthDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAD727051DE3964E00E83F32 /* BabylonHealthDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonHealthDemoTests.swift; sourceTree = "<group>"; };
 		BAD727071DE3964E00E83F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD727211DE3992000E83F32 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD727291DE39A3100E83F32 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +64,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA3B81621DEAEA0500B41A49 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B81631DEAEA2B00B41A49 /* PostListControllerTests.swift */,
+			);
+			name = Controllers;
+			path = PostList/Controllers;
+			sourceTree = "<group>";
+		};
+		BA3B81671DEAEB9D00B41A49 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B81681DEAEBB500B41A49 /* PostListHandler.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		BAD726E11DE3964D00E83F32 = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +114,7 @@
 		BAD727041DE3964D00E83F32 /* BabylonHealthDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAD727051DE3964E00E83F32 /* BabylonHealthDemoTests.swift */,
+				BA3B81621DEAEA0500B41A49 /* Controllers */,
 				BAD727071DE3964E00E83F32 /* Info.plist */,
 			);
 			path = BabylonHealthDemoTests;
@@ -130,6 +150,7 @@
 		BAD727251DE399FB00E83F32 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				BA3B81671DEAEB9D00B41A49 /* Controllers */,
 				BAD727281DE39A3100E83F32 /* Views */,
 			);
 			path = PostList;
@@ -140,6 +161,7 @@
 			children = (
 				BAD727291DE39A3100E83F32 /* PostListViewController.swift */,
 				BA3B81601DEADE2500B41A49 /* PostListCell.swift */,
+				BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +227,7 @@
 					};
 					BAD727001DE3964D00E83F32 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BAD726E91DE3964D00E83F32;
 					};
@@ -234,7 +257,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAD727221DE3992000E83F32 /* Info.plist in Resources */,
 				BAD726FB1DE3964D00E83F32 /* LaunchScreen.storyboard in Resources */,
 				BAD726F81DE3964D00E83F32 /* Assets.xcassets in Resources */,
 				BAD726F31DE3964D00E83F32 /* Main.storyboard in Resources */,
@@ -255,7 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3B81691DEAEBB500B41A49 /* PostListHandler.swift in Sources */,
 				BAD7272A1DE39A3100E83F32 /* PostListViewController.swift in Sources */,
+				BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */,
 				BAD726EE1DE3964D00E83F32 /* AppDelegate.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
 				BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */,
@@ -266,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAD727061DE3964E00E83F32 /* BabylonHealthDemoTests.swift in Sources */,
+				BA3B81641DEAEA2B00B41A49 /* PostListControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,10 +448,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BabylonHealthDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eugenio79.BabylonHealthDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabylonHealthDemo.app/BabylonHealthDemo";
 			};
@@ -438,6 +464,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BabylonHealthDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = eugenio79.BabylonHealthDemoTests;
