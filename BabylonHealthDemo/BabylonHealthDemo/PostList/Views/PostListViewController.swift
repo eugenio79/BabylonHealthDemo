@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PostListViewController.swift
 //  BabylonHealthDemo
 //
 //  Created by Giuseppe Morana on 21/11/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PostListViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
