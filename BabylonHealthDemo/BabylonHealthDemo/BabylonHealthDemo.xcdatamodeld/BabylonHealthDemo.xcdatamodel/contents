@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDAddress" representedClassName="CDAddress" syncable="YES">
-        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="suite" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="geo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDGeolocation" inverseName="address" inverseEntity="CDGeolocation" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="address" inverseEntity="CDUser" syncable="YES"/>
+        <attribute name="city" attributeType="String" syncable="YES"/>
+        <attribute name="street" attributeType="String" syncable="YES"/>
+        <attribute name="suite" attributeType="String" syncable="YES"/>
+        <attribute name="zipcode" attributeType="String" syncable="YES"/>
+        <relationship name="cdGeo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDGeolocation" inverseName="address" inverseEntity="CDGeolocation" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="cdAddress" inverseEntity="CDUser" syncable="YES"/>
     </entity>
     <entity name="CDComment" representedClassName="CDComment" syncable="YES">
-        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPost" inverseName="comments" inverseEntity="CDPost" syncable="YES"/>
+        <attribute name="body" attributeType="String" syncable="YES"/>
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPost" inverseName="cdComments" inverseEntity="CDPost" syncable="YES"/>
     </entity>
     <entity name="CDCompany" representedClassName="CDCompany" syncable="YES">
-        <attribute name="bs" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="catchPhrase" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="company" inverseEntity="CDUser" syncable="YES"/>
+        <attribute name="bs" attributeType="String" syncable="YES"/>
+        <attribute name="catchPhrase" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="cdCompany" inverseEntity="CDUser" syncable="YES"/>
     </entity>
     <entity name="CDGeolocation" representedClassName="CDGeolocation" syncable="YES">
-        <attribute name="lat" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lng" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDAddress" inverseName="geo" inverseEntity="CDAddress" syncable="YES"/>
+        <attribute name="lat" attributeType="String" syncable="YES"/>
+        <attribute name="lng" attributeType="String" syncable="YES"/>
+        <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDAddress" inverseName="cdGeo" inverseEntity="CDAddress" syncable="YES"/>
     </entity>
     <entity name="CDPost" representedClassName="CDPost" syncable="YES">
-        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDComment" inverseName="post" inverseEntity="CDComment" syncable="YES"/>
+        <attribute name="body" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="cdComments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDComment" inverseName="post" inverseEntity="CDComment" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="posts" inverseEntity="CDUser" syncable="YES"/>
     </entity>
     <entity name="CDUser" representedClassName="CDUser" syncable="YES">
-        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDAddress" inverseName="user" inverseEntity="CDAddress" syncable="YES"/>
-        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDCompany" inverseName="user" inverseEntity="CDCompany" syncable="YES"/>
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="phone" attributeType="String" syncable="YES"/>
+        <attribute name="username" attributeType="String" syncable="YES"/>
+        <attribute name="website" attributeType="String" syncable="YES"/>
+        <relationship name="cdAddress" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDAddress" inverseName="user" inverseEntity="CDAddress" syncable="YES"/>
+        <relationship name="cdCompany" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDCompany" inverseName="user" inverseEntity="CDCompany" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDPost" inverseName="user" inverseEntity="CDPost" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CDPost" positionX="-209" positionY="-126" width="128" height="118"/>
-        <element name="CDGeolocation" positionX="171" positionY="252" width="128" height="88"/>
-        <element name="CDCompany" positionX="-225" positionY="279" width="128" height="103"/>
-        <element name="CDAddress" positionX="-18" positionY="231" width="128" height="133"/>
-        <element name="CDUser" positionX="-236" positionY="54" width="128" height="178"/>
-        <element name="CDComment" positionX="25" positionY="-144" width="128" height="118"/>
+        <element name="CDAddress" positionX="-18" positionY="231" width="128" height="135"/>
+        <element name="CDComment" positionX="25" positionY="-144" width="128" height="120"/>
+        <element name="CDCompany" positionX="-225" positionY="279" width="128" height="105"/>
+        <element name="CDGeolocation" positionX="171" positionY="252" width="128" height="90"/>
+        <element name="CDPost" positionX="-209" positionY="-126" width="128" height="120"/>
+        <element name="CDUser" positionX="-236" positionY="54" width="128" height="180"/>
     </elements>
 </model>

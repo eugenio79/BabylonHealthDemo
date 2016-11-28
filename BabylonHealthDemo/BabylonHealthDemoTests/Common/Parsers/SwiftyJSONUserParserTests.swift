@@ -35,14 +35,14 @@ class SwiftyJSONUserParserTests: XCTestCase {
     
     XCTAssertEqual(users[0].id, 1)
     XCTAssertEqual(users[0].name, "Leanne Graham")
-    XCTAssertEqual(users[0].address.street, "Kulas Light")
-    XCTAssertEqual(users[0].address.geo.lat, "-37.3159")
-    XCTAssertEqual(users[0].company.name, "Romaguera-Crona")
+    XCTAssertEqual(users[0].address?.street, "Kulas Light")
+    XCTAssertEqual(users[0].address?.geo?.lat, "-37.3159")
+    XCTAssertEqual(users[0].company?.name, "Romaguera-Crona")
 
     XCTAssertEqual(users[1].email, "Shanna@melissa.tv")
-    XCTAssertEqual(users[1].address.zipcode, "90566-7771")
-    XCTAssertEqual(users[1].address.geo.lng, "-34.4618")
-    XCTAssertEqual(users[1].company.catchPhrase, "Proactive didactic contingency")
+    XCTAssertEqual(users[1].address?.zipcode, "90566-7771")
+    XCTAssertEqual(users[1].address?.geo?.lng, "-34.4618")
+    XCTAssertEqual(users[1].company?.catchPhrase, "Proactive didactic contingency")
   }
   
 }

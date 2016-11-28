@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol Geolocation {
-  var lat: String { get set }
-  var lng: String { get set }
+// I need the @objc in order to not incure in a linker error (CoreData conformance)
+@objc protocol Geolocation {
+  var lat: String? { get set }
+  var lng: String? { get set }
 }

@@ -8,8 +8,9 @@
 
 import Foundation
 
-protocol Company {
-  var name: String { get set }
-  var catchPhrase: String { get set }
-  var bs: String { get set }
+// I need the @objc in order to not incure in a linker error (CoreData conformance)
+@objc protocol Company {
+  var name: String? { get set }
+  var catchPhrase: String? { get set }
+  var bs: String? { get set }
 }

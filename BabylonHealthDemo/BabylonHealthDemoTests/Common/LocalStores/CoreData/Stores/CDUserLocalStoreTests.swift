@@ -23,18 +23,72 @@ class CDUserLocalStoreTests: XCTestCase {
     super.tearDown()
   }
   
-  /* disabled waiting for fetch to be implemented
-  func test_renameMe() {
+  func test_givenEmptyStore_whenInsertingOneUser_expectFetchToGetIt() {
+    
+    // GIVEN
+    let userToSave = givenAnUser()
     let userStore = CDUserLocalStore(coreDataStack: coreDataStack)
     
-    let geo = Geolocation(lat: "-37.3159", lng: "81.1496")
-    let address = Address(street: "Kulas Light", suite: "Apt. 556", city: "Gwenborough", zipcode: "92998-3874", geo: geo)
-    let company = Company(name: "Romaguera-Crona", catchPhrase: "Multi-layered client-server neural-net", bs: "harness real-time e-markets")
-    let userToSave = User(id: 1, name: "Leanne Graham", username: "Bret", email: "Sincere@april.biz", address: address, phone: "1-770-736-8031 x56442", website: "hildegard.org", company: company)
+    // WHEN
+    var insertResult: UserLocalStoreInsertCompletion?
+    let insertExpectation = expectation(description: "Waiting for insert to complete")
     
-    //userStore.insert([user])
+    userStore.insert(users: [userToSave]) { result in
+      insertResult = result
+      insertExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    
+    // EXPECT
+    XCTAssertNotNil(insertResult)
+    
+    if let insertResult = insertResult {
+      switch insertResult {
+      case .success:
+        XCTAssertTrue(true, "Insert should be successful")
+      case .failure:
+        XCTAssertTrue(false, "Insert should be successful")
+        return
+      }
+    }
+    
+    // WHEN
+    var fetchResult: UserLocalStoreFetchCompletion?
+    let fetchExpectation = expectation(description: "Waiting for fetch to complete")
+    
+    userStore.fetch { result in
+      fetchResult = result
+      fetchExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    
+    // EXPECT
+    XCTAssertNotNil(fetchResult)
+    
+    if let fetchResult = fetchResult {
+      switch fetchResult {
+      case .success(let users):
+        XCTAssertEqual(users.count, 1)
+      case .failure:
+        XCTAssertTrue(false, "Fetch should be successful")
+        return
+      }
+    }
   }
-  */
+  
+  func givenAnUser() -> User {
+    
+    let geo = RestGeolocation(lat: "-37.3159", lng: "81.1496")
+    let address = RestAddress(street: "Kulas Light", suite: "Apt. 556", city: "Gwenborough", zipcode: "92998-3874", geo: geo)
+    let company = RestCompany(name: "Romaguera-Crona", catchPhrase: "Multi-layered client-server neural-net", bs: "harness real-time e-markets")
+    return RestUser(id: 1, name: "Leanne Graham", username: "Bret", email: "Sincere@april.biz", address: address, phone: "1-770-736-8031 x56442", website: "hildegard.org", company: company)
+  }
 }
 //{
 //  "id": 1,

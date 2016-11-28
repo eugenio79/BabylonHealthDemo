@@ -8,13 +8,14 @@
 
 import Foundation
 
-protocol User {
-  var id: Int { get set }
-  var name: String { get set }
-  var username: String { get set }
-  var email: String { get set }
-  var address: Address { get set }
-  var phone: String { get set }
-  var website: String { get set }
-  var company: Company { get set }
+// I need the @objc in order to not incure in a linker error (CoreData conformance)
+@objc protocol User {
+  var id: Int32 { get set }
+  var name: String? { get set }
+  var username: String? { get set }
+  var email: String? { get set }
+  var address: Address? { get set }
+  var phone: String? { get set }
+  var website: String? { get set }
+  var company: Company? { get set }
 }

@@ -8,7 +8,13 @@
 
 import Foundation
 
-struct RestGeolocation: Geolocation {
-  var lat: String
-  var lng: String
+// Defined as a class to conform to @obj
+class RestGeolocation: Geolocation {
+  var lat: String?
+  var lng: String?
+  
+  init(lat: String, lng: String) {
+    self.lat = lat
+    self.lng = lng
+  }
 }

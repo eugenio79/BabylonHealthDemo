@@ -14,4 +14,8 @@ class StubUserLocalStore: UserLocalStore {
   func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void) {
     // TODO: implement it
   }
+  
+  func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
+    // TODO: implement it
+  }
 }

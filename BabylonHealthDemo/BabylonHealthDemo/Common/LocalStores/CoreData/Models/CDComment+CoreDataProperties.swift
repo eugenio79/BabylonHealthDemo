@@ -2,7 +2,7 @@
 //  CDComment+CoreDataProperties.swift
 //  BabylonHealthDemo
 //
-//  Created by Giuseppe Morana on 28/11/2016.
+//  Created by Giuseppe Morana on 29/11/2016.
 //  Copyright © 2016 Giuseppe Morana. All rights reserved.
 //
 
@@ -16,10 +16,10 @@ extension CDComment {
         return NSFetchRequest<CDComment>(entityName: "CDComment");
     }
 
+    @NSManaged public var body: String?
+    @NSManaged public var email: String?
     @NSManaged public var id: Int32
     @NSManaged public var name: String?
-    @NSManaged public var email: String?
-    @NSManaged public var body: String?
     @NSManaged public var post: CDPost?
 
 }

@@ -2,7 +2,7 @@
 //  CDPost+CoreDataProperties.swift
 //  BabylonHealthDemo
 //
-//  Created by Giuseppe Morana on 28/11/2016.
+//  Created by Giuseppe Morana on 29/11/2016.
 //  Copyright © 2016 Giuseppe Morana. All rights reserved.
 //
 
@@ -16,27 +16,27 @@ extension CDPost {
         return NSFetchRequest<CDPost>(entityName: "CDPost");
     }
 
+    @NSManaged public var body: String?
     @NSManaged public var id: Int32
     @NSManaged public var title: String?
-    @NSManaged public var body: String?
+    @NSManaged public var cdComments: NSSet?
     @NSManaged public var user: CDUser?
-    @NSManaged public var comments: NSSet?
 
 }
 
-// MARK: Generated accessors for comments
+// MARK: Generated accessors for cdComments
 extension CDPost {
 
-    @objc(addCommentsObject:)
-    @NSManaged public func addToComments(_ value: CDComment)
+    @objc(addCdCommentsObject:)
+    @NSManaged public func addToCdComments(_ value: CDComment)
 
-    @objc(removeCommentsObject:)
-    @NSManaged public func removeFromComments(_ value: CDComment)
+    @objc(removeCdCommentsObject:)
+    @NSManaged public func removeFromCdComments(_ value: CDComment)
 
-    @objc(addComments:)
-    @NSManaged public func addToComments(_ values: NSSet)
+    @objc(addCdComments:)
+    @NSManaged public func addToCdComments(_ values: NSSet)
 
-    @objc(removeComments:)
-    @NSManaged public func removeFromComments(_ values: NSSet)
+    @objc(removeCdComments:)
+    @NSManaged public func removeFromCdComments(_ values: NSSet)
 
 }

@@ -8,9 +8,10 @@
 
 import Foundation
 
-protocol Comment {
+// I need the @objc in order to not incure in a linker error (CoreData conformance)
+@objc protocol Comment {
   var id: Int { get set }
-  var name: String { get set }
-  var email: String { get set }
-  var body: String { get set }
+  var name: String? { get set }
+  var email: String? { get set }
+  var body: String? { get set }
 }

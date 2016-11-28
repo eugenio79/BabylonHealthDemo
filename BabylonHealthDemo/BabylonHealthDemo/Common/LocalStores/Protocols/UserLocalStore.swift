@@ -13,6 +13,12 @@ enum UserLocalStoreInsertCompletion {
   case failure
 }
 
+enum UserLocalStoreFetchCompletion {
+  case success(users: [User])
+  case failure
+}
+
 protocol UserLocalStore {
   func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void)
+  func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void)
 }

@@ -8,10 +8,11 @@
 
 import Foundation
 
-protocol Address {
-  var street: String { get set }
-  var suite: String { get set }
-  var city: String { get set }
-  var zipcode: String { get set }
-  var geo: Geolocation { get set }
+// I need the @objc in order to not incure in a linker error (CoreData conformance)
+@objc protocol Address {
+  var street: String? { get set }
+  var suite: String? { get set }
+  var city: String? { get set }
+  var zipcode: String? { get set }
+  var geo: Geolocation? { get set }
 }

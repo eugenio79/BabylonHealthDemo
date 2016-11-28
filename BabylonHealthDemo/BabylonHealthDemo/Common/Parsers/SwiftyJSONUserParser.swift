@@ -32,7 +32,7 @@ class SwiftyJSONUserParser: UserParser {
                                 catchPhrase: user["company"]["catchPhrase"].string!,
                                 bs: user["company"]["bs"].string!)
       
-      let user = RestUser(id: user["id"].int!,
+      let user = RestUser(id: Int32(user["id"].int!),
                           name: user["name"].string!,
                           username: user["username"].string!,
                           email: user["email"].string!,

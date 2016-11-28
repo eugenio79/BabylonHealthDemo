@@ -9,6 +9,40 @@
 import Foundation
 import CoreData
 
+extension CDGeolocation: Geolocation {}
+
+extension CDAddress: Address {
+  var geo: Geolocation? {
+    get {
+      return cdGeo
+    }
+    set(newGeo) {
+      cdGeo = newGeo as? CDGeolocation
+    }
+  }
+}
+
+extension CDCompany: Company {}
+
+extension CDUser: User {
+  var address: Address? {
+    get {
+      return cdAddress
+    }
+    set(newAddress) {
+      cdAddress = newAddress as? CDAddress
+    }
+  }
+  var company: Company? {
+    get {
+      return cdCompany
+    }
+    set(newCompany) {
+      cdCompany = newCompany as? CDCompany
+    }
+  }
+}
+
 class CDUserLocalStore: UserLocalStore {
   
   var coreDataStack: CoreDataStack
@@ -35,6 +69,21 @@ class CDUserLocalStore: UserLocalStore {
     }
   }
   
+  func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
+    
+    coreDataStack.storeContainer.performBackgroundTask { managedContext in
+      
+      do {
+        let request = NSFetchRequest<CDUser>(entityName: "CDUser")
+        let users = try managedContext.fetch(request)
+        completion(.success(users: users))
+      } catch let error as NSError {
+        print("Fetching error: \(error), \(error.userInfo)")
+        completion(.failure)
+      }
+    }
+  }
+  
 }
 
 // MARK: - private methods
@@ -45,14 +94,14 @@ fileprivate extension CDUserLocalStore {
     let entity = NSEntityDescription.entity(forEntityName: "CDUser", in: context)!
     let cdUser = CDUser(entity: entity, insertInto: context)
     
-    cdUser.id = 1
+    cdUser.id = user.id
     cdUser.name = user.name
     cdUser.username = user.username
     cdUser.email = user.email
     cdUser.phone = user.phone
     cdUser.website = user.website
-    cdUser.address = address(user: user, context: context)
-    cdUser.company = company(user: user, context: context)
+    cdUser.cdAddress = address(user: user, context: context)
+    cdUser.cdCompany = company(user: user, context: context)
   }
   
   func address(user: User, context: NSManagedObjectContext) -> CDAddress {
@@ -60,11 +109,11 @@ fileprivate extension CDUserLocalStore {
     let entity = NSEntityDescription.entity(forEntityName: "CDAddress", in: context)!
     let address = CDAddress(entity: entity, insertInto: context)
     
-    address.street = user.address.street
-    address.suite = user.address.suite
-    address.city = user.address.city
-    address.zipcode = user.address.zipcode
-    address.geo = geo(user: user, context: context)
+    address.street = user.address?.street
+    address.suite = user.address?.suite
+    address.city = user.address?.city
+    address.zipcode = user.address?.zipcode
+    address.cdGeo = geo(user: user, context: context)
     
     return address
   }
@@ -74,9 +123,9 @@ fileprivate extension CDUserLocalStore {
     let entity = NSEntityDescription.entity(forEntityName: "CDCompany", in: context)!
     let company = CDCompany(entity: entity, insertInto: context)
     
-    company.name = user.company.name
-    company.catchPhrase = user.company.catchPhrase
-    company.bs = user.company.bs
+    company.name = user.company?.name
+    company.catchPhrase = user.company?.catchPhrase
+    company.bs = user.company?.bs
     
     return company
   }
@@ -86,8 +135,8 @@ fileprivate extension CDUserLocalStore {
     let entity = NSEntityDescription.entity(forEntityName: "CDGeolocation", in: context)!
     let geolocation = CDGeolocation(entity: entity, insertInto: context)
     
-    geolocation.lat = user.address.geo.lat
-    geolocation.lng = user.address.geo.lng
+    geolocation.lat = user.address?.geo?.lat
+    geolocation.lng = user.address?.geo?.lng
     
     return geolocation
   }

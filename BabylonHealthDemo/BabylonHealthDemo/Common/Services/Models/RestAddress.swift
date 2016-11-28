@@ -8,10 +8,19 @@
 
 import Foundation
 
-struct RestAddress: Address {
-  var street: String
-  var suite: String
-  var city: String
-  var zipcode: String
-  var geo: Geolocation
+// Defined as a class to conform to @obj
+class RestAddress: Address {
+  var street: String?
+  var suite: String?
+  var city: String?
+  var zipcode: String?
+  var geo: Geolocation?
+  
+  init(street: String, suite: String, city: String, zipcode: String, geo: Geolocation) {
+    self.street = street
+    self.suite = suite
+    self.city = city
+    self.zipcode = zipcode
+    self.geo = geo
+  }
 }

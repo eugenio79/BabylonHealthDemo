@@ -2,7 +2,7 @@
 //  CDUser+CoreDataProperties.swift
 //  BabylonHealthDemo
 //
-//  Created by Giuseppe Morana on 28/11/2016.
+//  Created by Giuseppe Morana on 29/11/2016.
 //  Copyright © 2016 Giuseppe Morana. All rights reserved.
 //
 
@@ -16,14 +16,14 @@ extension CDUser {
         return NSFetchRequest<CDUser>(entityName: "CDUser");
     }
 
+    @NSManaged public var email: String?
     @NSManaged public var id: Int32
     @NSManaged public var name: String?
-    @NSManaged public var username: String?
-    @NSManaged public var email: String?
     @NSManaged public var phone: String?
+    @NSManaged public var username: String?
     @NSManaged public var website: String?
-    @NSManaged public var address: CDAddress?
-    @NSManaged public var company: CDCompany?
+    @NSManaged public var cdAddress: CDAddress?
+    @NSManaged public var cdCompany: CDCompany?
     @NSManaged public var posts: NSSet?
 
 }
