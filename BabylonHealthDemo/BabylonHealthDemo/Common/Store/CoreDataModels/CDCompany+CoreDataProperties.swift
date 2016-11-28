@@ -1,9 +1,9 @@
 //
 //  CDCompany+CoreDataProperties.swift
-//  
+//  BabylonHealthDemo
 //
 //  Created by Giuseppe Morana on 28/11/2016.
-//
+//  Copyright © 2016 Giuseppe Morana. All rights reserved.
 //
 
 import Foundation
@@ -19,5 +19,6 @@ extension CDCompany {
     @NSManaged public var name: String?
     @NSManaged public var catchPhrase: String?
     @NSManaged public var bs: String?
+    @NSManaged public var user: CDUser?
 
 }

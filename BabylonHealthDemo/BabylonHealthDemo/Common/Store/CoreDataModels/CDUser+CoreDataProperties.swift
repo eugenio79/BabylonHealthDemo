@@ -1,9 +1,9 @@
 //
 //  CDUser+CoreDataProperties.swift
-//  
+//  BabylonHealthDemo
 //
 //  Created by Giuseppe Morana on 28/11/2016.
-//
+//  Copyright © 2016 Giuseppe Morana. All rights reserved.
 //
 
 import Foundation
@@ -24,6 +24,23 @@ extension CDUser {
     @NSManaged public var website: String?
     @NSManaged public var address: CDAddress?
     @NSManaged public var company: CDCompany?
-    @NSManaged public var posts: CDPost?
+    @NSManaged public var posts: NSSet?
+
+}
+
+// MARK: Generated accessors for posts
+extension CDUser {
+
+    @objc(addPostsObject:)
+    @NSManaged public func addToPosts(_ value: CDPost)
+
+    @objc(removePostsObject:)
+    @NSManaged public func removeFromPosts(_ value: CDPost)
+
+    @objc(addPosts:)
+    @NSManaged public func addToPosts(_ values: NSSet)
+
+    @objc(removePosts:)
+    @NSManaged public func removeFromPosts(_ values: NSSet)
 
 }
