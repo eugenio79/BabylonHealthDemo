@@ -49,19 +49,20 @@
 		BAB48C931DEB7FA20039FB96 /* RestPostRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C8F1DEB7FA20039FB96 /* RestPostRemoteServiceTests.swift */; };
 		BAB48C941DEB7FA20039FB96 /* RestUserRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C901DEB7FA20039FB96 /* RestUserRemoteServiceTests.swift */; };
 		BAB48C951DEB7FA20039FB96 /* StubPostRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C911DEB7FA20039FB96 /* StubPostRemoteService.swift */; };
-		BAB48CA31DEBE8E60039FB96 /* CDAddress+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C971DEBE8E60039FB96 /* CDAddress+CoreDataClass.swift */; };
-		BAB48CA41DEBE8E60039FB96 /* CDAddress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C981DEBE8E60039FB96 /* CDAddress+CoreDataProperties.swift */; };
-		BAB48CA51DEBE8E60039FB96 /* CDComment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C991DEBE8E60039FB96 /* CDComment+CoreDataClass.swift */; };
-		BAB48CA61DEBE8E60039FB96 /* CDComment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C9A1DEBE8E60039FB96 /* CDComment+CoreDataProperties.swift */; };
-		BAB48CA71DEBE8E60039FB96 /* CDCompany+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C9B1DEBE8E60039FB96 /* CDCompany+CoreDataClass.swift */; };
-		BAB48CA81DEBE8E60039FB96 /* CDCompany+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C9C1DEBE8E60039FB96 /* CDCompany+CoreDataProperties.swift */; };
-		BAB48CA91DEBE8E60039FB96 /* CDGeolocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C9D1DEBE8E60039FB96 /* CDGeolocation+CoreDataClass.swift */; };
-		BAB48CAA1DEBE8E60039FB96 /* CDGeolocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C9E1DEBE8E60039FB96 /* CDGeolocation+CoreDataProperties.swift */; };
-		BAB48CAB1DEBE8E60039FB96 /* CDPost+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C9F1DEBE8E60039FB96 /* CDPost+CoreDataClass.swift */; };
-		BAB48CAC1DEBE8E60039FB96 /* CDPost+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CA01DEBE8E60039FB96 /* CDPost+CoreDataProperties.swift */; };
-		BAB48CAD1DEBE8E60039FB96 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CA11DEBE8E60039FB96 /* CDUser+CoreDataClass.swift */; };
-		BAB48CAE1DEBE8E60039FB96 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CA21DEBE8E60039FB96 /* CDUser+CoreDataProperties.swift */; };
-		BAB48CB01DEBE9AB0039FB96 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CAF1DEBE9AB0039FB96 /* CoreDataStack.swift */; };
+		BAB48CB31DEBF9810039FB96 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CB21DEBF9810039FB96 /* SyncEngine.swift */; };
+		BAB48CC31DEBFA420039FB96 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CB51DEBFA420039FB96 /* CoreDataStack.swift */; };
+		BAB48CC41DEBFA420039FB96 /* CDAddress+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CB71DEBFA420039FB96 /* CDAddress+CoreDataClass.swift */; };
+		BAB48CC51DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CB81DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift */; };
+		BAB48CC61DEBFA420039FB96 /* CDComment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CB91DEBFA420039FB96 /* CDComment+CoreDataClass.swift */; };
+		BAB48CC71DEBFA420039FB96 /* CDComment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CBA1DEBFA420039FB96 /* CDComment+CoreDataProperties.swift */; };
+		BAB48CC81DEBFA420039FB96 /* CDCompany+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CBB1DEBFA420039FB96 /* CDCompany+CoreDataClass.swift */; };
+		BAB48CC91DEBFA420039FB96 /* CDCompany+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CBC1DEBFA420039FB96 /* CDCompany+CoreDataProperties.swift */; };
+		BAB48CCA1DEBFA420039FB96 /* CDGeolocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CBD1DEBFA420039FB96 /* CDGeolocation+CoreDataClass.swift */; };
+		BAB48CCB1DEBFA420039FB96 /* CDGeolocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CBE1DEBFA420039FB96 /* CDGeolocation+CoreDataProperties.swift */; };
+		BAB48CCC1DEBFA420039FB96 /* CDPost+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CBF1DEBFA420039FB96 /* CDPost+CoreDataClass.swift */; };
+		BAB48CCD1DEBFA420039FB96 /* CDPost+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CC01DEBFA420039FB96 /* CDPost+CoreDataProperties.swift */; };
+		BAB48CCE1DEBFA420039FB96 /* CDUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CC11DEBFA420039FB96 /* CDUser+CoreDataClass.swift */; };
+		BAB48CCF1DEBFA420039FB96 /* CDUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CC21DEBFA420039FB96 /* CDUser+CoreDataProperties.swift */; };
 		BAD726EE1DE3964D00E83F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */; };
 		BAD726F31DE3964D00E83F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F11DE3964D00E83F32 /* Main.storyboard */; };
 		BAD726F81DE3964D00E83F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F71DE3964D00E83F32 /* Assets.xcassets */; };
@@ -123,19 +124,20 @@
 		BAB48C8F1DEB7FA20039FB96 /* RestPostRemoteServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostRemoteServiceTests.swift; sourceTree = "<group>"; };
 		BAB48C901DEB7FA20039FB96 /* RestUserRemoteServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestUserRemoteServiceTests.swift; sourceTree = "<group>"; };
 		BAB48C911DEB7FA20039FB96 /* StubPostRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubPostRemoteService.swift; sourceTree = "<group>"; };
-		BAB48C971DEBE8E60039FB96 /* CDAddress+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAddress+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BAB48C981DEBE8E60039FB96 /* CDAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BAB48C991DEBE8E60039FB96 /* CDComment+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDComment+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BAB48C9A1DEBE8E60039FB96 /* CDComment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDComment+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BAB48C9B1DEBE8E60039FB96 /* CDCompany+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDCompany+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BAB48C9C1DEBE8E60039FB96 /* CDCompany+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDCompany+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BAB48C9D1DEBE8E60039FB96 /* CDGeolocation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDGeolocation+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BAB48C9E1DEBE8E60039FB96 /* CDGeolocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDGeolocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BAB48C9F1DEBE8E60039FB96 /* CDPost+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDPost+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BAB48CA01DEBE8E60039FB96 /* CDPost+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDPost+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BAB48CA11DEBE8E60039FB96 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BAB48CA21DEBE8E60039FB96 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BAB48CAF1DEBE9AB0039FB96 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		BAB48CB21DEBF9810039FB96 /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
+		BAB48CB51DEBFA420039FB96 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		BAB48CB71DEBFA420039FB96 /* CDAddress+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAddress+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BAB48CB81DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BAB48CB91DEBFA420039FB96 /* CDComment+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDComment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BAB48CBA1DEBFA420039FB96 /* CDComment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDComment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BAB48CBB1DEBFA420039FB96 /* CDCompany+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDCompany+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BAB48CBC1DEBFA420039FB96 /* CDCompany+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDCompany+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BAB48CBD1DEBFA420039FB96 /* CDGeolocation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDGeolocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BAB48CBE1DEBFA420039FB96 /* CDGeolocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDGeolocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BAB48CBF1DEBFA420039FB96 /* CDPost+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDPost+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BAB48CC01DEBFA420039FB96 /* CDPost+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDPost+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BAB48CC11DEBFA420039FB96 /* CDUser+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BAB48CC21DEBFA420039FB96 /* CDUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BAD726EA1DE3964D00E83F32 /* BabylonHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD726F21DE3964D00E83F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -347,23 +349,40 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		BAB48C961DEBE8E60039FB96 /* CoreDataModels */ = {
+		BAB48CB11DEBF96F0039FB96 /* SyncEngine */ = {
 			isa = PBXGroup;
 			children = (
-				BAB48C971DEBE8E60039FB96 /* CDAddress+CoreDataClass.swift */,
-				BAB48C981DEBE8E60039FB96 /* CDAddress+CoreDataProperties.swift */,
-				BAB48C991DEBE8E60039FB96 /* CDComment+CoreDataClass.swift */,
-				BAB48C9A1DEBE8E60039FB96 /* CDComment+CoreDataProperties.swift */,
-				BAB48C9B1DEBE8E60039FB96 /* CDCompany+CoreDataClass.swift */,
-				BAB48C9C1DEBE8E60039FB96 /* CDCompany+CoreDataProperties.swift */,
-				BAB48C9D1DEBE8E60039FB96 /* CDGeolocation+CoreDataClass.swift */,
-				BAB48C9E1DEBE8E60039FB96 /* CDGeolocation+CoreDataProperties.swift */,
-				BAB48C9F1DEBE8E60039FB96 /* CDPost+CoreDataClass.swift */,
-				BAB48CA01DEBE8E60039FB96 /* CDPost+CoreDataProperties.swift */,
-				BAB48CA11DEBE8E60039FB96 /* CDUser+CoreDataClass.swift */,
-				BAB48CA21DEBE8E60039FB96 /* CDUser+CoreDataProperties.swift */,
+				BAB48CB21DEBF9810039FB96 /* SyncEngine.swift */,
 			);
-			path = CoreDataModels;
+			path = SyncEngine;
+			sourceTree = "<group>";
+		};
+		BAB48CB41DEBFA420039FB96 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BAB48CB51DEBFA420039FB96 /* CoreDataStack.swift */,
+				BAB48CB61DEBFA420039FB96 /* Models */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		BAB48CB61DEBFA420039FB96 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAB48CB71DEBFA420039FB96 /* CDAddress+CoreDataClass.swift */,
+				BAB48CB81DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift */,
+				BAB48CB91DEBFA420039FB96 /* CDComment+CoreDataClass.swift */,
+				BAB48CBA1DEBFA420039FB96 /* CDComment+CoreDataProperties.swift */,
+				BAB48CBB1DEBFA420039FB96 /* CDCompany+CoreDataClass.swift */,
+				BAB48CBC1DEBFA420039FB96 /* CDCompany+CoreDataProperties.swift */,
+				BAB48CBD1DEBFA420039FB96 /* CDGeolocation+CoreDataClass.swift */,
+				BAB48CBE1DEBFA420039FB96 /* CDGeolocation+CoreDataProperties.swift */,
+				BAB48CBF1DEBFA420039FB96 /* CDPost+CoreDataClass.swift */,
+				BAB48CC01DEBFA420039FB96 /* CDPost+CoreDataProperties.swift */,
+				BAB48CC11DEBFA420039FB96 /* CDUser+CoreDataClass.swift */,
+				BAB48CC21DEBFA420039FB96 /* CDUser+CoreDataProperties.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BAD726E11DE3964D00E83F32 = {
@@ -389,11 +408,11 @@
 		BAD726EC1DE3964D00E83F32 /* BabylonHealthDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */,
 				BAD727231DE399FB00E83F32 /* Common */,
 				BAD727241DE399FB00E83F32 /* PostDetail */,
 				BAD727251DE399FB00E83F32 /* PostList */,
 				BAD727201DE3992000E83F32 /* Resources */,
-				BAD726ED1DE3964D00E83F32 /* AppDelegate.swift */,
 			);
 			path = BabylonHealthDemo;
 			sourceTree = "<group>";
@@ -401,10 +420,10 @@
 		BAD727041DE3964D00E83F32 /* BabylonHealthDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				BAD727071DE3964E00E83F32 /* Info.plist */,
+				BA3B816D1DEAF1CB00B41A49 /* Common */,
 				BAB48C1C1DEB66500039FB96 /* PostDetail */,
 				BA3B81731DEAF48200B41A49 /* PostList */,
-				BA3B816D1DEAF1CB00B41A49 /* Common */,
-				BAD727071DE3964E00E83F32 /* Info.plist */,
 			);
 			path = BabylonHealthDemoTests;
 			sourceTree = "<group>";
@@ -424,11 +443,12 @@
 		BAD727231DE399FB00E83F32 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BAB48C801DEB7F6C0039FB96 /* Services */,
-				BAB48C6C1DEB7EB60039FB96 /* Parsers */,
 				BAB48C5F1DEB7E4C0039FB96 /* Models */,
 				BA3B816A1DEAEECC00B41A49 /* Networking */,
-				BAD7272B1DE3A41E00E83F32 /* Store */,
+				BAB48C6C1DEB7EB60039FB96 /* Parsers */,
+				BAB48C801DEB7F6C0039FB96 /* Services */,
+				BAD7272B1DE3A41E00E83F32 /* Stores */,
+				BAB48CB11DEBF96F0039FB96 /* SyncEngine */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -462,13 +482,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BAD7272B1DE3A41E00E83F32 /* Store */ = {
+		BAD7272B1DE3A41E00E83F32 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				BAB48CAF1DEBE9AB0039FB96 /* CoreDataStack.swift */,
-				BAB48C961DEBE8E60039FB96 /* CoreDataModels */,
+				BAB48CB41DEBFA420039FB96 /* CoreData */,
 			);
-			path = Store;
+			path = Stores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -629,37 +648,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3B81691DEAEBB500B41A49 /* PostListHandler.swift in Sources */,
-				BAB48CA41DEBE8E60039FB96 /* CDAddress+CoreDataProperties.swift in Sources */,
+				BAB48CC61DEBFA420039FB96 /* CDComment+CoreDataClass.swift in Sources */,
+				BAB48CCE1DEBFA420039FB96 /* CDUser+CoreDataClass.swift in Sources */,
 				BAB48C8C1DEB7F6C0039FB96 /* UserRemoteService.swift in Sources */,
-				BAB48CA71DEBE8E60039FB96 /* CDCompany+CoreDataClass.swift in Sources */,
+				BAB48CCB1DEBFA420039FB96 /* CDGeolocation+CoreDataProperties.swift in Sources */,
 				BAB48C1B1DEB5CF70039FB96 /* PostDetailViewController.swift in Sources */,
 				BAB48C8A1DEB7F6C0039FB96 /* RestPostRemoteService.swift in Sources */,
+				BAB48CCD1DEBFA420039FB96 /* CDPost+CoreDataProperties.swift in Sources */,
 				BAB48C671DEB7E4C0039FB96 /* Comment.swift in Sources */,
-				BAB48CAE1DEBE8E60039FB96 /* CDUser+CoreDataProperties.swift in Sources */,
+				BAB48CC71DEBFA420039FB96 /* CDComment+CoreDataProperties.swift in Sources */,
 				BAD7272A1DE39A3100E83F32 /* PostListViewController.swift in Sources */,
 				BAB48C761DEB7EB60039FB96 /* SwiftyJSONPostParser.swift in Sources */,
 				BAB48C881DEB7F6C0039FB96 /* PostRemoteService.swift in Sources */,
 				BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */,
+				BAB48CC51DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift in Sources */,
+				BAB48CB31DEBF9810039FB96 /* SyncEngine.swift in Sources */,
 				BAB48C661DEB7E4C0039FB96 /* Address.swift in Sources */,
-				BAB48CAD1DEBE8E60039FB96 /* CDUser+CoreDataClass.swift in Sources */,
+				BAB48CC91DEBFA420039FB96 /* CDCompany+CoreDataProperties.swift in Sources */,
 				BAB48C6A1DEB7E4C0039FB96 /* Post.swift in Sources */,
 				BA3B817D1DEAFA3100B41A49 /* PostListLoadingView.swift in Sources */,
-				BAB48CAC1DEBE8E60039FB96 /* CDPost+CoreDataProperties.swift in Sources */,
-				BAB48CA51DEBE8E60039FB96 /* CDComment+CoreDataClass.swift in Sources */,
 				BAB48C691DEB7E4C0039FB96 /* Geolocation.swift in Sources */,
+				BAB48CCF1DEBFA420039FB96 /* CDUser+CoreDataProperties.swift in Sources */,
 				BAB48C6B1DEB7E4C0039FB96 /* User.swift in Sources */,
 				BAD726EE1DE3964D00E83F32 /* AppDelegate.swift in Sources */,
-				BAB48CA31DEBE8E60039FB96 /* CDAddress+CoreDataClass.swift in Sources */,
 				BAB48C681DEB7E4C0039FB96 /* Company.swift in Sources */,
 				BA3B81701DEAF1E500B41A49 /* NetworkManager.swift in Sources */,
 				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
-				BAB48CAB1DEBE8E60039FB96 /* CDPost+CoreDataClass.swift in Sources */,
-				BAB48CA91DEBE8E60039FB96 /* CDGeolocation+CoreDataClass.swift in Sources */,
-				BAB48CAA1DEBE8E60039FB96 /* CDGeolocation+CoreDataProperties.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
-				BAB48CA61DEBE8E60039FB96 /* CDComment+CoreDataProperties.swift in Sources */,
-				BAB48CB01DEBE9AB0039FB96 /* CoreDataStack.swift in Sources */,
-				BAB48CA81DEBE8E60039FB96 /* CDCompany+CoreDataProperties.swift in Sources */,
 				BAB48C891DEB7F6C0039FB96 /* RestCommentRemoteService.swift in Sources */,
 				BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */,
 				BAB48C8B1DEB7F6C0039FB96 /* RestUserRemoteService.swift in Sources */,
@@ -669,10 +684,15 @@
 				BAB48C871DEB7F6C0039FB96 /* CommentRemoteService.swift in Sources */,
 				BAB48C251DEB669C0039FB96 /* PostDetailLayout.swift in Sources */,
 				BA3B816C1DEAEED700B41A49 /* Networking.swift in Sources */,
+				BAB48CC81DEBFA420039FB96 /* CDCompany+CoreDataClass.swift in Sources */,
+				BAB48CC31DEBFA420039FB96 /* CoreDataStack.swift in Sources */,
+				BAB48CCC1DEBFA420039FB96 /* CDPost+CoreDataClass.swift in Sources */,
 				BAB48C751DEB7EB60039FB96 /* SwiftyJSONCommentParser.swift in Sources */,
 				BAB48C741DEB7EB60039FB96 /* PostParser.swift in Sources */,
+				BAB48CCA1DEBFA420039FB96 /* CDGeolocation+CoreDataClass.swift in Sources */,
 				BAB48C211DEB66710039FB96 /* PostDetailHandler.swift in Sources */,
 				BAB48C771DEB7EB60039FB96 /* SwiftyJSONUserParser.swift in Sources */,
+				BAB48CC41DEBFA420039FB96 /* CDAddress+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
