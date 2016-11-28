@@ -28,7 +28,7 @@ class SwiftyJSONPostParserTests: XCTestCase {
     let data = jsonString.data(using: .utf8)!
     
     let parser = SwiftyJSONPostParser()
-    let posts = parser.parse(data: data)
+    let posts = parser.parse(data: data) as! [RestPost]
     
     XCTAssertEqual(posts.count, 2)
     

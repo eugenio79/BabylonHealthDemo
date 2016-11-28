@@ -24,12 +24,6 @@
 		BAB48C231DEB66810039FB96 /* PostDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C221DEB66810039FB96 /* PostDetailController.swift */; };
 		BAB48C251DEB669C0039FB96 /* PostDetailLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C241DEB669C0039FB96 /* PostDetailLayout.swift */; };
 		BAB48C5E1DEB77C00039FB96 /* PostDetailControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C5D1DEB77C00039FB96 /* PostDetailControllerTests.swift */; };
-		BAB48C661DEB7E4C0039FB96 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C601DEB7E4C0039FB96 /* Address.swift */; };
-		BAB48C671DEB7E4C0039FB96 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C611DEB7E4C0039FB96 /* Comment.swift */; };
-		BAB48C681DEB7E4C0039FB96 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C621DEB7E4C0039FB96 /* Company.swift */; };
-		BAB48C691DEB7E4C0039FB96 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C631DEB7E4C0039FB96 /* Geolocation.swift */; };
-		BAB48C6A1DEB7E4C0039FB96 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C641DEB7E4C0039FB96 /* Post.swift */; };
-		BAB48C6B1DEB7E4C0039FB96 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C651DEB7E4C0039FB96 /* User.swift */; };
 		BAB48C731DEB7EB60039FB96 /* CommentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C6D1DEB7EB60039FB96 /* CommentParser.swift */; };
 		BAB48C741DEB7EB60039FB96 /* PostParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C6E1DEB7EB60039FB96 /* PostParser.swift */; };
 		BAB48C751DEB7EB60039FB96 /* SwiftyJSONCommentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C6F1DEB7EB60039FB96 /* SwiftyJSONCommentParser.swift */; };
@@ -83,6 +77,18 @@
 		BADA46111DECE30F004FE2C2 /* RestCommentRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA460B1DECE30F004FE2C2 /* RestCommentRemoteService.swift */; };
 		BADA46121DECE30F004FE2C2 /* RestPostRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA460C1DECE30F004FE2C2 /* RestPostRemoteService.swift */; };
 		BADA46131DECE30F004FE2C2 /* RestUserRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA460D1DECE30F004FE2C2 /* RestUserRemoteService.swift */; };
+		BADA461B1DECE3C7004FE2C2 /* RestAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46151DECE3C7004FE2C2 /* RestAddress.swift */; };
+		BADA461C1DECE3C7004FE2C2 /* RestComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46161DECE3C7004FE2C2 /* RestComment.swift */; };
+		BADA461D1DECE3C7004FE2C2 /* RestCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46171DECE3C7004FE2C2 /* RestCompany.swift */; };
+		BADA461E1DECE3C7004FE2C2 /* RestGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46181DECE3C7004FE2C2 /* RestGeolocation.swift */; };
+		BADA461F1DECE3C7004FE2C2 /* RestPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46191DECE3C7004FE2C2 /* RestPost.swift */; };
+		BADA46201DECE3C7004FE2C2 /* RestUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA461A1DECE3C7004FE2C2 /* RestUser.swift */; };
+		BADA46221DECE409004FE2C2 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46211DECE409004FE2C2 /* Geolocation.swift */; };
+		BADA46241DECE43D004FE2C2 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46231DECE43D004FE2C2 /* Company.swift */; };
+		BADA46261DECE47F004FE2C2 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46251DECE47F004FE2C2 /* Address.swift */; };
+		BADA46281DECE4AC004FE2C2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46271DECE4AC004FE2C2 /* User.swift */; };
+		BADA462A1DECE4DE004FE2C2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46291DECE4DE004FE2C2 /* Post.swift */; };
+		BADA462C1DECE51A004FE2C2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA462B1DECE51A004FE2C2 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,12 +120,6 @@
 		BAB48C221DEB66810039FB96 /* PostDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailController.swift; sourceTree = "<group>"; };
 		BAB48C241DEB669C0039FB96 /* PostDetailLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailLayout.swift; sourceTree = "<group>"; };
 		BAB48C5D1DEB77C00039FB96 /* PostDetailControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailControllerTests.swift; sourceTree = "<group>"; };
-		BAB48C601DEB7E4C0039FB96 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		BAB48C611DEB7E4C0039FB96 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		BAB48C621DEB7E4C0039FB96 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
-		BAB48C631DEB7E4C0039FB96 /* Geolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geolocation.swift; sourceTree = "<group>"; };
-		BAB48C641DEB7E4C0039FB96 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		BAB48C651DEB7E4C0039FB96 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BAB48C6D1DEB7EB60039FB96 /* CommentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentParser.swift; sourceTree = "<group>"; };
 		BAB48C6E1DEB7EB60039FB96 /* PostParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostParser.swift; sourceTree = "<group>"; };
 		BAB48C6F1DEB7EB60039FB96 /* SwiftyJSONCommentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONCommentParser.swift; sourceTree = "<group>"; };
@@ -177,6 +177,18 @@
 		BADA460B1DECE30F004FE2C2 /* RestCommentRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCommentRemoteService.swift; sourceTree = "<group>"; };
 		BADA460C1DECE30F004FE2C2 /* RestPostRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostRemoteService.swift; sourceTree = "<group>"; };
 		BADA460D1DECE30F004FE2C2 /* RestUserRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestUserRemoteService.swift; sourceTree = "<group>"; };
+		BADA46151DECE3C7004FE2C2 /* RestAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAddress.swift; sourceTree = "<group>"; };
+		BADA46161DECE3C7004FE2C2 /* RestComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestComment.swift; sourceTree = "<group>"; };
+		BADA46171DECE3C7004FE2C2 /* RestCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCompany.swift; sourceTree = "<group>"; };
+		BADA46181DECE3C7004FE2C2 /* RestGeolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestGeolocation.swift; sourceTree = "<group>"; };
+		BADA46191DECE3C7004FE2C2 /* RestPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPost.swift; sourceTree = "<group>"; };
+		BADA461A1DECE3C7004FE2C2 /* RestUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestUser.swift; sourceTree = "<group>"; };
+		BADA46211DECE409004FE2C2 /* Geolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geolocation.swift; sourceTree = "<group>"; };
+		BADA46231DECE43D004FE2C2 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		BADA46251DECE47F004FE2C2 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		BADA46271DECE4AC004FE2C2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BADA46291DECE4DE004FE2C2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		BADA462B1DECE51A004FE2C2 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		EC1A3C8B2BE523E31795255C /* Pods_BabylonHealthDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonHealthDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -324,12 +336,12 @@
 		BAB48C5F1DEB7E4C0039FB96 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BAB48C601DEB7E4C0039FB96 /* Address.swift */,
-				BAB48C611DEB7E4C0039FB96 /* Comment.swift */,
-				BAB48C621DEB7E4C0039FB96 /* Company.swift */,
-				BAB48C631DEB7E4C0039FB96 /* Geolocation.swift */,
-				BAB48C641DEB7E4C0039FB96 /* Post.swift */,
-				BAB48C651DEB7E4C0039FB96 /* User.swift */,
+				BADA46211DECE409004FE2C2 /* Geolocation.swift */,
+				BADA46231DECE43D004FE2C2 /* Company.swift */,
+				BADA46251DECE47F004FE2C2 /* Address.swift */,
+				BADA46271DECE4AC004FE2C2 /* User.swift */,
+				BADA46291DECE4DE004FE2C2 /* Post.swift */,
+				BADA462B1DECE51A004FE2C2 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +372,7 @@
 		BAB48C801DEB7F6C0039FB96 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BADA46141DECE363004FE2C2 /* Models */,
 				BADA46061DECE30F004FE2C2 /* Protocols */,
 				BADA460A1DECE30F004FE2C2 /* Rest */,
 			);
@@ -623,6 +636,19 @@
 			path = Rest;
 			sourceTree = "<group>";
 		};
+		BADA46141DECE363004FE2C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BADA46151DECE3C7004FE2C2 /* RestAddress.swift */,
+				BADA46161DECE3C7004FE2C2 /* RestComment.swift */,
+				BADA46171DECE3C7004FE2C2 /* RestCompany.swift */,
+				BADA46181DECE3C7004FE2C2 /* RestGeolocation.swift */,
+				BADA46191DECE3C7004FE2C2 /* RestPost.swift */,
+				BADA461A1DECE3C7004FE2C2 /* RestUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -786,37 +812,40 @@
 				BAB48CCB1DEBFA420039FB96 /* CDGeolocation+CoreDataProperties.swift in Sources */,
 				BAB48C1B1DEB5CF70039FB96 /* PostDetailViewController.swift in Sources */,
 				BAB48CCD1DEBFA420039FB96 /* CDPost+CoreDataProperties.swift in Sources */,
-				BAB48C671DEB7E4C0039FB96 /* Comment.swift in Sources */,
+				BADA46261DECE47F004FE2C2 /* Address.swift in Sources */,
 				BAB48CC71DEBFA420039FB96 /* CDComment+CoreDataProperties.swift in Sources */,
 				BAD7272A1DE39A3100E83F32 /* PostListViewController.swift in Sources */,
 				BAB48C761DEB7EB60039FB96 /* SwiftyJSONPostParser.swift in Sources */,
 				BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */,
 				BAB48CC51DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift in Sources */,
 				BAB48CB31DEBF9810039FB96 /* SyncEngine.swift in Sources */,
-				BAB48C661DEB7E4C0039FB96 /* Address.swift in Sources */,
 				BAB48CDD1DEBFC4D0039FB96 /* CDPostLocalStore.swift in Sources */,
 				BADA460F1DECE30F004FE2C2 /* PostRemoteService.swift in Sources */,
 				BAB48CDF1DEBFC680039FB96 /* CDCommentLocalStore.swift in Sources */,
 				BAB48CC91DEBFA420039FB96 /* CDCompany+CoreDataProperties.swift in Sources */,
-				BAB48C6A1DEB7E4C0039FB96 /* Post.swift in Sources */,
+				BADA462C1DECE51A004FE2C2 /* Comment.swift in Sources */,
+				BADA46221DECE409004FE2C2 /* Geolocation.swift in Sources */,
 				BADA46131DECE30F004FE2C2 /* RestUserRemoteService.swift in Sources */,
+				BADA46241DECE43D004FE2C2 /* Company.swift in Sources */,
 				BA3B817D1DEAFA3100B41A49 /* PostListLoadingView.swift in Sources */,
-				BAB48C691DEB7E4C0039FB96 /* Geolocation.swift in Sources */,
 				BAB48CCF1DEBFA420039FB96 /* CDUser+CoreDataProperties.swift in Sources */,
-				BAB48C6B1DEB7E4C0039FB96 /* User.swift in Sources */,
 				BAD726EE1DE3964D00E83F32 /* AppDelegate.swift in Sources */,
-				BAB48C681DEB7E4C0039FB96 /* Company.swift in Sources */,
 				BAB48CDB1DEBFC320039FB96 /* CDUserLocalStore.swift in Sources */,
 				BA3B81701DEAF1E500B41A49 /* NetworkManager.swift in Sources */,
+				BADA461E1DECE3C7004FE2C2 /* RestGeolocation.swift in Sources */,
 				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
+				BADA461C1DECE3C7004FE2C2 /* RestComment.swift in Sources */,
 				BAB48CD61DEBFB950039FB96 /* PostLocalStore.swift in Sources */,
 				BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */,
 				BAB48CE91DEC10C90039FB96 /* CDRestSyncEngine.swift in Sources */,
 				BAB48CD41DEBFB7C0039FB96 /* UserLocalStore.swift in Sources */,
+				BADA46201DECE3C7004FE2C2 /* RestUser.swift in Sources */,
 				BAB48C231DEB66810039FB96 /* PostDetailController.swift in Sources */,
 				BADA46101DECE30F004FE2C2 /* UserRemoteService.swift in Sources */,
+				BADA461B1DECE3C7004FE2C2 /* RestAddress.swift in Sources */,
 				BAB48C731DEB7EB60039FB96 /* CommentParser.swift in Sources */,
+				BADA461D1DECE3C7004FE2C2 /* RestCompany.swift in Sources */,
 				BAB48C781DEB7EB60039FB96 /* UserParser.swift in Sources */,
 				BAB48C251DEB669C0039FB96 /* PostDetailLayout.swift in Sources */,
 				BA3B816C1DEAEED700B41A49 /* Networking.swift in Sources */,
@@ -825,14 +854,17 @@
 				BAB48CC31DEBFA420039FB96 /* CoreDataStack.swift in Sources */,
 				BAB48CCC1DEBFA420039FB96 /* CDPost+CoreDataClass.swift in Sources */,
 				BADA46121DECE30F004FE2C2 /* RestPostRemoteService.swift in Sources */,
+				BADA461F1DECE3C7004FE2C2 /* RestPost.swift in Sources */,
 				BAB48CD81DEBFBB10039FB96 /* CommentLocalStore.swift in Sources */,
 				BAB48C751DEB7EB60039FB96 /* SwiftyJSONCommentParser.swift in Sources */,
 				BAB48C741DEB7EB60039FB96 /* PostParser.swift in Sources */,
+				BADA462A1DECE4DE004FE2C2 /* Post.swift in Sources */,
 				BAB48CCA1DEBFA420039FB96 /* CDGeolocation+CoreDataClass.swift in Sources */,
 				BAB48C211DEB66710039FB96 /* PostDetailHandler.swift in Sources */,
 				BADA46111DECE30F004FE2C2 /* RestCommentRemoteService.swift in Sources */,
 				BAB48C771DEB7EB60039FB96 /* SwiftyJSONUserParser.swift in Sources */,
 				BAB48CC41DEBFA420039FB96 /* CDAddress+CoreDataClass.swift in Sources */,
+				BADA46281DECE4AC004FE2C2 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

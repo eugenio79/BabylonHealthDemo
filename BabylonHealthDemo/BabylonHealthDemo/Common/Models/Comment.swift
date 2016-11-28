@@ -2,16 +2,15 @@
 //  Comment.swift
 //  BabylonHealthDemo
 //
-//  Created by Giuseppe Morana on 27/11/2016.
+//  Created by Giuseppe Morana on 28/11/2016.
 //  Copyright © 2016 Giuseppe Morana. All rights reserved.
 //
 
 import Foundation
 
-struct Comment {
-  var postId: Int
-  var id: Int
-  var name: String
-  var email: String
-  var body: String
+protocol Comment {
+  var id: Int { get set }
+  var name: String { get set }
+  var email: String { get set }
+  var body: String { get set }
 }

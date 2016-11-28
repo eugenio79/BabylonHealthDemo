@@ -18,10 +18,10 @@ class SwiftyJSONPostParser: PostParser {
     // I'm currently assuming the JSON is always correct
     // in a production code, I'd validate each field
     return postsArray.map { post in
-      Post(id: post["id"].int!,
-           userId: post["userId"].int!,
-           title: post["title"].string!,
-           body: post["body"].string!)
+      RestPost(id: post["id"].int!,
+               userId: post["userId"].int!,
+               title: post["title"].string!,
+               body: post["body"].string!)
     }
   }
 }

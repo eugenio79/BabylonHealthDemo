@@ -2,19 +2,19 @@
 //  User.swift
 //  BabylonHealthDemo
 //
-//  Created by Giuseppe Morana on 27/11/2016.
+//  Created by Giuseppe Morana on 28/11/2016.
 //  Copyright © 2016 Giuseppe Morana. All rights reserved.
 //
 
 import Foundation
 
-struct User {
-  var id: Int
-  var name: String
-  var username: String
-  var email: String
-  var address: Address
-  var phone: String
-  var website: String
-  var company: Company
+protocol User {
+  var id: Int { get set }
+  var name: String { get set }
+  var username: String { get set }
+  var email: String { get set }
+  var address: Address { get set }
+  var phone: String { get set }
+  var website: String { get set }
+  var company: Company { get set }
 }

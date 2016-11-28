@@ -29,7 +29,7 @@ class SwiftyJSONCommentParserTests: XCTestCase {
     let data = jsonString.data(using: .utf8)!
     
     let parser = SwiftyJSONCommentParser()
-    let comments = parser.parse(data: data)
+    let comments = parser.parse(data: data) as! [RestComment]
     
     XCTAssertEqual(comments.count, 2)
     
