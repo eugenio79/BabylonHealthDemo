@@ -11,6 +11,11 @@ import Foundation
 /// Responsible for downloading all the data from remote services
 /// and to store them into local stores
 protocol SyncEngine {
-  
-  init(userService: UserRemoteService, postService: PostRemoteService, commentService: CommentRemoteService)
+
+  init(userRemoteService: UserRemoteService,
+       postRemoteService: PostRemoteService,
+       commentRemoteService: CommentRemoteService,
+       userLocalStore: UserLocalStore,
+       postLocalStore: PostLocalStore,
+       commentLocalStore: CommentLocalStore)
 }

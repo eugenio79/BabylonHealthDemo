@@ -10,4 +10,9 @@ import Foundation
 
 class CDUserLocalStore: UserLocalStore {
   
+  var coreDataStack: CoreDataStack
+  
+  init(coreDataStack: CoreDataStack) {
+    self.coreDataStack = coreDataStack
+  }
 }

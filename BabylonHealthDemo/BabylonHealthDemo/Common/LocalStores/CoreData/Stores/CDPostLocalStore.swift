@@ -10,4 +10,9 @@ import Foundation
 
 class CDPostLocalStore: PostLocalStore {
   
+  var coreDataStack: CoreDataStack
+  
+  init(coreDataStack: CoreDataStack) {
+    self.coreDataStack = coreDataStack
+  }
 }

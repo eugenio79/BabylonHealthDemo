@@ -8,12 +8,29 @@
 import Foundation
 import CoreData
 
+enum CoreDataStoreType {
+  case sqlite
+  case inMemory
+}
+
 class CoreDataStack {
   
   private let modelName: String
   
-  init(modelName: String) {
+  init(modelName: String, storeType: CoreDataStoreType) {
     self.modelName = modelName
+    
+    let persistentStoreDescription = NSPersistentStoreDescription()
+    persistentStoreDescription.type = storeDescriptionType(for: storeType)
+  }
+  
+  private func storeDescriptionType(for storeType: CoreDataStoreType) -> String {
+    switch storeType {
+    case .sqlite:
+      return NSSQLiteStoreType
+    case .inMemory:
+      return NSInMemoryStoreType
+    }
   }
   
   private lazy var storeContainer: NSPersistentContainer = {

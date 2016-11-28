@@ -10,4 +10,9 @@ import Foundation
 
 class CDCommentLocalStore: CommentLocalStore {
   
+  var coreDataStack: CoreDataStack
+  
+  init(coreDataStack: CoreDataStack) {
+    self.coreDataStack = coreDataStack
+  }
 }
