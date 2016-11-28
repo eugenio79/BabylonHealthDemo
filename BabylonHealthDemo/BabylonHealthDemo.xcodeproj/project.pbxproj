@@ -385,6 +385,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BAB48CD01DEBFADB0039FB96 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BAD726E11DE3964D00E83F32 = {
 			isa = PBXGroup;
 			children = (
@@ -447,7 +454,7 @@
 				BA3B816A1DEAEECC00B41A49 /* Networking */,
 				BAB48C6C1DEB7EB60039FB96 /* Parsers */,
 				BAB48C801DEB7F6C0039FB96 /* Services */,
-				BAD7272B1DE3A41E00E83F32 /* Stores */,
+				BAD7272B1DE3A41E00E83F32 /* LocalStores */,
 				BAB48CB11DEBF96F0039FB96 /* SyncEngine */,
 			);
 			path = Common;
@@ -482,12 +489,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BAD7272B1DE3A41E00E83F32 /* Stores */ = {
+		BAD7272B1DE3A41E00E83F32 /* LocalStores */ = {
 			isa = PBXGroup;
 			children = (
+				BAB48CD01DEBFADB0039FB96 /* Protocols */,
 				BAB48CB41DEBFA420039FB96 /* CoreData */,
 			);
-			path = Stores;
+			path = LocalStores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
