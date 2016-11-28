@@ -4,4 +4,5 @@ use_frameworks!
 target 'BabylonHealthDemo' do
   pod 'ReachabilitySwift', '~> 3'
   pod 'SwiftyJSON'
+  pod 'PromiseKit', '~> 4.0'
 end

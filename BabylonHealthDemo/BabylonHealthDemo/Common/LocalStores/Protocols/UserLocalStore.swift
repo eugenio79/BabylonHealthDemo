@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum UserLocalStoreInsertCompletion {
+  case success
+  case failure
+}
+
 protocol UserLocalStore {
-  
+  func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void)
 }

@@ -7,17 +7,18 @@
 //
 
 import Foundation
+import PromiseKit
 
 /// Uses restful web services for remote sources
 /// and CoreData for local storage
 class CDRestSyncEngine: SyncEngine {
   
-  private let userRemoteService:        UserRemoteService
-  private let postRemoteService:        PostRemoteService
-  private let commentRemoteService:     CommentRemoteService
-  private let userLocalStore:           UserLocalStore
-  private let postLocalStore:           PostLocalStore
-  private let commentLocalStore:        CommentLocalStore
+  fileprivate let userRemoteService:        UserRemoteService
+  fileprivate let postRemoteService:        PostRemoteService
+  fileprivate let commentRemoteService:     CommentRemoteService
+  fileprivate let userLocalStore:           UserLocalStore
+  fileprivate let postLocalStore:           PostLocalStore
+  fileprivate let commentLocalStore:        CommentLocalStore
   
   required init(userRemoteService: UserRemoteService,
                 postRemoteService: PostRemoteService,
@@ -36,26 +37,51 @@ class CDRestSyncEngine: SyncEngine {
   
   func sync(completion: @escaping (SyncEngineResult) -> Void) {
     
-//    var userListFetched: [User] = []
+    //var userListFetched: [User] = []
 //    var postListFetched: [Post] = []
 //    var commentListFetched: [Comment] = []
     
-    userRemoteService.fetch { /*[weak self]*/ result in
-      
-//      guard let strongSelf = self else { return }
-      
-      switch result {
-      case .success(let userList):
-        // currently do nothing
-        //        userListFetched = userList
-        break
-      case .failure:
-        completion(.failure)
-        return
-      }
+//    userRemoteService.fetch { /*[weak self]*/ result in
+//      
+////      guard let strongSelf = self else { return }
+//      
+//      switch result {
+//      case .success(let userList):
+//        // currently do nothing
+//        //        userListFetched = userList
+//        break
+//      case .failure:
+//        completion(.failure)
+//        return
+//      }
+//    }
+    
+    fetchRemoteUsers().then { users in
+      //userListFetched = users
+      print("not implemented yet")
+    }.catch { error in
+      print("\(error)")
+      completion(.failure)
     }
     
     completion(.success)
-    
+  }
+}
+
+// MARK: - private methods
+fileprivate extension CDRestSyncEngine {
+  
+  func fetchRemoteUsers() -> Promise<[User]> {
+    return Promise { fulfill, reject in
+      
+      userRemoteService.fetch { result in
+        switch result {
+        case .success(let userList):
+          fulfill(userList)
+        case .failure(let error):
+          reject(error)
+        }
+      }
+    }
   }
 }

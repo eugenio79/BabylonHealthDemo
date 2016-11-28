@@ -8,9 +8,13 @@
 
 import Foundation
 
+enum UserRemoteFetchError: Error {
+  case generic
+}
+
 enum UserRemoteFetchResult {
   case success(userList: [User])
-  case failure
+  case failure(error: UserRemoteFetchError)
 }
 
 // Note: yeah, I know they're essentially copy-pasted from PostRemoteService

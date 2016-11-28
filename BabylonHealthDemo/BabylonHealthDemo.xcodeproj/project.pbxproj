@@ -82,6 +82,7 @@
 		BAD726F81DE3964D00E83F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F71DE3964D00E83F32 /* Assets.xcassets */; };
 		BAD726FB1DE3964D00E83F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD726F91DE3964D00E83F32 /* LaunchScreen.storyboard */; };
 		BAD7272A1DE39A3100E83F32 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD727291DE39A3100E83F32 /* PostListViewController.swift */; };
+		BADA46051DECCE02004FE2C2 /* CDUserLocalStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46041DECCE02004FE2C2 /* CDUserLocalStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		BAD727071DE3964E00E83F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD727211DE3992000E83F32 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAD727291DE39A3100E83F32 /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		BADA46041DECCE02004FE2C2 /* CDUserLocalStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDUserLocalStoreTests.swift; sourceTree = "<group>"; };
 		EC1A3C8B2BE523E31795255C /* Pods_BabylonHealthDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonHealthDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -456,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB48CE31DEC09740039FB96 /* CDCommentLocalStoreTests.swift */,
+				BADA46041DECCE02004FE2C2 /* CDUserLocalStoreTests.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				BAB48CF41DEC12E90039FB96 /* RestPostRemoteServiceTests.swift in Sources */,
 				BAB48CE41DEC09740039FB96 /* CDCommentLocalStoreTests.swift in Sources */,
 				BAB48CF91DEC133A0039FB96 /* StubUserRemoteService.swift in Sources */,
+				BADA46051DECCE02004FE2C2 /* CDUserLocalStoreTests.swift in Sources */,
 				BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */,
 				BAB48CFE1DEC14700039FB96 /* StubPostLocalStore.swift in Sources */,
 				BAB48CEB1DEC11090039FB96 /* CDRestSyncEngineTests.swift in Sources */,

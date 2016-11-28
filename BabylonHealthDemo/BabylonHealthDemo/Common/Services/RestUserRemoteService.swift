@@ -34,7 +34,7 @@ class RestUserRemoteService: UserRemoteService {
       
       switch response {
       case .failure:
-        fetchResult = UserRemoteFetchResult.failure
+        fetchResult = UserRemoteFetchResult.failure(error: .generic)
       case .success(let data):
         let posts = strongSelf.userParser.parse(data: data)
         fetchResult = UserRemoteFetchResult.success(userList: posts)

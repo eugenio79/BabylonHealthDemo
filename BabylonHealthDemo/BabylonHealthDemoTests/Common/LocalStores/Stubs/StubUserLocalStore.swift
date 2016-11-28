@@ -11,4 +11,7 @@ import Foundation
 
 class StubUserLocalStore: UserLocalStore {
   
+  func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void) {
+    // TODO: implement it
+  }
 }
