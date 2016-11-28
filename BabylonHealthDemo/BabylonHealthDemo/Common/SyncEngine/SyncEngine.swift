@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum SyncEngineResult {
+  case success
+  case failure
+}
+
 /// Responsible for downloading all the data from remote services
 /// and to store them into local stores
 protocol SyncEngine {
@@ -18,4 +23,6 @@ protocol SyncEngine {
        userLocalStore: UserLocalStore,
        postLocalStore: PostLocalStore,
        commentLocalStore: CommentLocalStore)
+  
+  func sync(completion: @escaping (SyncEngineResult) -> Void)
 }

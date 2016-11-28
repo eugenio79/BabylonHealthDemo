@@ -21,14 +21,49 @@ class CDRestSyncEngineTests: XCTestCase {
     super.tearDown()
   }
   
-//  func test_renameMe() {
-//    
-//    let userRemoteService = StubUserRemoteService()
-//    let postRemoteService = StubPostRemoteService()
-//    let commentRemoteService = StubCommentRemoteService()
-//    
-////    let coreDataStack = CoreDataStack(modelName: "BabylonHealthDemo", storeType: .inMemory)
-////    let
-//    //let syncEngine = CDRest
-//  }
+  func test_givenWellConfiguredEngine_whenSync_expectLocalStoresFilled() {
+    
+    // GIVEN
+    let userRemoteService = StubUserRemoteService()
+    let postRemoteService = StubPostRemoteService()
+    let commentRemoteService = StubCommentRemoteService()
+    
+    let userLocalStore = StubUserLocalStore()
+    let postLocalStore = StubPostLocalStore()
+    let commentLocalStore = StubCommentLocalStore()
+    
+    let syncEngine = CDRestSyncEngine(userRemoteService: userRemoteService,
+                                      postRemoteService: postRemoteService,
+                                      commentRemoteService: commentRemoteService,
+                                      userLocalStore: userLocalStore,
+                                      postLocalStore: postLocalStore,
+                                      commentLocalStore: commentLocalStore)
+    
+    var syncResult: SyncEngineResult?
+    
+    // WHEN
+    let asyncExpectation = expectation(description: "Waiting for sync to complete")
+    
+    syncEngine.sync { result in
+      syncResult = result
+      asyncExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    
+    // EXPECT
+    
+    XCTAssertNotNil(syncResult)
+    
+    if let syncResult = syncResult {
+      switch syncResult {
+      case .success:
+        XCTAssertTrue(true, "Sync should be successful")
+      case .failure:
+        XCTAssertTrue(false, "Sync should be successful")
+      }
+    }
+  }
 }

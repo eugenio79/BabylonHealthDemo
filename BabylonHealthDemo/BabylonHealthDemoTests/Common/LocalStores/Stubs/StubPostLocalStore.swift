@@ -7,3 +7,8 @@
 //
 
 import Foundation
+@testable import BabylonHealthDemo
+
+class StubPostLocalStore: PostLocalStore {
+  
+}

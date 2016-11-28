@@ -33,4 +33,29 @@ class CDRestSyncEngine: SyncEngine {
     self.postLocalStore = postLocalStore
     self.commentLocalStore = commentLocalStore
   }
+  
+  func sync(completion: @escaping (SyncEngineResult) -> Void) {
+    
+//    var userListFetched: [User] = []
+//    var postListFetched: [Post] = []
+//    var commentListFetched: [Comment] = []
+    
+    userRemoteService.fetch { /*[weak self]*/ result in
+      
+//      guard let strongSelf = self else { return }
+      
+      switch result {
+      case .success(let userList):
+        // currently do nothing
+        //        userListFetched = userList
+        break
+      case .failure:
+        completion(.failure)
+        return
+      }
+    }
+    
+    completion(.success)
+    
+  }
 }
