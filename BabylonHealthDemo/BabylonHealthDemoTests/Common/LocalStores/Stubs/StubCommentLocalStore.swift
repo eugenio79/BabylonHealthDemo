@@ -9,16 +9,22 @@
 import Foundation
 @testable import BabylonHealthDemo
 
-class StubCommentLocalStore: CommentLocalStore {
+// TODO: rename it to FakeCommentLocalStore
+// Subclassed from CoreData, so I can use in RestToCDUserSyncTests
+class StubCommentLocalStore: CDCommentLocalStore {
   
   var comments: [Comment] = []
   
-  func insert(comments: [Comment], completion: @escaping (CommentLocalStoreInsertCompletion) -> Void) {
+  convenience init() {
+    self.init(coreDataStack: CoreDataStack(modelName: "BabylonHealthDemo", storeType: .inMemory))
+  }
+  
+  override func insert(comments: [Comment], completion: @escaping (CommentLocalStoreInsertCompletion) -> Void) {
     self.comments += comments
     completion(.success)
   }
   
-  func fetch(completion: @escaping (CommentLocalStoreFetchCompletion) -> Void) {
+  override func fetch(completion: @escaping (CommentLocalStoreFetchCompletion) -> Void) {
     completion(.success(comments: comments))
   }
 }

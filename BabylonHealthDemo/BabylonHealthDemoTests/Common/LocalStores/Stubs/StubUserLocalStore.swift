@@ -9,16 +9,22 @@
 import Foundation
 @testable import BabylonHealthDemo
 
-class StubUserLocalStore: UserLocalStore {
+// TODO: rename it to FakeUserLocalStore
+// Subclassed from CoreData, so I can use in RestToCDUserSyncTests
+class StubUserLocalStore: CDUserLocalStore {
   
   var users: [User] = []
   
-  func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void) {
+  convenience init() {
+    self.init(coreDataStack: CoreDataStack(modelName: "BabylonHealthDemo", storeType: .inMemory))
+  }
+  
+  override func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void) {
     self.users += users
     completion(.success)
   }
   
-  func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
+  override func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
     completion(.success(users: users))
   }
 }

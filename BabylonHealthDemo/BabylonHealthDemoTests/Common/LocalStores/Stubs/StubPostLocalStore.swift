@@ -9,16 +9,22 @@
 import Foundation
 @testable import BabylonHealthDemo
 
-class StubPostLocalStore: PostLocalStore {
+// TODO: rename it to FakePostLocalStore
+// Subclassed from CoreData, so I can use in RestToCDUserSyncTests
+class StubPostLocalStore: CDPostLocalStore {
   
   var posts: [Post] = []
   
-  func insert(posts: [Post], completion: @escaping (PostLocalStoreInsertCompletion) -> Void) {
+  convenience init() {
+    self.init(coreDataStack: CoreDataStack(modelName: "BabylonHealthDemo", storeType: .inMemory))
+  }
+  
+  override func insert(posts: [Post], completion: @escaping (PostLocalStoreInsertCompletion) -> Void) {
     self.posts += posts
     completion(.success)
   }
   
-  func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void) {
+  override func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void) {
     completion(.success(posts: posts))
   }
 }

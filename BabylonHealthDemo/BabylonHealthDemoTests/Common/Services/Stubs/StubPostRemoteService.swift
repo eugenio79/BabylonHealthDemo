@@ -9,12 +9,14 @@
 import Foundation
 @testable import BabylonHealthDemo
 
-class StubPostRemoteService: PostRemoteService {
+/// I need to subclass from Rest and not simply implementing the protocol
+/// because I will reuse it into RestToCDUserSyncTests
+class StubPostRemoteService: RestPostRemoteService {
   
   fileprivate var fakeFetchResult: PostRemoteFetchResult?
   
   required init(networking: Networking, postParser: PostParser) {
-    // do nothing, 'cause I'll ignore them
+    super.init(networking: networking, postParser: postParser)
   }
   
   convenience init() {
@@ -23,7 +25,7 @@ class StubPostRemoteService: PostRemoteService {
     self.init(networking: network, postParser: parser)
   }
   
-  func fetch(completion: @escaping (PostRemoteFetchResult) -> Void) {
+  override func fetch(completion: @escaping (PostRemoteFetchResult) -> Void) {
     if let fetchResult = fakeFetchResult {
       completion(fetchResult)
     }

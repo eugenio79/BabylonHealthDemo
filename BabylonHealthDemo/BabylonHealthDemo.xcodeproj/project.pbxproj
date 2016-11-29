@@ -33,7 +33,6 @@
 		BAB48C7D1DEB7F200039FB96 /* SwiftyJSONCommentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C7A1DEB7F200039FB96 /* SwiftyJSONCommentParserTests.swift */; };
 		BAB48C7E1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C7B1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift */; };
 		BAB48C7F1DEB7F200039FB96 /* SwiftyJSONUserParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C7C1DEB7F200039FB96 /* SwiftyJSONUserParserTests.swift */; };
-		BAB48CB31DEBF9810039FB96 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CB21DEBF9810039FB96 /* SyncEngine.swift */; };
 		BAB48CC31DEBFA420039FB96 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CB51DEBFA420039FB96 /* CoreDataStack.swift */; };
 		BAB48CC41DEBFA420039FB96 /* CDAddress+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CB71DEBFA420039FB96 /* CDAddress+CoreDataClass.swift */; };
 		BAB48CC51DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CB81DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift */; };
@@ -54,8 +53,6 @@
 		BAB48CDD1DEBFC4D0039FB96 /* CDPostLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CDC1DEBFC4D0039FB96 /* CDPostLocalStore.swift */; };
 		BAB48CDF1DEBFC680039FB96 /* CDCommentLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CDE1DEBFC680039FB96 /* CDCommentLocalStore.swift */; };
 		BAB48CE41DEC09740039FB96 /* CDCommentLocalStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CE31DEC09740039FB96 /* CDCommentLocalStoreTests.swift */; };
-		BAB48CE91DEC10C90039FB96 /* CDRestSyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CE81DEC10C90039FB96 /* CDRestSyncEngine.swift */; };
-		BAB48CEB1DEC11090039FB96 /* CDRestSyncEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CEA1DEC11090039FB96 /* CDRestSyncEngineTests.swift */; };
 		BAB48CF21DEC12E90039FB96 /* StubPostRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CED1DEC12E90039FB96 /* StubPostRemoteService.swift */; };
 		BAB48CF31DEC12E90039FB96 /* RestCommentRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CEF1DEC12E90039FB96 /* RestCommentRemoteServiceTests.swift */; };
 		BAB48CF41DEC12E90039FB96 /* RestPostRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48CF01DEC12E90039FB96 /* RestPostRemoteServiceTests.swift */; };
@@ -96,6 +93,12 @@
 		BADA463C1DEDC1A0004FE2C2 /* PostCommentLinker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA463B1DEDC1A0004FE2C2 /* PostCommentLinker.swift */; };
 		BADA463E1DEDC202004FE2C2 /* RestPostCommentLinker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA463D1DEDC202004FE2C2 /* RestPostCommentLinker.swift */; };
 		BADA46401DEDC21D004FE2C2 /* RestPostCommentLinkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA463F1DEDC21D004FE2C2 /* RestPostCommentLinkerTests.swift */; };
+		BADA46651DEDCF73004FE2C2 /* UserSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46641DEDCF73004FE2C2 /* UserSyncing.swift */; };
+		BADA46671DEDCF89004FE2C2 /* RestToCDUserSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46661DEDCF89004FE2C2 /* RestToCDUserSync.swift */; };
+		BADA466B1DEDD13E004FE2C2 /* CDRestSyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46691DEDD13E004FE2C2 /* CDRestSyncEngine.swift */; };
+		BADA466C1DEDD13E004FE2C2 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA466A1DEDD13E004FE2C2 /* SyncEngine.swift */; };
+		BADA466F1DEDD153004FE2C2 /* CDRestSyncEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA466E1DEDD153004FE2C2 /* CDRestSyncEngineTests.swift */; };
+		BADA46731DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +139,6 @@
 		BAB48C7A1DEB7F200039FB96 /* SwiftyJSONCommentParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONCommentParserTests.swift; sourceTree = "<group>"; };
 		BAB48C7B1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONPostParserTests.swift; sourceTree = "<group>"; };
 		BAB48C7C1DEB7F200039FB96 /* SwiftyJSONUserParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSONUserParserTests.swift; sourceTree = "<group>"; };
-		BAB48CB21DEBF9810039FB96 /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
 		BAB48CB51DEBFA420039FB96 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BAB48CB71DEBFA420039FB96 /* CDAddress+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAddress+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BAB48CB81DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -157,8 +159,6 @@
 		BAB48CDC1DEBFC4D0039FB96 /* CDPostLocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPostLocalStore.swift; sourceTree = "<group>"; };
 		BAB48CDE1DEBFC680039FB96 /* CDCommentLocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDCommentLocalStore.swift; sourceTree = "<group>"; };
 		BAB48CE31DEC09740039FB96 /* CDCommentLocalStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDCommentLocalStoreTests.swift; sourceTree = "<group>"; };
-		BAB48CE81DEC10C90039FB96 /* CDRestSyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDRestSyncEngine.swift; sourceTree = "<group>"; };
-		BAB48CEA1DEC11090039FB96 /* CDRestSyncEngineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDRestSyncEngineTests.swift; sourceTree = "<group>"; };
 		BAB48CED1DEC12E90039FB96 /* StubPostRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubPostRemoteService.swift; sourceTree = "<group>"; };
 		BAB48CEF1DEC12E90039FB96 /* RestCommentRemoteServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCommentRemoteServiceTests.swift; sourceTree = "<group>"; };
 		BAB48CF01DEC12E90039FB96 /* RestPostRemoteServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostRemoteServiceTests.swift; sourceTree = "<group>"; };
@@ -203,6 +203,12 @@
 		BADA463B1DEDC1A0004FE2C2 /* PostCommentLinker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentLinker.swift; sourceTree = "<group>"; };
 		BADA463D1DEDC202004FE2C2 /* RestPostCommentLinker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostCommentLinker.swift; sourceTree = "<group>"; };
 		BADA463F1DEDC21D004FE2C2 /* RestPostCommentLinkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostCommentLinkerTests.swift; sourceTree = "<group>"; };
+		BADA46641DEDCF73004FE2C2 /* UserSyncing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSyncing.swift; sourceTree = "<group>"; };
+		BADA46661DEDCF89004FE2C2 /* RestToCDUserSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDUserSync.swift; sourceTree = "<group>"; };
+		BADA46691DEDD13E004FE2C2 /* CDRestSyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDRestSyncEngine.swift; sourceTree = "<group>"; };
+		BADA466A1DEDD13E004FE2C2 /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
+		BADA466E1DEDD153004FE2C2 /* CDRestSyncEngineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDRestSyncEngineTests.swift; sourceTree = "<group>"; };
+		BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDUserSyncTests.swift; sourceTree = "<group>"; };
 		EC1A3C8B2BE523E31795255C /* Pods_BabylonHealthDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonHealthDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -405,9 +411,9 @@
 		BAB48CB11DEBF96F0039FB96 /* SyncEngine */ = {
 			isa = PBXGroup;
 			children = (
+				BADA46681DEDD13E004FE2C2 /* Engine */,
+				BADA465F1DEDCE92004FE2C2 /* ModelsSync */,
 				BADA462F1DEDAA47004FE2C2 /* ModelsLinker */,
-				BAB48CB21DEBF9810039FB96 /* SyncEngine.swift */,
-				BAB48CE81DEC10C90039FB96 /* CDRestSyncEngine.swift */,
 			);
 			path = SyncEngine;
 			sourceTree = "<group>";
@@ -491,8 +497,9 @@
 		BAB48CE51DEC103B0039FB96 /* SyncEngine */ = {
 			isa = PBXGroup;
 			children = (
+				BADA46701DEDD172004FE2C2 /* ModelsSync */,
+				BADA466D1DEDD153004FE2C2 /* Engine */,
 				BADA46361DEDAC02004FE2C2 /* ModelsLinker */,
-				BAB48CEA1DEC11090039FB96 /* CDRestSyncEngineTests.swift */,
 			);
 			path = SyncEngine;
 			sourceTree = "<group>";
@@ -702,6 +709,64 @@
 			path = ModelsLinker;
 			sourceTree = "<group>";
 		};
+		BADA465F1DEDCE92004FE2C2 /* ModelsSync */ = {
+			isa = PBXGroup;
+			children = (
+				BADA46621DEDCF73004FE2C2 /* Implementations */,
+				BADA46631DEDCF73004FE2C2 /* Protocols */,
+			);
+			path = ModelsSync;
+			sourceTree = "<group>";
+		};
+		BADA46621DEDCF73004FE2C2 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				BADA46661DEDCF89004FE2C2 /* RestToCDUserSync.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		BADA46631DEDCF73004FE2C2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BADA46641DEDCF73004FE2C2 /* UserSyncing.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BADA46681DEDD13E004FE2C2 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				BADA46691DEDD13E004FE2C2 /* CDRestSyncEngine.swift */,
+				BADA466A1DEDD13E004FE2C2 /* SyncEngine.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		BADA466D1DEDD153004FE2C2 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				BADA466E1DEDD153004FE2C2 /* CDRestSyncEngineTests.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		BADA46701DEDD172004FE2C2 /* ModelsSync */ = {
+			isa = PBXGroup;
+			children = (
+				BADA46711DEDD18A004FE2C2 /* Implementations */,
+			);
+			path = ModelsSync;
+			sourceTree = "<group>";
+		};
+		BADA46711DEDD18A004FE2C2 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -868,10 +933,11 @@
 				BADA46261DECE47F004FE2C2 /* Address.swift in Sources */,
 				BAB48CC71DEBFA420039FB96 /* CDComment+CoreDataProperties.swift in Sources */,
 				BAD7272A1DE39A3100E83F32 /* PostListViewController.swift in Sources */,
+				BADA466B1DEDD13E004FE2C2 /* CDRestSyncEngine.swift in Sources */,
 				BAB48C761DEB7EB60039FB96 /* SwiftyJSONPostParser.swift in Sources */,
 				BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */,
 				BAB48CC51DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift in Sources */,
-				BAB48CB31DEBF9810039FB96 /* SyncEngine.swift in Sources */,
+				BADA46671DEDCF89004FE2C2 /* RestToCDUserSync.swift in Sources */,
 				BAB48CDD1DEBFC4D0039FB96 /* CDPostLocalStore.swift in Sources */,
 				BADA460F1DECE30F004FE2C2 /* PostRemoteService.swift in Sources */,
 				BAB48CDF1DEBFC680039FB96 /* CDCommentLocalStore.swift in Sources */,
@@ -890,13 +956,14 @@
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
 				BADA461C1DECE3C7004FE2C2 /* RestComment.swift in Sources */,
 				BAB48CD61DEBFB950039FB96 /* PostLocalStore.swift in Sources */,
+				BADA466C1DEDD13E004FE2C2 /* SyncEngine.swift in Sources */,
 				BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */,
-				BAB48CE91DEC10C90039FB96 /* CDRestSyncEngine.swift in Sources */,
 				BADA46351DEDABCE004FE2C2 /* UserPostLinker.swift in Sources */,
 				BAB48CD41DEBFB7C0039FB96 /* UserLocalStore.swift in Sources */,
 				BADA46201DECE3C7004FE2C2 /* RestUser.swift in Sources */,
 				BADA463C1DEDC1A0004FE2C2 /* PostCommentLinker.swift in Sources */,
 				BAB48C231DEB66810039FB96 /* PostDetailController.swift in Sources */,
+				BADA46651DEDCF73004FE2C2 /* UserSyncing.swift in Sources */,
 				BADA46101DECE30F004FE2C2 /* UserRemoteService.swift in Sources */,
 				BADA461B1DECE3C7004FE2C2 /* RestAddress.swift in Sources */,
 				BAB48C731DEB7EB60039FB96 /* CommentParser.swift in Sources */,
@@ -934,18 +1001,19 @@
 				BADA462E1DECFC25004FE2C2 /* CDPostLocalStoreTests.swift in Sources */,
 				BAB48CF51DEC12E90039FB96 /* RestUserRemoteServiceTests.swift in Sources */,
 				BAB48CF41DEC12E90039FB96 /* RestPostRemoteServiceTests.swift in Sources */,
+				BADA466F1DEDD153004FE2C2 /* CDRestSyncEngineTests.swift in Sources */,
 				BAB48CE41DEC09740039FB96 /* CDCommentLocalStoreTests.swift in Sources */,
 				BAB48CF91DEC133A0039FB96 /* StubUserRemoteService.swift in Sources */,
 				BADA46051DECCE02004FE2C2 /* CDUserLocalStoreTests.swift in Sources */,
 				BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */,
 				BAB48CFE1DEC14700039FB96 /* StubPostLocalStore.swift in Sources */,
-				BAB48CEB1DEC11090039FB96 /* CDRestSyncEngineTests.swift in Sources */,
 				BAB48CFC1DEC14620039FB96 /* StubUserLocalStore.swift in Sources */,
 				BAB48CF71DEC132D0039FB96 /* StubCommentRemoteService.swift in Sources */,
 				BAB48D001DEC14820039FB96 /* StubCommentLocalStore.swift in Sources */,
 				BAB48CF31DEC12E90039FB96 /* RestCommentRemoteServiceTests.swift in Sources */,
 				BA3B81721DEAF30100B41A49 /* StubNetworkManager.swift in Sources */,
 				BADA46381DEDAC16004FE2C2 /* RestUserPostLinkerTests.swift in Sources */,
+				BADA46731DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift in Sources */,
 				BA3B81761DEAF49300B41A49 /* PostListControllerTests.swift in Sources */,
 				BAB48CF21DEC12E90039FB96 /* StubPostRemoteService.swift in Sources */,
 				BAB48C7E1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift in Sources */,
