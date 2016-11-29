@@ -23,7 +23,7 @@ class RestToCDPostSyncTests: XCTestCase {
     super.tearDown()
   }
   
-  func test_givenAUserInStoreAndTwoPostsRemotely_whenSync_expectTwoPostsInStore() {
+  func test_givenAUserInStoreAndAPostRemotely_whenSync_expectAPostInStore() {
     
     let userStore = givenUserStorePrefilledWithOneUser()
     let postStore = CDPostLocalStore(coreDataStack: coreDataStack)
@@ -40,8 +40,8 @@ class RestToCDPostSyncTests: XCTestCase {
     let fetchResult = whenFetch(postStore: postStore)
     
     switch fetchResult {
-    case .success(let users):
-      XCTAssertEqual(users.count, 1)
+    case .success(let posts):
+      XCTAssertEqual(posts.count, 1)
     case .failure:
       XCTAssertFalse(true, "Should be successful")
     }

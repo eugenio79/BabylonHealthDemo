@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4ECD7F61C17B21BA89AF91B9 /* Pods_BabylonHealthDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A3C8B2BE523E31795255C /* Pods_BabylonHealthDemo.framework */; };
+		BA3954E91DEE19F600FC1720 /* CommentSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3954E81DEE19F600FC1720 /* CommentSyncing.swift */; };
+		BA3954EB1DEE1A5300FC1720 /* RestToCDCommentSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3954EA1DEE1A5300FC1720 /* RestToCDCommentSync.swift */; };
+		BA3954ED1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3954EC1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift */; };
 		BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA3B815D1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld */; };
 		BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81601DEADE2500B41A49 /* PostListCell.swift */; };
 		BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */; };
@@ -117,6 +120,9 @@
 /* Begin PBXFileReference section */
 		A17661B548CA02D8EA9EE576 /* Pods-BabylonHealthDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonHealthDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonHealthDemo/Pods-BabylonHealthDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A8C84CDE1B08468823A36D08 /* Pods-BabylonHealthDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabylonHealthDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabylonHealthDemo/Pods-BabylonHealthDemo.release.xcconfig"; sourceTree = "<group>"; };
+		BA3954E81DEE19F600FC1720 /* CommentSyncing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSyncing.swift; sourceTree = "<group>"; };
+		BA3954EA1DEE1A5300FC1720 /* RestToCDCommentSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDCommentSync.swift; sourceTree = "<group>"; };
+		BA3954EC1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDCommentSyncTests.swift; sourceTree = "<group>"; };
 		BA3B815E1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 		BA3B81601DEADE2500B41A49 /* PostListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
 		BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLayout.swift; sourceTree = "<group>"; };
@@ -729,6 +735,7 @@
 			children = (
 				BADA46661DEDCF89004FE2C2 /* RestToCDUserSync.swift */,
 				BAFE072C1DEDDD7C008509C0 /* RestToCDPostSync.swift */,
+				BA3954EA1DEE1A5300FC1720 /* RestToCDCommentSync.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -738,6 +745,7 @@
 			children = (
 				BADA46641DEDCF73004FE2C2 /* UserSyncing.swift */,
 				BAFE072A1DEDDCB1008509C0 /* PostSyncing.swift */,
+				BA3954E81DEE19F600FC1720 /* CommentSyncing.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -772,6 +780,7 @@
 			children = (
 				BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */,
 				BAFE072E1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift */,
+				BA3954EC1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -965,6 +974,7 @@
 				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
 				BADA461C1DECE3C7004FE2C2 /* RestComment.swift in Sources */,
+				BA3954EB1DEE1A5300FC1720 /* RestToCDCommentSync.swift in Sources */,
 				BAB48CD61DEBFB950039FB96 /* PostLocalStore.swift in Sources */,
 				BADA466C1DEDD13E004FE2C2 /* SyncEngine.swift in Sources */,
 				BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */,
@@ -990,6 +1000,7 @@
 				BADA46121DECE30F004FE2C2 /* RestPostRemoteService.swift in Sources */,
 				BADA461F1DECE3C7004FE2C2 /* RestPost.swift in Sources */,
 				BAB48CD81DEBFBB10039FB96 /* CommentLocalStore.swift in Sources */,
+				BA3954E91DEE19F600FC1720 /* CommentSyncing.swift in Sources */,
 				BAB48C751DEB7EB60039FB96 /* SwiftyJSONCommentParser.swift in Sources */,
 				BAB48C741DEB7EB60039FB96 /* PostParser.swift in Sources */,
 				BADA462A1DECE4DE004FE2C2 /* Post.swift in Sources */,
@@ -1030,6 +1041,7 @@
 				BAFE072F1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift in Sources */,
 				BAB48C7E1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift in Sources */,
 				BADA46401DEDC21D004FE2C2 /* RestPostCommentLinkerTests.swift in Sources */,
+				BA3954ED1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift in Sources */,
 				BAB48C5E1DEB77C00039FB96 /* PostDetailControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
