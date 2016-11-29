@@ -10,23 +10,39 @@ import Foundation
 
 class RestPostCommentLinker: PostCommentLinker {
   
-  private var postCommentMap: [Int32: [RestComment]] = [:]  // key = post.id
+  private var posts: [Post] = []
+  private var comments: [RestComment] = []
   
-  required init?(comments: [Comment]) {
+  required init?(posts: [Post], comments: [Comment]) {
     
     guard let restComments = comments as? [RestComment] else {
       return nil
     }
     
-    for comment in restComments {
-      if postCommentMap[comment.postId] == nil {
-        postCommentMap[comment.postId] = []
-      }
-      postCommentMap[comment.postId]?.append(comment)
-    }
+    self.posts = posts
+    self.comments = restComments
   }
   
-  func comments(for post: Post) -> [Comment] {
-    return postCommentMap[post.id] ?? []
+  func postMap() -> [Int32 : Post] {
+    
+    var map: [Int32: Post] = [:]
+    
+    for post in posts {
+      map[post.id] = post
+    }
+    return map
+  }
+  
+  func postCommentMap() -> [Int32 : [Comment]] {
+    
+    var map: [Int32: [Comment]] = [:]
+    
+    for comment in comments {
+      if map[comment.postId] == nil {
+        map[comment.postId] = []
+      }
+      map[comment.postId]!.append(comment)
+    }
+    return map
   }
 }

@@ -11,10 +11,13 @@ import Foundation
 /// It explicits the relationships between users and posts
 protocol PostCommentLinker {
   
-  /// In order to work, the concrete implementations of Post should have obviously
+  /// In order to work, the concrete implementations of Post and Comment should have obviously
   /// something that put it in relation with users
-  init?(comments: [Comment])
+  init?(posts: [Post], comments: [Comment])
   
-  /// @return the list of the comments for of the post or an empty list if none found
-  func comments(for post: Post) -> [Comment]
+  /// key = Post.id, value = the post with that id
+  func postMap() -> [Int32: Post]
+  
+  /// key = Post.id, value = the list of comments done by the user
+  func postCommentMap() -> [Int32: [Comment]]
 }

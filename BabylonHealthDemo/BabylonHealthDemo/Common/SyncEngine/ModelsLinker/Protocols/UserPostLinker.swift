@@ -11,10 +11,13 @@ import Foundation
 /// It explicits the relationships between users and posts
 protocol UserPostLinker {
   
-  /// In order to work, the concrete implementations of Post should have obviously
+  /// In order to work, the concrete implementations of User and Post should have obviously
   /// something that put it in relation with users
-  init?(posts: [Post])
+  init?(users: [User], posts: [Post])
   
-  /// @return the list of the post for a specific author or an empty list if none found
-  func posts(for user: User) -> [Post]
+  /// key = User.id, value = the user with that id
+  func userMap() -> [Int32: User]
+  
+  /// key = User.id, value = the list of posts done by the user
+  func userPostMap() -> [Int32: [Post]]
 }

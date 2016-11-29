@@ -11,9 +11,7 @@ import XCTest
 
 class RestToCDPostSyncTests: XCTestCase {
   
-  /* DISABLED waiting for UserLocalStore.addPosts(:to user:) method to be implemented and tested
-   
-  func test_givenAUserInStoreAndTwoPostsRemotely_whenSync_expectPostsInStoreWhichBelongToUser() {
+  func test_givenAUserInStoreAndTwoPostsRemotely_whenSync_expectTwoPostsInStore() {
     
     let userStore = givenUserStorePrefilledWithOneUser()
     let postStore = StubPostLocalStore()
@@ -36,11 +34,9 @@ class RestToCDPostSyncTests: XCTestCase {
       XCTAssertFalse(true, "Should be successful")
     }
   }
- */
-  
 }
 
-// MARK: - utils
+// MARK: - given, when, expect
 extension RestToCDPostSyncTests {
   
   func whenFetch(postStore: PostLocalStore) -> PostLocalStoreFetchCompletion {

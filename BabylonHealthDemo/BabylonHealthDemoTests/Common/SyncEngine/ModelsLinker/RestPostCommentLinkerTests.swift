@@ -16,16 +16,22 @@ class RestPostCommentLinkerTests: XCTestCase {
     let postsToLink = givenTwoPosts()
     let commentsToLink = givenFourComments()
     
-    let linker = RestPostCommentLinker(comments: commentsToLink)
+    let linker = RestPostCommentLinker(posts: postsToLink, comments: commentsToLink)
     
     XCTAssertNotNil(linker)
     
     if let linker = linker {
-      let firstPostComments = linker.comments(for: postsToLink[0])
-      let secondPostComments = linker.comments(for: postsToLink[1])
       
-      XCTAssertEqual(firstPostComments.count, 2)
-      XCTAssertEqual(secondPostComments.count, 2)
+      let postMap = linker.postMap()
+      let postCommentMap = linker.postCommentMap()
+      
+      XCTAssertEqual(postMap.count, 2)
+      
+      for (postId, comments) in postCommentMap {
+        
+        XCTAssertNotNil(postMap[postId])
+        XCTAssertEqual(comments.count, 2)
+      }
     }
   }
 }

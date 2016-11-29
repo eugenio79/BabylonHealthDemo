@@ -10,23 +10,39 @@ import Foundation
 
 class RestUserPostLinker: UserPostLinker {
   
-  private var userPostMap: [Int32: [RestPost]] = [:]  // key = user.id
+  private var users: [User] = []
+  private var posts: [RestPost] = []
   
-  required init?(posts: [Post]) {
+  required init?(users: [User], posts: [Post]) {
     
     guard let restPosts = posts as? [RestPost] else {
       return nil
     }
     
-    for post in restPosts {
-      if userPostMap[post.userId] == nil {
-        userPostMap[post.userId] = []
-      }
-      userPostMap[post.userId]?.append(post)
-    }
+    self.users = users
+    self.posts = restPosts
   }
   
-  func posts(for user: User) -> [Post] {
-    return userPostMap[user.id] ?? []
+  func userMap() -> [Int32 : User] {
+    
+    var map: [Int32: User] = [:]
+    
+    for user in users {
+      map[user.id] = user
+    }
+    return map
+  }
+  
+  func userPostMap() -> [Int32 : [Post]] {
+    
+    var map: [Int32: [Post]] = [:]
+    
+    for post in posts {
+      if map[post.userId] == nil {
+        map[post.userId] = []
+      }
+      map[post.userId]!.append(post)
+    }
+    return map
   }
 }

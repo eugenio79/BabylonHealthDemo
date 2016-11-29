@@ -11,9 +11,12 @@ import Foundation
 /// Fetches from rest web service, saves to CoreData
 class RestToCDPostSync: PostSyncing {
   
-  private var remoteService: RestPostRemoteService!
-  private var postLocalStore: CDPostLocalStore!
-  private var userLocalStore: CDUserLocalStore!
+  /// Used to execute sequentially async tasks
+  fileprivate let dispatchGroup = DispatchGroup()
+  
+  fileprivate var remoteService: RestPostRemoteService!
+  fileprivate var postLocalStore: CDPostLocalStore!
+  fileprivate var userLocalStore: CDUserLocalStore!
   
   required init?(remoteService: PostRemoteService, postLocalStore: PostLocalStore, userLocalStore: UserLocalStore) {
     
@@ -28,5 +31,54 @@ class RestToCDPostSync: PostSyncing {
   
   func sync(completion: @escaping (PostSyncResult) -> Void) {
     
+    guard let usersStoreFetch = fetchUsers() else {
+      completion(.failure)
+      return
+    }
+    
+    guard let postsRemoteFetch = fetchPosts() else {
+      completion(.failure)
+      return
+    }
+    
+    // temp
+    completion(.success)
+  }
+}
+
+// MARK: - Private methods
+fileprivate extension RestToCDPostSync {
+  
+  func fetchUsers() -> UserLocalStoreFetchCompletion? {
+    
+    dispatchGroup.enter()
+    var fetchResult: UserLocalStoreFetchCompletion?
+    
+    userLocalStore.fetch { [weak self] result in
+      
+      guard let strongSelf = self else {
+        return
+      }
+      fetchResult = result
+      
+      strongSelf.dispatchGroup.leave()
+    }
+    return fetchResult
+  }
+  
+  func fetchPosts() -> PostRemoteFetchResult? {
+    
+    dispatchGroup.enter()
+    var fetchResult: PostRemoteFetchResult?
+    
+    remoteService.fetch { [weak self] result in
+      
+      guard let strongSelf = self else {
+        return
+      }
+      fetchResult = result
+      strongSelf.dispatchGroup.leave()
+    }
+    return fetchResult
   }
 }

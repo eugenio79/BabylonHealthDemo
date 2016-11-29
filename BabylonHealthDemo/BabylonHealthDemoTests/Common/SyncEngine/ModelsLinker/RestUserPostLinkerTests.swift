@@ -16,16 +16,22 @@ class RestUserPostLinkerTests: XCTestCase {
     let usersToLink = givenTwoUsers()
     let postsToLink = givenFourPosts()
     
-    let linker = RestUserPostLinker(posts: postsToLink)
+    let linker = RestUserPostLinker(users: usersToLink, posts: postsToLink)
     
     XCTAssertNotNil(linker)
     
     if let linker = linker {
-      let firstUserPosts = linker.posts(for: usersToLink[0])
-      let secondUserPosts = linker.posts(for: usersToLink[1])
       
-      XCTAssertEqual(firstUserPosts.count, 2)
-      XCTAssertEqual(secondUserPosts.count, 2)
+      let userMap = linker.userMap()
+      let userPostMap = linker.userPostMap()
+      
+      XCTAssertEqual(userMap.count, 2)
+      
+      for (userId, posts) in userPostMap {
+        
+        XCTAssertNotNil(userMap[userId])
+        XCTAssertEqual(posts.count, 2)
+      }
     }
   }
   
