@@ -20,4 +20,7 @@ protocol SyncEngine {
   init(userSync: UserSyncing, postSync: PostSyncing, commentSync: CommentSyncing)
   
   func sync(completion: (SyncResult) -> Void)
+  
+  /// @return true if already synced (has users, posts and comments)
+  func isSynced() -> Bool
 }

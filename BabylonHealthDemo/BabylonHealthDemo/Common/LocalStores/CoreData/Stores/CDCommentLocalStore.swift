@@ -47,6 +47,16 @@ class CDCommentLocalStore: CommentLocalStore {
       completion(.failure)
     }
   }
+  
+  func count() -> Int {
+    do {
+      let request = NSFetchRequest<CDComment>(entityName: "CDComment")
+      return try coreDataStack.managedContext.count(for: request)
+    } catch let error as NSError {
+      print("Count error: \(error), \(error.userInfo)")
+      return 0  // for the purpose of this demo, I think it's enough
+    }
+  }
 }
 
 // MARK: - private methods

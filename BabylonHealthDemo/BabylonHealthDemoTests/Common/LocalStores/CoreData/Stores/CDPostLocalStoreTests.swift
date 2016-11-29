@@ -54,6 +54,21 @@ class CDPostLocalStoreTests: XCTestCase {
     expectTwoComments(into: fetchResult)
   }
   
+  func test_givenStoreWithOnePost_whenCount_expectOne() {
+    
+    // GIVEN
+    let post = givenAPost()
+    let postStore = CDPostLocalStore(coreDataStack: coreDataStack)
+    let insertResult = whenInserting(posts: [post], into: postStore)
+    
+    XCTAssertNotNil(insertResult)
+    
+    // WHEN
+    let count = postStore.count()
+    
+    // EXPECT
+    XCTAssertEqual(count, 1)
+  }
 }
 
 // MARK: - given, when, expect (common between tests)

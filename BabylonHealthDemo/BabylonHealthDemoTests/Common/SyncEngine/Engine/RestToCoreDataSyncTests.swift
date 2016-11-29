@@ -50,6 +50,17 @@ class RestToCoreDataSyncTests: XCTestCase {
     expectOnePostInStore()
     expectOneCommentInStore()
   }
+  
+  func test_givenEmtpyStores_whenAskingIfSynced_expectFalse() {
+    
+    // GIVEN
+    let userSync = givenUserSync()
+    let postSync = givenPostSync()
+    let commentSync = givenCommentSync()
+    let syncEngine = RestToCoreDataSync(userSync: userSync, postSync: postSync, commentSync: commentSync)
+    
+    //syncEngine.is
+  }
 }
 
 // MARK: - expect

@@ -82,10 +82,43 @@ class CDCommentLocalStoreTests: XCTestCase {
     }
   }
   
+  func test_givenStoreWithOneComment_whenCount_expectOne() {
+    
+    // GIVEN
+    let comment = givenAComment()
+    let commentStore = CDCommentLocalStore(coreDataStack: coreDataStack)
+    let insertResult = whenInserting(comments: [comment], into: commentStore)
+    
+    XCTAssertNotNil(insertResult)
+    
+    // WHEN
+    let count = commentStore.count()
+    
+    // EXPECT
+    XCTAssertEqual(count, 1)
+  }
 }
 
 // MARK: - utils
 extension CDCommentLocalStoreTests {
+  
+  func whenInserting(comments: [Comment], into store: CommentLocalStore) -> CommentLocalStoreInsertCompletion? {
+    
+    var insertResult: CommentLocalStoreInsertCompletion?
+    let insertExpectation = expectation(description: "Waiting for insert to complete")
+    
+    store.insert(comments: comments) { result in
+      insertResult = result
+      insertExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    
+    return insertResult
+  }
+  
   func givenAComment() -> Comment {
     return RestComment(postId: 1, id: 1, name: "id labore ex et quam laborum", email: "Eliseo@gardner.biz", body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium")
   }

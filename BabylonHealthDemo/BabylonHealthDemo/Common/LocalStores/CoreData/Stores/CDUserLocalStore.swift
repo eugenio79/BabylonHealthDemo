@@ -103,6 +103,16 @@ class CDUserLocalStore: UserLocalStore {
     }
   }
   
+  func count() -> Int {
+    do {
+      let request = NSFetchRequest<CDUser>(entityName: "CDUser")
+      return try coreDataStack.managedContext.count(for: request)
+    } catch let error as NSError {
+      print("Count error: \(error), \(error.userInfo)")
+      return 0  // for the purpose of this demo, I think it's enough
+    }
+  }
+  
 }
 
 // MARK: - private methods

@@ -33,5 +33,9 @@ protocol PostLocalStore {
   /// Add comments which belong to a Post
   func addComments(comments: [Comment], to post: Post, completion: @escaping (PostLocalStoreAddCommentsResult) -> Void)
   
+  /// Fetch all posts
   func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void)
+  
+  /// @return the number of posts in store
+  func count() -> Int
 }

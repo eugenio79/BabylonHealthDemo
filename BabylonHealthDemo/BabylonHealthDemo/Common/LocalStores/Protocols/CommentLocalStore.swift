@@ -24,5 +24,10 @@ enum CommentLocalStoreFetchCompletion {
 
 protocol CommentLocalStore {
   func insert(comments: [Comment], completion: @escaping (CommentLocalStoreInsertCompletion) -> Void)
+  
+  /// Fetch all comments
   func fetch(completion: @escaping (CommentLocalStoreFetchCompletion) -> Void)
+  
+  /// @return the number of comments in store
+  func count() -> Int
 }

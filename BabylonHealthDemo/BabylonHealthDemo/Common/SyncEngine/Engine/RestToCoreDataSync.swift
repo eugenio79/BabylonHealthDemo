@@ -39,6 +39,10 @@ class RestToCoreDataSync: SyncEngine {
     }
     completion(.success)
   }
+  
+  func isSynced() -> Bool {
+    return false  // TODO: not implemented yet
+  }
 }
 
 // MARK: - utils

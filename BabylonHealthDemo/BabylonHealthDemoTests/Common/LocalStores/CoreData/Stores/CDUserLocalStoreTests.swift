@@ -66,6 +66,22 @@ class CDUserLocalStoreTests: XCTestCase {
       }
     }
   }
+  
+  func test_givenStoreWithOneUser_whenCount_expectOne() {
+    
+    // GIVEN
+    let user = givenAnUser()
+    let userStore = CDUserLocalStore(coreDataStack: coreDataStack)
+    let insertResult = whenInserting(users: [user], into: userStore)
+    
+    XCTAssertNotNil(insertResult)
+    
+    // WHEN
+    let usersCount = userStore.count()
+    
+    // EXPECT
+    XCTAssertEqual(usersCount, 1)
+  }
 }
 
 // MARK: - given, when, expect (common between tests)

@@ -21,4 +21,7 @@ protocol UserSyncing {
   init?(remoteService: UserRemoteService, localStore: UserLocalStore)
   
   func sync(completion: @escaping (UserSyncResult) -> Void)
+  
+  /// @return true if has already local data
+  func isSynced() -> Bool
 }

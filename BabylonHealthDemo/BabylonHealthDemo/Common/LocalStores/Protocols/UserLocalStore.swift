@@ -34,5 +34,9 @@ protocol UserLocalStore {
   /// Add posts which belong to an author (User)
   func addPosts(posts: [Post], to user: User, completion: @escaping (UserLocalStoreAddPostsResult) -> Void)
   
+  /// Fetch all users
   func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void)
+  
+  /// @return the number of users in store
+  func count() -> Int
 }

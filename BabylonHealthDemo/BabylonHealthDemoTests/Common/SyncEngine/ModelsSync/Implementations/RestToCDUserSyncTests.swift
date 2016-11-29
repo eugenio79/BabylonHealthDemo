@@ -31,6 +31,16 @@ class RestToCDUserSyncTests: XCTestCase {
       XCTAssertFalse(true, "Should be successful")
     }
   }
+  
+  func test_givenEmptyStores_whenAskIfSynced_expectFalse() {
+    
+    // GIVEN
+    let remoteService = StubUserRemoteService()
+    let localStore = StubUserLocalStore()
+    let userSync = RestToCDUserSync(remoteService: remoteService, localStore: localStore)
+    
+    
+  }
 }
 
 // MARK: - utils
