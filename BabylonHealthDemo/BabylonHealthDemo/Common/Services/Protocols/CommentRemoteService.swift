@@ -8,9 +8,13 @@
 
 import Foundation
 
+enum CommentRemoteFetchError: Error {
+  case generic
+}
+
 enum CommentRemoteFetchResult {
   case success(commentList: [Comment])
-  case failure
+  case failure(error: CommentRemoteFetchError)
 }
 
 // Note: yeah, I know they're essentially copy-pasted from PostRemoteService

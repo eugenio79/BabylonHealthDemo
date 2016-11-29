@@ -11,11 +11,14 @@ import Foundation
 
 class StubUserLocalStore: UserLocalStore {
   
+  var users: [User] = []
+  
   func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void) {
-    // TODO: implement it
+    self.users += users
+    completion(.success)
   }
   
   func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
-    // TODO: implement it
+    completion(.success(users: users))
   }
 }

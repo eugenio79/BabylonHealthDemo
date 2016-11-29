@@ -34,7 +34,7 @@ class RestCommentRemoteService: CommentRemoteService {
       
       switch response {
       case .failure:
-        fetchResult = CommentRemoteFetchResult.failure
+        fetchResult = CommentRemoteFetchResult.failure(error: .generic)
       case .success(let data):
         let posts = strongSelf.commentParser.parse(data: data)
         fetchResult = CommentRemoteFetchResult.success(commentList: posts)

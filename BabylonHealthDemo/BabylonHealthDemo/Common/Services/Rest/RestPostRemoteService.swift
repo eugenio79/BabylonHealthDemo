@@ -33,7 +33,7 @@ class RestPostRemoteService: PostRemoteService {
       
       switch response {
       case .failure:
-        fetchResult = PostRemoteFetchResult.failure
+        fetchResult = PostRemoteFetchResult.failure(error: .generic)
       case .success(let data):
         let posts = strongSelf.postParser.parse(data: data)
         fetchResult = PostRemoteFetchResult.success(postList: posts)

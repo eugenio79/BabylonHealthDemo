@@ -8,9 +8,13 @@
 
 import Foundation
 
+enum PostLocalStoreInsertError: Error {
+  case generic
+}
+
 enum PostLocalStoreInsertCompletion {
   case success
-  case failure
+  case failure(error: PostLocalStoreInsertError)
 }
 
 enum PostLocalStoreFetchCompletion {

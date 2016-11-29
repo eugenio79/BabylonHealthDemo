@@ -8,9 +8,13 @@
 
 import Foundation
 
+enum PostRemoteFetchError: Error {
+  case generic
+}
+
 enum PostRemoteFetchResult {
   case success(postList: [Post])
-  case failure
+  case failure(error: PostRemoteFetchError)
 }
 
 /// This will be the link between the post list controller

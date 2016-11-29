@@ -11,11 +11,14 @@ import Foundation
 
 class StubCommentLocalStore: CommentLocalStore {
   
+  var comments: [Comment] = []
+  
   func insert(comments: [Comment], completion: @escaping (CommentLocalStoreInsertCompletion) -> Void) {
-    
+    self.comments += comments
+    completion(.success)
   }
   
   func fetch(completion: @escaping (CommentLocalStoreFetchCompletion) -> Void) {
-    
+    completion(.success(comments: comments))
   }
 }

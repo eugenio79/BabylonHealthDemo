@@ -75,7 +75,7 @@ extension PostListControllerTests {
   func givenFailingRemoteService() -> PostRemoteService {
     
     let remoteService = StubPostRemoteService()
-    remoteService.setFetchResult(.failure)
+    remoteService.setFetchResult(.failure(error: .generic))
     return remoteService
   }
   

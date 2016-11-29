@@ -37,39 +37,81 @@ class CDRestSyncEngine: SyncEngine {
   
   func sync(completion: @escaping (SyncEngineResult) -> Void) {
     
-    //var userListFetched: [User] = []
-//    var postListFetched: [Post] = []
-//    var commentListFetched: [Comment] = []
-    
-//    userRemoteService.fetch { /*[weak self]*/ result in
-//      
-////      guard let strongSelf = self else { return }
-//      
-//      switch result {
-//      case .success(let userList):
-//        // currently do nothing
-//        //        userListFetched = userList
-//        break
-//      case .failure:
-//        completion(.failure)
-//        return
-//      }
-//    }
+    var userListFetched: [User] = []
+    var postListFetched: [Post] = []
+    var commentListFetched: [Comment] = []
     
     fetchRemoteUsers().then { users in
-      //userListFetched = users
-      print("not implemented yet")
+      userListFetched = users
+    }.then {
+      return self.fetchRemotePosts()
+    }.then { posts in
+      postListFetched = posts
+    }.then {
+      return self.fetchRemoteComments()
+    }.then { comments in
+      commentListFetched = comments
+    }.then {
+      return self.storeUsers(users: userListFetched)
+    }.then { _ in
+      return self.storePosts(posts: postListFetched)
+    }.then { _ in
+      return self.storeComments(comments: commentListFetched)
+    }.then { _ in
+      completion(.success)
     }.catch { error in
       print("\(error)")
       completion(.failure)
+      return
     }
-    
-    completion(.success)
   }
+  
 }
 
 // MARK: - private methods
 fileprivate extension CDRestSyncEngine {
+  
+  func storeComments(comments: [Comment]) -> Promise<Any?> {
+    return Promise { fulfill, reject in
+      
+      commentLocalStore.insert(comments: comments) { result in
+        switch result {
+        case .success:
+          fulfill(nil)
+        case .failure(let error):
+          reject(error)
+        }
+      }
+    }
+  }
+  
+  func storePosts(posts: [Post]) -> Promise<Any?> {
+    return Promise { fulfill, reject in
+      
+      postLocalStore.insert(posts: posts) { result in
+        switch result {
+        case .success:
+          fulfill(nil)
+        case .failure(let error):
+          reject(error)
+        }
+      }
+    }
+  }
+  
+  func storeUsers(users: [User]) -> Promise<Any?> {
+    return Promise { fulfill, reject in
+      
+      userLocalStore.insert(users: users) { result in
+        switch result {
+        case .success:
+          fulfill(nil)
+        case .failure(let error):
+          reject(error)
+        }
+      }
+    }
+  }
   
   func fetchRemoteUsers() -> Promise<[User]> {
     return Promise { fulfill, reject in
@@ -84,4 +126,33 @@ fileprivate extension CDRestSyncEngine {
       }
     }
   }
+  
+  func fetchRemotePosts() -> Promise<[Post]> {
+    return Promise { fulfill, reject in
+      
+      postRemoteService.fetch { result in
+        switch result {
+        case .success(let postList):
+          fulfill(postList)
+        case .failure(let error):
+          reject(error)
+        }
+      }
+    }
+  }
+  
+  func fetchRemoteComments() -> Promise<[Comment]> {
+    return Promise { fulfill, reject in
+      
+      commentRemoteService.fetch { result in
+        switch result {
+        case .success(let commentList):
+          fulfill(commentList)
+        case .failure(let error):
+          reject(error)
+        }
+      }
+    }
+  }
+  
 }

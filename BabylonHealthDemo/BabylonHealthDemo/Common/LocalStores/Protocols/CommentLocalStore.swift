@@ -8,9 +8,13 @@
 
 import Foundation
 
+enum CommentLocalStoreInsertError: Error {
+  case generic
+}
+
 enum CommentLocalStoreInsertCompletion {
   case success
-  case failure
+  case failure(error: CommentLocalStoreInsertError)
 }
 
 enum CommentLocalStoreFetchCompletion {

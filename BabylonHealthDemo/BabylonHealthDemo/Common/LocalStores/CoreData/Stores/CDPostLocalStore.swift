@@ -32,7 +32,7 @@ class CDPostLocalStore: PostLocalStore {
         completion(.success)
       } catch let error as NSError {
         print("Could not save \(error), \(error.userInfo)")
-        completion(.failure)
+        completion(.failure(error: .generic))
       }
     }
   }

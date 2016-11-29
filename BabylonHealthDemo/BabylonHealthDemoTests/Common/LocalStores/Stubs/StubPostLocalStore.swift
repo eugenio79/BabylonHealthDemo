@@ -11,11 +11,14 @@ import Foundation
 
 class StubPostLocalStore: PostLocalStore {
   
+  var posts: [Post] = []
+  
   func insert(posts: [Post], completion: @escaping (PostLocalStoreInsertCompletion) -> Void) {
-    
+    self.posts += posts
+    completion(.success)
   }
   
   func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void) {
-    
+    completion(.success(posts: posts))
   }
 }
