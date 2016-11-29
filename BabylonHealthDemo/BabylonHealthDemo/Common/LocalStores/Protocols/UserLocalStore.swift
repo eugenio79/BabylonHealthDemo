@@ -22,7 +22,17 @@ enum UserLocalStoreFetchCompletion {
   case failure
 }
 
+enum UserLocalStoreAddPostsResult {
+  case success
+  case failure
+}
+
 protocol UserLocalStore {
+  
   func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void)
+  
+  /// Add posts which belong to an author (User)
+  func addPosts(posts: [Post], to user: User, completion: @escaping (UserLocalStoreAddPostsResult) -> Void)
+  
   func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void)
 }

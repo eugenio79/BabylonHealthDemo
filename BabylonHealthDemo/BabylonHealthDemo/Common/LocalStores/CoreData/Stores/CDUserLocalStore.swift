@@ -69,6 +69,31 @@ class CDUserLocalStore: UserLocalStore {
     }
   }
   
+  func addPosts(posts: [Post], to user: User, completion: @escaping (UserLocalStoreAddPostsResult) -> Void) {
+    
+    coreDataStack.storeContainer.performBackgroundTask { [unowned self] managedContext in
+      
+      let fetchedUser = self.fetchUser(user: user, context: managedContext)
+      
+      guard let cdUser = fetchedUser else {
+        // user not found
+        completion(.failure)
+        return
+      }
+      
+      let postInserted = self.insertPostList(posts: posts, context: managedContext)
+      cdUser.addToPosts(postInserted)
+      
+      do {
+        try managedContext.save()
+        completion(.success)
+      } catch let error as NSError {
+        print("Could not save \(error), \(error.userInfo)")
+        completion(.failure)
+      }
+    }
+  }
+  
   func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
     
     coreDataStack.storeContainer.performBackgroundTask { managedContext in
@@ -88,6 +113,47 @@ class CDUserLocalStore: UserLocalStore {
 
 // MARK: - private methods
 fileprivate extension CDUserLocalStore {
+  
+  func fetchUser(user: User, context: NSManagedObjectContext) -> CDUser? {
+    
+    var fetchedUser: CDUser? = nil
+    
+    let fetch: NSFetchRequest<CDUser> = CDUser.fetchRequest()
+    fetch.predicate = NSPredicate(format: "%K == %d", #keyPath(CDUser.id), user.id)
+    
+    do {
+      let results = try context.fetch(fetch)
+      if results.count > 0 {
+        fetchedUser = results.first
+      }
+    } catch let error as NSError {
+      print("Fetching error: \(error), \(error.userInfo)")
+    }
+    
+    return fetchedUser
+  }
+  
+  func insertPostList(posts: [Post], context: NSManagedObjectContext) -> NSSet {
+    let postSetToReturn = NSMutableSet()
+    
+    for post in posts {
+      let postInserted = insertPost(post: post, context: context)
+      postSetToReturn.add(postInserted)
+    }
+    
+    return postSetToReturn
+  }
+  
+  func insertPost(post: Post, context: NSManagedObjectContext) -> CDPost {
+    
+    let cdPost = CDPost(context: context)
+    
+    cdPost.id = post.id
+    cdPost.title = post.title
+    cdPost.body = post.body
+    
+    return cdPost
+  }
   
   func insert(user: User, context: NSManagedObjectContext) {
     
