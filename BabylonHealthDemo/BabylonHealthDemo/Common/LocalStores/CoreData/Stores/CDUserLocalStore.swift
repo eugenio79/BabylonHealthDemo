@@ -51,61 +51,55 @@ class CDUserLocalStore: UserLocalStore {
     self.coreDataStack = coreDataStack
   }
   
+  /// In a production code I'd do this operation in background
   func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void) {
     
-    coreDataStack.storeContainer.performBackgroundTask { [unowned self] managedContext in
-      
-      for user in users {
-        self.insert(user: user, context: managedContext)
-      }
-      
-      do {
-        try managedContext.save()
-        completion(.success)
-      } catch let error as NSError {
-        print("Could not save \(error), \(error.userInfo)")
-        completion(.failure(error: .generic))
-      }
+    for user in users {
+      self.insert(user: user, context: self.coreDataStack.managedContext)
+    }
+    
+    do {
+      try self.coreDataStack.managedContext.save()
+      completion(.success)
+    } catch let error as NSError {
+      print("Could not save \(error), \(error.userInfo)")
+      completion(.failure(error: .generic))
     }
   }
   
+  /// In a production code I'd do this operation in background
   func addPosts(posts: [Post], to user: User, completion: @escaping (UserLocalStoreAddPostsResult) -> Void) {
     
-    coreDataStack.storeContainer.performBackgroundTask { [unowned self] managedContext in
-      
-      let fetchedUser = self.fetchUser(user: user, context: managedContext)
-      
-      guard let cdUser = fetchedUser else {
-        // user not found
-        completion(.failure)
-        return
-      }
-      
-      let postInserted = self.insertPostList(posts: posts, context: managedContext)
-      cdUser.addToPosts(postInserted)
-      
-      do {
-        try managedContext.save()
-        completion(.success)
-      } catch let error as NSError {
-        print("Could not save \(error), \(error.userInfo)")
-        completion(.failure)
-      }
+    let fetchedUser = self.fetchUser(user: user, context: self.coreDataStack.managedContext)
+    
+    guard let cdUser = fetchedUser else {
+      // user not found
+      completion(.failure)
+      return
+    }
+    
+    let postInserted = self.insertPostList(posts: posts, context: self.coreDataStack.managedContext)
+    cdUser.addToPosts(postInserted)
+    
+    do {
+      try self.coreDataStack.managedContext.save()
+      completion(.success)
+    } catch let error as NSError {
+      print("Could not save \(error), \(error.userInfo)")
+      completion(.failure)
     }
   }
   
+  /// In a production code I'd do this operation in background
   func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
     
-    coreDataStack.storeContainer.performBackgroundTask { managedContext in
-      
-      do {
-        let request = NSFetchRequest<CDUser>(entityName: "CDUser")
-        let users = try managedContext.fetch(request)
-        completion(.success(users: users))
-      } catch let error as NSError {
-        print("Fetching error: \(error), \(error.userInfo)")
-        completion(.failure)
-      }
+    do {
+      let request = NSFetchRequest<CDUser>(entityName: "CDUser")
+      let users = try self.coreDataStack.managedContext.fetch(request)
+      completion(.success(users: users))
+    } catch let error as NSError {
+      print("Fetching error: \(error), \(error.userInfo)")
+      completion(.failure)
     }
   }
   

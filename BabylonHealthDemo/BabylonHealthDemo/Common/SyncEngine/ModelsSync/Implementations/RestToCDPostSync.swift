@@ -31,54 +31,96 @@ class RestToCDPostSync: PostSyncing {
   
   func sync(completion: @escaping (PostSyncResult) -> Void) {
     
-    guard let usersStoreFetch = fetchUsers() else {
+    guard let users = fetchUsers() else {
+      completion(.failure)
+      return
+    }
+    guard let posts = fetchPosts() else {
       completion(.failure)
       return
     }
     
-    guard let postsRemoteFetch = fetchPosts() else {
-      completion(.failure)
-      return
-    }
+    let userPostLinker = RestUserPostLinker(users: users, posts: posts)!
     
-    // temp
-    completion(.success)
+    let added = addPosts(userPostLinker: userPostLinker)
+    
+    added ? completion(.success) : completion(.failure)
+  }
+  
+  /// @return true if successful
+  func addPosts(userPostLinker: UserPostLinker) -> Bool {
+    
+    let userMap = userPostLinker.userMap()
+    let userPostMap = userPostLinker.userPostMap()
+    
+    for (userId, posts) in userPostMap {
+      
+      dispatchGroup.enter()
+      guard let user = userMap[userId] else { return false }
+      
+      userLocalStore.addPosts(posts: posts, to: user) { [weak self] result in
+        
+        guard let strongSelf = self else { return }
+        
+        // Note: in this example I won't take into consideration failure cases in this block
+        // in a production environment I'd take care of them
+        
+        strongSelf.dispatchGroup.leave()
+      }
+    }
+    return true
   }
 }
 
 // MARK: - Private methods
 fileprivate extension RestToCDPostSync {
   
-  func fetchUsers() -> UserLocalStoreFetchCompletion? {
+  func fetchUsers() -> [User]? {
     
     dispatchGroup.enter()
-    var fetchResult: UserLocalStoreFetchCompletion?
+    var usersToReturn: [User]?
     
     userLocalStore.fetch { [weak self] result in
       
       guard let strongSelf = self else {
         return
       }
-      fetchResult = result
+      switch result {
+      case .success(let fetchedUsers):
+        usersToReturn = fetchedUsers
+      case .failure:
+        usersToReturn = nil
+      }
       
       strongSelf.dispatchGroup.leave()
     }
-    return fetchResult
+    
+    dispatchGroup.wait()
+    
+    return usersToReturn
   }
   
-  func fetchPosts() -> PostRemoteFetchResult? {
+  func fetchPosts() -> [Post]? {
     
     dispatchGroup.enter()
-    var fetchResult: PostRemoteFetchResult?
+    var postsToReturn: [Post]?
     
     remoteService.fetch { [weak self] result in
       
       guard let strongSelf = self else {
         return
       }
-      fetchResult = result
+      switch result {
+      case .success(let fetchedPosts):
+        postsToReturn = fetchedPosts
+      case .failure:
+        postsToReturn = nil
+      }
       strongSelf.dispatchGroup.leave()
     }
-    return fetchResult
+    
+    dispatchGroup.wait()
+    
+    return postsToReturn
   }
 }

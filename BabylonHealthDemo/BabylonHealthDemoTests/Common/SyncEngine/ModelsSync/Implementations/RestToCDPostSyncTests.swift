@@ -11,10 +11,22 @@ import XCTest
 
 class RestToCDPostSyncTests: XCTestCase {
   
+  var coreDataStack: CoreDataStack!
+  
+  override func setUp() {
+    super.setUp()
+    coreDataStack = CoreDataStack(modelName: "BabylonHealthDemo", storeType: .inMemory)
+  }
+  
+  override func tearDown() {
+    coreDataStack = nil
+    super.tearDown()
+  }
+  
   func test_givenAUserInStoreAndTwoPostsRemotely_whenSync_expectTwoPostsInStore() {
     
     let userStore = givenUserStorePrefilledWithOneUser()
-    let postStore = StubPostLocalStore()
+    let postStore = CDPostLocalStore(coreDataStack: coreDataStack)
     let postRemoteService = givenAPostRemoteService()
     
     let postSync = RestToCDPostSync(remoteService: postRemoteService,
@@ -86,7 +98,7 @@ extension RestToCDPostSyncTests {
   
   func givenUserStorePrefilledWithOneUser() -> UserLocalStore {
     
-    let userStore = StubUserLocalStore()
+    let userStore = CDUserLocalStore(coreDataStack: coreDataStack)
     let user = givenAnUser()
     
     let insertExpectation = expectation(description: "Waiting for sync completed")
