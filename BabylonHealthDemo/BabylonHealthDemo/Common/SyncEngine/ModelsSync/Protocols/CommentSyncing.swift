@@ -22,4 +22,7 @@ protocol CommentSyncing {
   init?(remoteService: CommentRemoteService, commentLocalStore: CommentLocalStore, postLocalStore: PostLocalStore)
   
   func sync(completion: @escaping (CommentSyncResult) -> Void)
+  
+  /// @return true if has already local data
+  func isSynced() -> Bool
 }

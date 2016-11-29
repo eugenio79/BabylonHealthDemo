@@ -37,9 +37,9 @@ class RestToCDUserSyncTests: XCTestCase {
     // GIVEN
     let remoteService = StubUserRemoteService()
     let localStore = StubUserLocalStore()
-    let userSync = RestToCDUserSync(remoteService: remoteService, localStore: localStore)
+    let userSync = RestToCDUserSync(remoteService: remoteService, localStore: localStore)!
     
-    
+    XCTAssertFalse(userSync.isSynced())
   }
 }
 

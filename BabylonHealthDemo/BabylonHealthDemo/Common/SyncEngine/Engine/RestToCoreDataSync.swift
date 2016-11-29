@@ -41,7 +41,7 @@ class RestToCoreDataSync: SyncEngine {
   }
   
   func isSynced() -> Bool {
-    return false  // TODO: not implemented yet
+    return userSync.isSynced() && postSync.isSynced() && commentSync.isSynced()
   }
 }
 

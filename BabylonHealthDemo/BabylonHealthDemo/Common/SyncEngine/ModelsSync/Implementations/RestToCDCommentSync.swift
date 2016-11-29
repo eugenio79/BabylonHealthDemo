@@ -72,6 +72,10 @@ class RestToCDCommentSync: CommentSyncing {
     }
     return true
   }
+  
+  func isSynced() -> Bool {
+    return postLocalStore.count() > 0
+  }
 }
 
 // MARK: - Private methods

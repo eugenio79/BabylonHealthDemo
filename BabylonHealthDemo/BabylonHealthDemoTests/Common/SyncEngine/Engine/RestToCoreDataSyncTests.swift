@@ -59,7 +59,7 @@ class RestToCoreDataSyncTests: XCTestCase {
     let commentSync = givenCommentSync()
     let syncEngine = RestToCoreDataSync(userSync: userSync, postSync: postSync, commentSync: commentSync)
     
-    //syncEngine.is
+    XCTAssertFalse(syncEngine.isSynced())
   }
 }
 

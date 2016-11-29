@@ -22,4 +22,7 @@ protocol PostSyncing {
   init?(remoteService: PostRemoteService, postLocalStore: PostLocalStore, userLocalStore: UserLocalStore)
   
   func sync(completion: @escaping (PostSyncResult) -> Void)
+  
+  /// @return true if has already local data
+  func isSynced() -> Bool
 }

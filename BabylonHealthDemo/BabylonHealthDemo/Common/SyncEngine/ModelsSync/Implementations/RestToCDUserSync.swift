@@ -49,6 +49,6 @@ class RestToCDUserSync: UserSyncing {
   }
   
   func isSynced() -> Bool {
-    return false // TODO: not implemented yet - waiting for localStore to implement count
+    return localStore.count() > 0
   }
 }

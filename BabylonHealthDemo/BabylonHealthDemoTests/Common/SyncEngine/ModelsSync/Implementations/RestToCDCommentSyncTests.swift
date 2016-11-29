@@ -46,6 +46,18 @@ class RestToCDCommentSyncTests: XCTestCase {
       XCTAssertFalse(true, "Should be successful")
     }
   }
+  
+  func test_givenEmptyStores_whenAskIfSynced_expectFalse() {
+    
+    // GIVEN
+    let remoteService = StubCommentRemoteService()
+    let commentStore = StubCommentLocalStore()
+    let postStore = StubPostLocalStore()
+    
+    let commentSync = RestToCDCommentSync(remoteService: remoteService, commentLocalStore: commentStore, postLocalStore: postStore)!
+    
+    XCTAssertFalse(commentSync.isSynced())
+  }
 }
 
 // MARK: - given, when, expect
