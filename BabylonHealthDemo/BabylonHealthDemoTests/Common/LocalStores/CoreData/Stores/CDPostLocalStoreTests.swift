@@ -73,8 +73,8 @@ class CDPostLocalStoreTests: XCTestCase {
     
     if let fetchResult = fetchResult {
       switch fetchResult {
-      case .success(let users):
-        XCTAssertEqual(users.count, 1)
+      case .success(let posts):
+        XCTAssertEqual(posts.count, 1)
       case .failure:
         XCTAssertTrue(false, "Fetch should be successful")
         return

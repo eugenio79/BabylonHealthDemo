@@ -18,8 +18,8 @@ class SwiftyJSONCommentParser: CommentParser {
     // I'm currently assuming the JSON is always correct
     // in a production code, I'd validate each field
     return commentsArray.map { comment in
-      RestComment(postId: comment["postId"].int!,
-                  id: comment["id"].int!,
+      RestComment(postId: Int32(comment["postId"].int!),
+                  id: Int32(comment["id"].int!),
                   name: comment["name"].string!,
                   email: comment["email"].string!,
                   body: comment["body"].string!)

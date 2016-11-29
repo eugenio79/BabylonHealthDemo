@@ -8,6 +8,17 @@
 
 import Foundation
 
+enum CommentLocalStoreInsertCompletion {
+  case success
+  case failure
+}
+
+enum CommentLocalStoreFetchCompletion {
+  case success(comments: [Comment])
+  case failure
+}
+
 protocol CommentLocalStore {
-  
+  func insert(comments: [Comment], completion: @escaping (CommentLocalStoreInsertCompletion) -> Void)
+  func fetch(completion: @escaping (CommentLocalStoreFetchCompletion) -> Void)
 }

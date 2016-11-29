@@ -23,8 +23,70 @@ class CDCommentLocalStoreTests: XCTestCase {
     super.tearDown()
   }
   
-  // disabled waiting for SyncEngineTests to be written first
-//  func DISABLED_test_givenEmtpyStore_when() {
-//    let userLocalStore = CDUserLocalStore(coreDataStack: coreDataStack)
-//  }
+  func test_givenEmptyStore_whenInsertingOneComment_expectFetchToGetIt() {
+    
+    // GIVEN
+    let commentToSave = givenAComment()
+    let commentStore = CDCommentLocalStore(coreDataStack: coreDataStack)
+    
+    // WHEN
+    var insertResult: CommentLocalStoreInsertCompletion?
+    let insertExpectation = expectation(description: "Waiting for insert to complete")
+    
+    commentStore.insert(comments: [commentToSave]) { result in
+      insertResult = result
+      insertExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    
+    // EXPECT
+    XCTAssertNotNil(insertResult)
+    
+    if let insertResult = insertResult {
+      switch insertResult {
+      case .success:
+        XCTAssertTrue(true, "Insert should be successful")
+      case .failure:
+        XCTAssertTrue(false, "Insert should be successful")
+        return
+      }
+    }
+    
+    // WHEN
+    var fetchResult: CommentLocalStoreFetchCompletion?
+    let fetchExpectation = expectation(description: "Waiting for fetch to complete")
+    
+    commentStore.fetch { result in
+      fetchResult = result
+      fetchExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    
+    // EXPECT
+    XCTAssertNotNil(fetchResult)
+    
+    if let fetchResult = fetchResult {
+      switch fetchResult {
+      case .success(let comments):
+        XCTAssertEqual(comments.count, 1)
+      case .failure:
+        XCTAssertTrue(false, "Fetch should be successful")
+        return
+      }
+    }
+  }
+  
+}
+
+// MARK: - utils
+extension CDCommentLocalStoreTests {
+  func givenAComment() -> Comment {
+    return RestComment(postId: 1, id: 1, name: "id labore ex et quam laborum", email: "Eliseo@gardner.biz", body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium")
+  }
 }
