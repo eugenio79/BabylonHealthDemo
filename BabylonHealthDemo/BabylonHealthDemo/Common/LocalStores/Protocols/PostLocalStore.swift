@@ -22,7 +22,16 @@ enum PostLocalStoreFetchCompletion {
   case failure
 }
 
+enum PostLocalStoreAddCommentsResult {
+  case success
+  case failure
+}
+
 protocol PostLocalStore {
   func insert(posts: [Post], completion: @escaping (PostLocalStoreInsertCompletion) -> Void)
+  
+  /// Add comments which belong to a Post
+  func addComments(comments: [Comment], to post: Post, completion: @escaping (PostLocalStoreAddCommentsResult) -> Void)
+  
   func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void)
 }

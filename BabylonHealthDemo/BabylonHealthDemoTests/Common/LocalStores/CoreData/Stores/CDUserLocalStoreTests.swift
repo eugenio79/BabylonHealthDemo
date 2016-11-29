@@ -35,7 +35,7 @@ class CDUserLocalStoreTests: XCTestCase {
     expectOneUser(into: fetchResult)
   }
   
-  func test_givenStoreWithOneUser_whenAddingTwoPosts_expectFetchByUserToGetThem() {
+  func test_givenStoreWithOneUser_whenAddingTwoPosts_expectFetchToGetThem() {
     
     // GIVEN
     let user = givenAnUser()
@@ -68,7 +68,53 @@ class CDUserLocalStoreTests: XCTestCase {
   }
 }
 
-// MARK: - utils
+// MARK: - given, when, expect (common between tests)
+extension CDUserLocalStoreTests {
+  
+  func givenAnUser() -> User {
+    
+    let geo = RestGeolocation(lat: "-37.3159", lng: "81.1496")
+    let address = RestAddress(street: "Kulas Light", suite: "Apt. 556", city: "Gwenborough", zipcode: "92998-3874", geo: geo)
+    let company = RestCompany(name: "Romaguera-Crona", catchPhrase: "Multi-layered client-server neural-net", bs: "harness real-time e-markets")
+    return RestUser(id: 1, name: "Leanne Graham", username: "Bret", email: "Sincere@april.biz", address: address, phone: "1-770-736-8031 x56442", website: "hildegard.org", company: company)
+  }
+  
+  func whenInserting(users: [User], into userStore: UserLocalStore) -> UserLocalStoreInsertCompletion? {
+    
+    var insertResult: UserLocalStoreInsertCompletion?
+    let insertExpectation = expectation(description: "Waiting for insert to complete")
+    
+    userStore.insert(users: users) { result in
+      insertResult = result
+      insertExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    
+    return insertResult
+  }
+  
+  func whenFetching(from userStore: UserLocalStore) -> UserLocalStoreFetchCompletion? {
+    
+    var fetchResult: UserLocalStoreFetchCompletion?
+    let fetchExpectation = expectation(description: "Waiting for fetch to complete")
+    
+    userStore.fetch { result in
+      fetchResult = result
+      fetchExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    
+    return fetchResult
+  }
+}
+
+// MARK: - given, when, expect of addingTwoPosts test
 extension CDUserLocalStoreTests {
   
   func whenFetching(from postStore: PostLocalStore) -> PostLocalStoreFetchCompletion? {
@@ -120,14 +166,6 @@ extension CDUserLocalStoreTests {
     return addResult
   }
   
-  func givenAnUser() -> User {
-    
-    let geo = RestGeolocation(lat: "-37.3159", lng: "81.1496")
-    let address = RestAddress(street: "Kulas Light", suite: "Apt. 556", city: "Gwenborough", zipcode: "92998-3874", geo: geo)
-    let company = RestCompany(name: "Romaguera-Crona", catchPhrase: "Multi-layered client-server neural-net", bs: "harness real-time e-markets")
-    return RestUser(id: 1, name: "Leanne Graham", username: "Bret", email: "Sincere@april.biz", address: address, phone: "1-770-736-8031 x56442", website: "hildegard.org", company: company)
-  }
-  
   func givenTwoPosts() -> [Post] {
     return [givenFirstPost(), givenSecondPost()]
   }
@@ -138,23 +176,6 @@ extension CDUserLocalStoreTests {
   
   func givenSecondPost() -> Post {
     return RestPost(id: 2, userId: 1, title: "qui est esse", body: "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla")
-  }
-  
-  func whenInserting(users: [User], into userStore: UserLocalStore) -> UserLocalStoreInsertCompletion? {
-    
-    var insertResult: UserLocalStoreInsertCompletion?
-    let insertExpectation = expectation(description: "Waiting for insert to complete")
-    
-    userStore.insert(users: users) { result in
-      insertResult = result
-      insertExpectation.fulfill()
-    }
-    
-    waitForExpectations(timeout: 0.1) { error in
-      XCTAssertNil(error, "Timeout")
-    }
-    
-    return insertResult
   }
   
   func expectSuccessful(insertResult: UserLocalStoreInsertCompletion?) {
@@ -170,23 +191,6 @@ extension CDUserLocalStoreTests {
         return
       }
     }
-  }
-  
-  func whenFetching(from userStore: UserLocalStore) -> UserLocalStoreFetchCompletion? {
-    
-    var fetchResult: UserLocalStoreFetchCompletion?
-    let fetchExpectation = expectation(description: "Waiting for fetch to complete")
-    
-    userStore.fetch { result in
-      fetchResult = result
-      fetchExpectation.fulfill()
-    }
-    
-    waitForExpectations(timeout: 0.1) { error in
-      XCTAssertNil(error, "Timeout")
-    }
-    
-    return fetchResult
   }
   
   func expectOneUser(into fetchResult: UserLocalStoreFetchCompletion?) {
