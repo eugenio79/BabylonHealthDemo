@@ -10,7 +10,7 @@ import Foundation
 
 // I need the @objc in order to not incure in a linker error (CoreData conformance)
 @objc protocol Post {
-  var id: Int { get set }
+  var id: Int32 { get set }
   var title: String? { get set }
   var body: String? { get set }
 }

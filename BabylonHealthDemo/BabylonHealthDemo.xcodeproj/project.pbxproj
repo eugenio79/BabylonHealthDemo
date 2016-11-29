@@ -89,6 +89,7 @@
 		BADA46281DECE4AC004FE2C2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46271DECE4AC004FE2C2 /* User.swift */; };
 		BADA462A1DECE4DE004FE2C2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46291DECE4DE004FE2C2 /* Post.swift */; };
 		BADA462C1DECE51A004FE2C2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA462B1DECE51A004FE2C2 /* Comment.swift */; };
+		BADA462E1DECFC25004FE2C2 /* CDPostLocalStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA462D1DECFC25004FE2C2 /* CDPostLocalStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		BADA46271DECE4AC004FE2C2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BADA46291DECE4DE004FE2C2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BADA462B1DECE51A004FE2C2 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		BADA462D1DECFC25004FE2C2 /* CDPostLocalStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPostLocalStoreTests.swift; sourceTree = "<group>"; };
 		EC1A3C8B2BE523E31795255C /* Pods_BabylonHealthDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabylonHealthDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -468,6 +470,7 @@
 			children = (
 				BAB48CE31DEC09740039FB96 /* CDCommentLocalStoreTests.swift */,
 				BADA46041DECCE02004FE2C2 /* CDUserLocalStoreTests.swift */,
+				BADA462D1DECFC25004FE2C2 /* CDPostLocalStoreTests.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 			files = (
 				BAB48C7D1DEB7F200039FB96 /* SwiftyJSONCommentParserTests.swift in Sources */,
 				BAB48C7F1DEB7F200039FB96 /* SwiftyJSONUserParserTests.swift in Sources */,
+				BADA462E1DECFC25004FE2C2 /* CDPostLocalStoreTests.swift in Sources */,
 				BAB48CF51DEC12E90039FB96 /* RestUserRemoteServiceTests.swift in Sources */,
 				BAB48CF41DEC12E90039FB96 /* RestPostRemoteServiceTests.swift in Sources */,
 				BAB48CE41DEC09740039FB96 /* CDCommentLocalStoreTests.swift in Sources */,

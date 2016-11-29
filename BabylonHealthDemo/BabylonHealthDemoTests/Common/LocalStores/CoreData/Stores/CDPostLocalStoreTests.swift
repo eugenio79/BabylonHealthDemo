@@ -1,15 +1,15 @@
 //
-//  CDUserLocalStoreTests.swift
+//  CDPostLocalStoreTests.swift
 //  BabylonHealthDemo
 //
-//  Created by Giuseppe Morana on 28/11/2016.
+//  Created by Giuseppe Morana on 29/11/2016.
 //  Copyright © 2016 Giuseppe Morana. All rights reserved.
 //
 
 import XCTest
 @testable import BabylonHealthDemo
 
-class CDUserLocalStoreTests: XCTestCase {
+class CDPostLocalStoreTests: XCTestCase {
   
   var coreDataStack: CoreDataStack!
   
@@ -23,17 +23,17 @@ class CDUserLocalStoreTests: XCTestCase {
     super.tearDown()
   }
   
-  func test_givenEmptyStore_whenInsertingOneUser_expectFetchToGetIt() {
+  func test_givenEmptyStore_whenInsertingOnePost_expectFetchToGetIt() {
     
     // GIVEN
-    let userToSave = givenAnUser()
-    let userStore = CDUserLocalStore(coreDataStack: coreDataStack)
+    let postToSave = givenAPost()
+    let postStore = CDPostLocalStore(coreDataStack: coreDataStack)
     
     // WHEN
-    var insertResult: UserLocalStoreInsertCompletion?
+    var insertResult: PostLocalStoreInsertCompletion?
     let insertExpectation = expectation(description: "Waiting for insert to complete")
     
-    userStore.insert(users: [userToSave]) { result in
+    postStore.insert(posts: [postToSave]) { result in
       insertResult = result
       insertExpectation.fulfill()
     }
@@ -56,10 +56,10 @@ class CDUserLocalStoreTests: XCTestCase {
     }
     
     // WHEN
-    var fetchResult: UserLocalStoreFetchCompletion?
+    var fetchResult: PostLocalStoreFetchCompletion?
     let fetchExpectation = expectation(description: "Waiting for fetch to complete")
     
-    userStore.fetch { result in
+    postStore.fetch { result in
       fetchResult = result
       fetchExpectation.fulfill()
     }
@@ -81,16 +81,12 @@ class CDUserLocalStoreTests: XCTestCase {
       }
     }
   }
+  
 }
 
 // MARK: - utils
-extension CDUserLocalStoreTests {
-  
-  func givenAnUser() -> User {
-    
-    let geo = RestGeolocation(lat: "-37.3159", lng: "81.1496")
-    let address = RestAddress(street: "Kulas Light", suite: "Apt. 556", city: "Gwenborough", zipcode: "92998-3874", geo: geo)
-    let company = RestCompany(name: "Romaguera-Crona", catchPhrase: "Multi-layered client-server neural-net", bs: "harness real-time e-markets")
-    return RestUser(id: 1, name: "Leanne Graham", username: "Bret", email: "Sincere@april.biz", address: address, phone: "1-770-736-8031 x56442", website: "hildegard.org", company: company)
+extension CDPostLocalStoreTests {
+  func givenAPost() -> Post {
+    return RestPost(id: 1, userId: 1, title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit", body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto")
   }
 }
