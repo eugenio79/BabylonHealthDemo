@@ -1,28 +1,15 @@
 PODS:
-  - PromiseKit (4.0.5):
-    - PromiseKit/Foundation (= 4.0.5)
-    - PromiseKit/QuartzCore (= 4.0.5)
-    - PromiseKit/UIKit (= 4.0.5)
-  - PromiseKit/CorePromise (4.0.5)
-  - PromiseKit/Foundation (4.0.5):
-    - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.0.5):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.0.5):
-    - PromiseKit/CorePromise
   - ReachabilitySwift (3)
   - SwiftyJSON (3.1.3)
 
 DEPENDENCIES:
-  - PromiseKit (~> 4.0)
   - ReachabilitySwift (~> 3)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  PromiseKit: 593b5e24ded6cbb1ebc708bc2c3428a8a5632d91
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 9dfa63f9134e05907af6321e2484211cc632afd6
+PODFILE CHECKSUM: 13d5fa2b229258ff611a6512a6c1ac2d9d7745e4
 
 COCOAPODS: 1.1.1

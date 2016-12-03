@@ -19,35 +19,40 @@ class CDCommentLocalStore: CommentLocalStore {
     self.coreDataStack = coreDataStack
   }
 
-  /// In a production code I'd do this operation in background
   func insert(comments: [Comment], completion: @escaping (CommentLocalStoreInsertCompletion) -> Void) {
     
-    for comment in comments {
-      self.insert(comment: comment, context: self.coreDataStack.managedContext)
+    /// In a production code I'd do this operation in background but currently I use viewContext
+    DispatchQueue.main.sync {
+      for comment in comments {
+        self.insert(comment: comment, context: self.coreDataStack.managedContext)
+      }
+      
+      do {
+        try self.coreDataStack.managedContext.save()
+        completion(.success)
+      } catch let error as NSError {
+        print("Could not save \(error), \(error.userInfo)")
+        completion(.failure(error: .generic))
+      }
     }
+  }
+  
+  func fetch(completion: @escaping (CommentLocalStoreFetchCompletion) -> Void) {
     
-    do {
-      try self.coreDataStack.managedContext.save()
-      completion(.success)
-    } catch let error as NSError {
-      print("Could not save \(error), \(error.userInfo)")
-      completion(.failure(error: .generic))
+    /// In a production code I'd do this operation in background but currently I use viewContext
+    DispatchQueue.main.sync {
+      do {
+        let request = NSFetchRequest<CDComment>(entityName: "CDComment")
+        let comments = try self.coreDataStack.managedContext.fetch(request)
+        completion(.success(comments: comments))
+      } catch let error as NSError {
+        print("Fetching error: \(error), \(error.userInfo)")
+        completion(.failure)
+      }
     }
   }
   
   /// In a production code I'd do this operation in background
-  func fetch(completion: @escaping (CommentLocalStoreFetchCompletion) -> Void) {
-    
-    do {
-      let request = NSFetchRequest<CDComment>(entityName: "CDComment")
-      let comments = try self.coreDataStack.managedContext.fetch(request)
-      completion(.success(comments: comments))
-    } catch let error as NSError {
-      print("Fetching error: \(error), \(error.userInfo)")
-      completion(.failure)
-    }
-  }
-  
   func count() -> Int {
     do {
       let request = NSFetchRequest<CDComment>(entityName: "CDComment")

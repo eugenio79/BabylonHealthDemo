@@ -51,58 +51,66 @@ class CDUserLocalStore: UserLocalStore {
     self.coreDataStack = coreDataStack
   }
   
-  /// In a production code I'd do this operation in background
+  
   func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void) {
     
-    for user in users {
-      self.insert(user: user, context: self.coreDataStack.managedContext)
-    }
-    
-    do {
-      try self.coreDataStack.managedContext.save()
-      completion(.success)
-    } catch let error as NSError {
-      print("Could not save \(error), \(error.userInfo)")
-      completion(.failure(error: .generic))
+    /// In a production code I'd do this operation in background
+    DispatchQueue.main.async {
+      for user in users {
+        self.insert(user: user, context: self.coreDataStack.managedContext)
+      }
+      
+      do {
+        try self.coreDataStack.managedContext.save()
+        completion(.success)
+      } catch let error as NSError {
+        print("Could not save \(error), \(error.userInfo)")
+        completion(.failure(error: .generic))
+      }
     }
   }
   
-  /// In a production code I'd do this operation in background
   func addPosts(posts: [Post], to user: User, completion: @escaping (UserLocalStoreAddPostsResult) -> Void) {
     
-    let fetchedUser = self.fetchUser(user: user, context: self.coreDataStack.managedContext)
-    
-    guard let cdUser = fetchedUser else {
-      // user not found
-      completion(.failure)
-      return
+    /// In a production code I'd do this operation in background but currently I use viewContext
+    DispatchQueue.main.sync {
+      let fetchedUser = self.fetchUser(user: user, context: self.coreDataStack.managedContext)
+      
+      guard let cdUser = fetchedUser else {
+        // user not found
+        completion(.failure)
+        return
+      }
+      
+      let postInserted = self.insertPostList(posts: posts, context: self.coreDataStack.managedContext)
+      cdUser.addToPosts(postInserted)
+      
+      do {
+        try self.coreDataStack.managedContext.save()
+        completion(.success)
+      } catch let error as NSError {
+        print("Could not save \(error), \(error.userInfo)")
+        completion(.failure)
+      }
     }
+  }
+  
+  func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
     
-    let postInserted = self.insertPostList(posts: posts, context: self.coreDataStack.managedContext)
-    cdUser.addToPosts(postInserted)
-    
-    do {
-      try self.coreDataStack.managedContext.save()
-      completion(.success)
-    } catch let error as NSError {
-      print("Could not save \(error), \(error.userInfo)")
-      completion(.failure)
+    /// In a production code I'd do this operation in background but currently I use viewContext
+    DispatchQueue.main.sync {
+      do {
+        let request = NSFetchRequest<CDUser>(entityName: "CDUser")
+        let users = try self.coreDataStack.managedContext.fetch(request)
+        completion(.success(users: users))
+      } catch let error as NSError {
+        print("Fetching error: \(error), \(error.userInfo)")
+        completion(.failure)
+      }
     }
   }
   
   /// In a production code I'd do this operation in background
-  func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
-    
-    do {
-      let request = NSFetchRequest<CDUser>(entityName: "CDUser")
-      let users = try self.coreDataStack.managedContext.fetch(request)
-      completion(.success(users: users))
-    } catch let error as NSError {
-      print("Fetching error: \(error), \(error.userInfo)")
-      completion(.failure)
-    }
-  }
-  
   func count() -> Int {
     do {
       let request = NSFetchRequest<CDUser>(entityName: "CDUser")

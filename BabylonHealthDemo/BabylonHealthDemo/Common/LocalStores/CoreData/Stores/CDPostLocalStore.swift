@@ -19,59 +19,66 @@ class CDPostLocalStore: PostLocalStore {
     self.coreDataStack = coreDataStack
   }
 
-  /// In a production code I'd do this operation in background
   func insert(posts: [Post], completion: @escaping (PostLocalStoreInsertCompletion) -> Void) {
     
-    for post in posts {
-      self.insert(post: post, context: self.coreDataStack.managedContext)
-    }
-    
-    do {
-      try self.coreDataStack.managedContext.save()
-      completion(.success)
-    } catch let error as NSError {
-      print("Could not save \(error), \(error.userInfo)")
-      completion(.failure(error: .generic))
+    /// In a production code I'd do this operation in background but currently I use viewContext
+    DispatchQueue.main.sync {
+      for post in posts {
+        self.insert(post: post, context: self.coreDataStack.managedContext)
+      }
+      
+      do {
+        try self.coreDataStack.managedContext.save()
+        completion(.success)
+      } catch let error as NSError {
+        print("Could not save \(error), \(error.userInfo)")
+        completion(.failure(error: .generic))
+      }
     }
   }
   
-  /// In a production code I'd do this operation in background
   func addComments(comments: [Comment], to post: Post,
                    completion: @escaping (PostLocalStoreAddCommentsResult) -> Void) {
     
-    let fetchedPost = self.fetchPost(post: post, context: self.coreDataStack.managedContext)
-    
-    guard let cdPost = fetchedPost else {
-      // post not found
-      completion(.failure)
-      return
+    /// In a production code I'd do this operation in background but currently I use viewContext
+    DispatchQueue.main.sync {
+      let fetchedPost = self.fetchPost(post: post, context: self.coreDataStack.managedContext)
+      
+      guard let cdPost = fetchedPost else {
+        // post not found
+        completion(.failure)
+        return
+      }
+      
+      let commentsInserted = self.insertCommentList(comments: comments, context: self.coreDataStack.managedContext)
+      cdPost.addToCdComments(commentsInserted)
+      
+      do {
+        try self.coreDataStack.managedContext.save()
+        completion(.success)
+      } catch let error as NSError {
+        print("Could not save \(error), \(error.userInfo)")
+        completion(.failure)
+      }
     }
+  }
+  
+  func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void) {
     
-    let commentsInserted = self.insertCommentList(comments: comments, context: self.coreDataStack.managedContext)
-    cdPost.addToCdComments(commentsInserted)
-    
-    do {
-      try self.coreDataStack.managedContext.save()
-      completion(.success)
-    } catch let error as NSError {
-      print("Could not save \(error), \(error.userInfo)")
-      completion(.failure)
+    /// In a production code I'd do this operation in background but currently I use viewContext
+    DispatchQueue.main.sync {
+      do {
+        let request = NSFetchRequest<CDPost>(entityName: "CDPost")
+        let posts = try self.coreDataStack.managedContext.fetch(request)
+        completion(.success(posts: posts))
+      } catch let error as NSError {
+        print("Fetching error: \(error), \(error.userInfo)")
+        completion(.failure)
+      }
     }
   }
   
   /// In a production code I'd do this operation in background
-  func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void) {
-    
-    do {
-      let request = NSFetchRequest<CDPost>(entityName: "CDPost")
-      let posts = try self.coreDataStack.managedContext.fetch(request)
-      completion(.success(posts: posts))
-    } catch let error as NSError {
-      print("Fetching error: \(error), \(error.userInfo)")
-      completion(.failure)
-    }
-  }
-  
   func count() -> Int {
     do {
       let request = NSFetchRequest<CDPost>(entityName: "CDPost")
