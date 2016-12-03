@@ -11,15 +11,25 @@ import Foundation
 
 class StubSyncEngine: SyncEngine {
   
+  var synced = false
+  var syncResult: SyncResult = .failure
+  
   required init(userSync: UserSyncing, postSync: PostSyncing, commentSync: CommentSyncing) {
     // no need to store them
   }
   
+  convenience init() {
+    let userSync = StubUserSync()!
+    let postSync = StubPostSync()!
+    let commentSync = StubCommentSync()!
+    self.init(userSync: userSync, postSync: postSync, commentSync: commentSync)
+  }
+  
   func sync(completion: (SyncResult) -> Void) {
-    
+    completion(syncResult)
   }
   
   func isSynced() -> Bool {
-    return false
+    return synced
   }
 }
