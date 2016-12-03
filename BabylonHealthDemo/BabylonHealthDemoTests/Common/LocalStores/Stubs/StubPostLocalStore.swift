@@ -14,6 +14,7 @@ import Foundation
 class StubPostLocalStore: CDPostLocalStore {
   
   var posts: [Post] = []
+  var commentStore: CommentLocalStore?  // injectable to simulate link between user store and post store
   
   convenience init() {
     self.init(coreDataStack: CoreDataStack(modelName: "BabylonHealthDemo", storeType: .inMemory))
@@ -26,5 +27,22 @@ class StubPostLocalStore: CDPostLocalStore {
   
   override func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void) {
     completion(.success(posts: posts))
+  }
+  
+  override func addComments(comments: [Comment], to post: Post, completion: @escaping (PostLocalStoreAddCommentsResult) -> Void) {
+    
+    guard let commentStore = commentStore else {
+      completion(.failure)
+      return
+    }
+    
+    commentStore.insert(comments: comments) { result in
+      switch result {
+      case .failure:
+        completion(.failure)
+      case .success:
+        completion(.success)
+      }
+    }
   }
 }

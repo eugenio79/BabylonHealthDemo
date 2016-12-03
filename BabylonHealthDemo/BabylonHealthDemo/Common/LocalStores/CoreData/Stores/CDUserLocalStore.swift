@@ -73,7 +73,7 @@ class CDUserLocalStore: UserLocalStore {
   func addPosts(posts: [Post], to user: User, completion: @escaping (UserLocalStoreAddPostsResult) -> Void) {
     
     /// In a production code I'd do this operation in background but currently I use viewContext
-    DispatchQueue.main.sync {
+    DispatchQueue.main.async {
       let fetchedUser = self.fetchUser(user: user, context: self.coreDataStack.managedContext)
       
       guard let cdUser = fetchedUser else {
@@ -98,7 +98,7 @@ class CDUserLocalStore: UserLocalStore {
   func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
     
     /// In a production code I'd do this operation in background but currently I use viewContext
-    DispatchQueue.main.sync {
+    DispatchQueue.main.async {
       do {
         let request = NSFetchRequest<CDUser>(entityName: "CDUser")
         let users = try self.coreDataStack.managedContext.fetch(request)

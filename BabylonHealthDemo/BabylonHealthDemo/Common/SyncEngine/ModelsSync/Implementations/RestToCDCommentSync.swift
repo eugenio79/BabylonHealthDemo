@@ -33,6 +33,8 @@ class RestToCDCommentSync: CommentSyncing {
   
   func sync(completion: @escaping (CommentSyncResult) -> Void) {
     
+    // On tests, this hangs! Maybe I need to move this operations on a separate queue
+    // OR I can simply fake all CoreData calls in tests!!! <<<<
     guard let posts = fetchPosts() else {
       completion(.failure)
       return

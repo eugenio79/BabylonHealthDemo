@@ -22,7 +22,7 @@ class CDPostLocalStore: PostLocalStore {
   func insert(posts: [Post], completion: @escaping (PostLocalStoreInsertCompletion) -> Void) {
     
     /// In a production code I'd do this operation in background but currently I use viewContext
-    DispatchQueue.main.sync {
+    DispatchQueue.main.async {
       for post in posts {
         self.insert(post: post, context: self.coreDataStack.managedContext)
       }
@@ -41,7 +41,7 @@ class CDPostLocalStore: PostLocalStore {
                    completion: @escaping (PostLocalStoreAddCommentsResult) -> Void) {
     
     /// In a production code I'd do this operation in background but currently I use viewContext
-    DispatchQueue.main.sync {
+    DispatchQueue.main.async {
       let fetchedPost = self.fetchPost(post: post, context: self.coreDataStack.managedContext)
       
       guard let cdPost = fetchedPost else {
@@ -66,7 +66,7 @@ class CDPostLocalStore: PostLocalStore {
   func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void) {
     
     /// In a production code I'd do this operation in background but currently I use viewContext
-    DispatchQueue.main.sync {
+    DispatchQueue.main.async {
       do {
         let request = NSFetchRequest<CDPost>(entityName: "CDPost")
         let posts = try self.coreDataStack.managedContext.fetch(request)

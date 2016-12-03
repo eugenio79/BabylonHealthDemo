@@ -2,6 +2,5 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'BabylonHealthDemo' do
-  pod 'ReachabilitySwift', '~> 3'
   pod 'SwiftyJSON'
 end

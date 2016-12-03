@@ -30,8 +30,5 @@ protocol Networking: class {
   /// Here's where the setup of the network should come up
   init()
   
-  /// @return true if network is reachable
-  func isOnline() -> Bool
-  
   func httpGet(request: HttpGetRequest, completion: @escaping (HttpGetResponse) -> Void)
 }

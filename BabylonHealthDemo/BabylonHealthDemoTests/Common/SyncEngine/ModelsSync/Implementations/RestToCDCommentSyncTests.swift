@@ -26,7 +26,9 @@ class RestToCDCommentSyncTests: XCTestCase {
   func test_givenAPostInStoreAndACommentRemotely_whenSync_expectACommentInStore() {
     
     let postStore = givenPostStorePrefilledWithOnePost()
-    let commentStore = CDCommentLocalStore(coreDataStack: coreDataStack)
+    let commentStore = StubCommentLocalStore()
+    postStore.commentStore = commentStore
+    
     let commentRemoteService = givenACommentRemoteService()
     
     let commentSync = RestToCDCommentSync(remoteService: commentRemoteService,
@@ -108,9 +110,9 @@ extension RestToCDCommentSyncTests {
     return syncResult!
   }
   
-  func givenPostStorePrefilledWithOnePost() -> PostLocalStore {
+  func givenPostStorePrefilledWithOnePost() -> StubPostLocalStore {
     
-    let postStore = CDPostLocalStore(coreDataStack: coreDataStack)
+    let postStore = StubPostLocalStore()
     let post = givenAPost()
     
     let insertExpectation = expectation(description: "Waiting for sync completed")

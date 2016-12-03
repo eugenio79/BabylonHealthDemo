@@ -22,7 +22,7 @@ class CDCommentLocalStore: CommentLocalStore {
   func insert(comments: [Comment], completion: @escaping (CommentLocalStoreInsertCompletion) -> Void) {
     
     /// In a production code I'd do this operation in background but currently I use viewContext
-    DispatchQueue.main.sync {
+    DispatchQueue.main.async {
       for comment in comments {
         self.insert(comment: comment, context: self.coreDataStack.managedContext)
       }
@@ -40,7 +40,7 @@ class CDCommentLocalStore: CommentLocalStore {
   func fetch(completion: @escaping (CommentLocalStoreFetchCompletion) -> Void) {
     
     /// In a production code I'd do this operation in background but currently I use viewContext
-    DispatchQueue.main.sync {
+    DispatchQueue.main.async {
       do {
         let request = NSFetchRequest<CDComment>(entityName: "CDComment")
         let comments = try self.coreDataStack.managedContext.fetch(request)

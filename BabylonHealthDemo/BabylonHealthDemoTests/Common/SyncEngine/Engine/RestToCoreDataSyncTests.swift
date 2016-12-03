@@ -12,24 +12,28 @@ import XCTest
 // MARK: - Tests
 class RestToCoreDataSyncTests: XCTestCase {
   
-  var coreDataStack: CoreDataStack!
   var userStore: UserLocalStore!
   var postStore: PostLocalStore!
   var commentStore: CommentLocalStore!
   
   override func setUp() {
     super.setUp()
-    coreDataStack = CoreDataStack(modelName: "BabylonHealthDemo", storeType: .inMemory)
-    userStore = CDUserLocalStore(coreDataStack: coreDataStack)
-    postStore = CDPostLocalStore(coreDataStack: coreDataStack)
-    commentStore = CDCommentLocalStore(coreDataStack: coreDataStack)
+    userStore = StubUserLocalStore()
+    postStore = StubPostLocalStore()
+    commentStore = StubCommentLocalStore()
+    
+    if let stubUserStore = userStore as? StubUserLocalStore {
+      stubUserStore.postStore = postStore
+    }
+    if let stubPostStore = postStore as? StubPostLocalStore {
+      stubPostStore.commentStore = commentStore
+    }
   }
   
   override func tearDown() {
     userStore = nil
     postStore = nil
     commentStore = nil
-    coreDataStack = nil
     super.tearDown()
   }
   
@@ -162,13 +166,11 @@ extension RestToCoreDataSyncTests {
   func givenUserSync() -> UserSyncing {
     
     let userRemoteService = givenAnUserRemoteService()
-    let userStore = CDUserLocalStore(coreDataStack: coreDataStack)
     return RestToCDUserSync(remoteService: userRemoteService, localStore: userStore)!
   }
   
   func givenPostSync() -> PostSyncing {
     
-    let postStore = CDPostLocalStore(coreDataStack: coreDataStack)
     let postRemoteService = givenAPostRemoteService()
     
     return RestToCDPostSync(remoteService: postRemoteService,
@@ -178,7 +180,6 @@ extension RestToCoreDataSyncTests {
   
   func givenCommentSync() -> CommentSyncing {
     
-    let commentStore = CDCommentLocalStore(coreDataStack: coreDataStack)
     let commentRemoteService = givenACommentRemoteService()
     
     return RestToCDCommentSync(remoteService: commentRemoteService,

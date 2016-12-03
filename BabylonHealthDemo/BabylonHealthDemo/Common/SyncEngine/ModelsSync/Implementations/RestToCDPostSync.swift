@@ -31,11 +31,11 @@ class RestToCDPostSync: PostSyncing {
   
   func sync(completion: @escaping (PostSyncResult) -> Void) {
     
-    guard let users = fetchUsers() else {
+    guard let users = fetchUsersFromLocalStore() else {
       completion(.failure)
       return
     }
-    guard let posts = fetchPosts() else {
+    guard let posts = fetchPostsFromRemoteService() else {
       completion(.failure)
       return
     }
@@ -79,7 +79,7 @@ class RestToCDPostSync: PostSyncing {
 // MARK: - Private methods
 fileprivate extension RestToCDPostSync {
   
-  func fetchUsers() -> [User]? {
+  func fetchUsersFromLocalStore() -> [User]? {
     
     dispatchGroup.enter()
     var usersToReturn: [User]?
@@ -104,7 +104,7 @@ fileprivate extension RestToCDPostSync {
     return usersToReturn
   }
   
-  func fetchPosts() -> [Post]? {
+  func fetchPostsFromRemoteService() -> [Post]? {
     
     dispatchGroup.enter()
     var postsToReturn: [Post]?

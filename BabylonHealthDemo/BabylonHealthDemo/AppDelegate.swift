@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
+    if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+      // Skipping initialization when tests are running
+      return true
+    }
+    
     networking = NetworkManager()
     configureStores()
     syncEngine = configureSync()

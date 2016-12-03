@@ -14,6 +14,7 @@ import Foundation
 class StubUserLocalStore: CDUserLocalStore {
   
   var users: [User] = []
+  var postStore: PostLocalStore?  // injectable to simulate link between user store and post store
   
   convenience init() {
     self.init(coreDataStack: CoreDataStack(modelName: "BabylonHealthDemo", storeType: .inMemory))
@@ -27,4 +28,22 @@ class StubUserLocalStore: CDUserLocalStore {
   override func fetch(completion: @escaping (UserLocalStoreFetchCompletion) -> Void) {
     completion(.success(users: users))
   }
+  
+  override func addPosts(posts: [Post], to user: User, completion: @escaping (UserLocalStoreAddPostsResult) -> Void) {
+    
+    guard let postStore = postStore else {
+      completion(.failure)
+      return
+    }
+    
+    postStore.insert(posts: posts) { result in
+      switch result {
+      case .failure:
+        completion(.failure)
+      case .success:
+        completion(.success)
+      }
+    }
+  }
+  
 }
