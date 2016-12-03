@@ -25,6 +25,10 @@
 		BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81781DEAF56000B41A49 /* FakePostListView.swift */; };
 		BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817A1DEAF5B900B41A49 /* PostListController.swift */; };
 		BA3B817D1DEAFA3100B41A49 /* PostListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817C1DEAFA3100B41A49 /* PostListLoadingView.swift */; };
+		BA96A17F1DF3690A0082B66E /* StubSyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96A17E1DF3690A0082B66E /* StubSyncEngine.swift */; };
+		BA96A1821DF36A5C0082B66E /* StubUserSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96A1811DF36A5C0082B66E /* StubUserSync.swift */; };
+		BA96A1841DF36A650082B66E /* StubPostSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96A1831DF36A650082B66E /* StubPostSync.swift */; };
+		BA96A1861DF36A6D0082B66E /* StubCommentSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96A1851DF36A6D0082B66E /* StubCommentSync.swift */; };
 		BAB48C1B1DEB5CF70039FB96 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C1A1DEB5CF70039FB96 /* PostDetailViewController.swift */; };
 		BAB48C211DEB66710039FB96 /* PostDetailHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C201DEB66710039FB96 /* PostDetailHandler.swift */; };
 		BAB48C231DEB66810039FB96 /* PostDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB48C221DEB66810039FB96 /* PostDetailController.swift */; };
@@ -137,6 +141,10 @@
 		BA3B81781DEAF56000B41A49 /* FakePostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakePostListView.swift; sourceTree = "<group>"; };
 		BA3B817A1DEAF5B900B41A49 /* PostListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListController.swift; sourceTree = "<group>"; };
 		BA3B817C1DEAFA3100B41A49 /* PostListLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLoadingView.swift; sourceTree = "<group>"; };
+		BA96A17E1DF3690A0082B66E /* StubSyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubSyncEngine.swift; sourceTree = "<group>"; };
+		BA96A1811DF36A5C0082B66E /* StubUserSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubUserSync.swift; sourceTree = "<group>"; };
+		BA96A1831DF36A650082B66E /* StubPostSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubPostSync.swift; sourceTree = "<group>"; };
+		BA96A1851DF36A6D0082B66E /* StubCommentSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubCommentSync.swift; sourceTree = "<group>"; };
 		BAB48C1A1DEB5CF70039FB96 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		BAB48C201DEB66710039FB96 /* PostDetailHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailHandler.swift; sourceTree = "<group>"; };
 		BAB48C221DEB66810039FB96 /* PostDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailController.swift; sourceTree = "<group>"; };
@@ -281,11 +289,11 @@
 		BA3B816D1DEAF1CB00B41A49 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BAB48CE51DEC103B0039FB96 /* SyncEngine */,
 				BAB48CE01DEC09320039FB96 /* LocalStores */,
 				BA3B816E1DEAF1CB00B41A49 /* Networking */,
 				BAB48C791DEB7F200039FB96 /* Parsers */,
 				BAB48C8D1DEB7FA20039FB96 /* Services */,
+				BAB48CE51DEC103B0039FB96 /* SyncEngine */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -321,6 +329,16 @@
 				BA3B81781DEAF56000B41A49 /* FakePostListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BA96A1801DF36A180082B66E /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				BA96A1811DF36A5C0082B66E /* StubUserSync.swift */,
+				BA96A1831DF36A650082B66E /* StubPostSync.swift */,
+				BA96A1851DF36A6D0082B66E /* StubCommentSync.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 		BAB48C191DEB5CDD0039FB96 /* Views */ = {
@@ -763,6 +781,7 @@
 			isa = PBXGroup;
 			children = (
 				BA3954F41DEE2DD100FC1720 /* RestToCoreDataSyncTests.swift */,
+				BA96A17E1DF3690A0082B66E /* StubSyncEngine.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -770,6 +789,7 @@
 		BADA46701DEDD172004FE2C2 /* ModelsSync */ = {
 			isa = PBXGroup;
 			children = (
+				BA96A1801DF36A180082B66E /* Stubs */,
 				BADA46711DEDD18A004FE2C2 /* Implementations */,
 			);
 			path = ModelsSync;
@@ -1030,6 +1050,8 @@
 				BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */,
 				BAB48CFE1DEC14700039FB96 /* StubPostLocalStore.swift in Sources */,
 				BAB48CFC1DEC14620039FB96 /* StubUserLocalStore.swift in Sources */,
+				BA96A1821DF36A5C0082B66E /* StubUserSync.swift in Sources */,
+				BA96A1861DF36A6D0082B66E /* StubCommentSync.swift in Sources */,
 				BAB48CF71DEC132D0039FB96 /* StubCommentRemoteService.swift in Sources */,
 				BAB48D001DEC14820039FB96 /* StubCommentLocalStore.swift in Sources */,
 				BAB48CF31DEC12E90039FB96 /* RestCommentRemoteServiceTests.swift in Sources */,
@@ -1039,9 +1061,11 @@
 				BA3B81761DEAF49300B41A49 /* PostListControllerTests.swift in Sources */,
 				BAB48CF21DEC12E90039FB96 /* StubPostRemoteService.swift in Sources */,
 				BAFE072F1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift in Sources */,
+				BA96A1841DF36A650082B66E /* StubPostSync.swift in Sources */,
 				BAB48C7E1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift in Sources */,
 				BADA46401DEDC21D004FE2C2 /* RestPostCommentLinkerTests.swift in Sources */,
 				BA3954ED1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift in Sources */,
+				BA96A17F1DF3690A0082B66E /* StubSyncEngine.swift in Sources */,
 				BAB48C5E1DEB77C00039FB96 /* PostDetailControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
