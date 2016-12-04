@@ -11,9 +11,6 @@
 		BA3954E91DEE19F600FC1720 /* CommentSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3954E81DEE19F600FC1720 /* CommentSyncing.swift */; };
 		BA3954EB1DEE1A5300FC1720 /* RestToCDCommentSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3954EA1DEE1A5300FC1720 /* RestToCDCommentSync.swift */; };
 		BA3954ED1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3954EC1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift */; };
-		BA3954EF1DEE2D2400FC1720 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3954EE1DEE2D2400FC1720 /* SyncEngine.swift */; };
-		BA3954F11DEE2D7200FC1720 /* RestToCoreDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3954F01DEE2D7200FC1720 /* RestToCoreDataSync.swift */; };
-		BA3954F51DEE2DD100FC1720 /* RestToCoreDataSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3954F41DEE2DD100FC1720 /* RestToCoreDataSyncTests.swift */; };
 		BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA3B815D1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld */; };
 		BA3B81611DEADE2500B41A49 /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81601DEADE2500B41A49 /* PostListCell.swift */; };
 		BA3B81661DEAEB5F00B41A49 /* PostListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */; };
@@ -25,6 +22,14 @@
 		BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B81781DEAF56000B41A49 /* FakePostListView.swift */; };
 		BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817A1DEAF5B900B41A49 /* PostListController.swift */; };
 		BA3B817D1DEAFA3100B41A49 /* PostListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B817C1DEAFA3100B41A49 /* PostListLoadingView.swift */; };
+		BA50741F1DF4752D0057F70E /* RestToCoreDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50741C1DF4752D0057F70E /* RestToCoreDataSync.swift */; };
+		BA5074201DF4752D0057F70E /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50741E1DF4752D0057F70E /* SyncEngine.swift */; };
+		BA5074221DF475460057F70E /* SyncEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5074211DF475460057F70E /* SyncEngineFactory.swift */; };
+		BA5074241DF475840057F70E /* RestToCoreDataSyncEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5074231DF475840057F70E /* RestToCoreDataSyncEngineFactory.swift */; };
+		BA8D33331DF47241002BBD4B /* LocalStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33321DF47241002BBD4B /* LocalStores.swift */; };
+		BA8D33351DF472AF002BBD4B /* LocalStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33341DF472AF002BBD4B /* LocalStoreFactory.swift */; };
+		BA8D33371DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33361DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift */; };
+		BA8D33391DF4731A002BBD4B /* CoreDataLocalStoreFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33381DF4731A002BBD4B /* CoreDataLocalStoreFactoryTests.swift */; };
 		BA96A17F1DF3690A0082B66E /* StubSyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96A17E1DF3690A0082B66E /* StubSyncEngine.swift */; };
 		BA96A1821DF36A5C0082B66E /* StubUserSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96A1811DF36A5C0082B66E /* StubUserSync.swift */; };
 		BA96A1841DF36A650082B66E /* StubPostSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA96A1831DF36A650082B66E /* StubPostSync.swift */; };
@@ -106,7 +111,6 @@
 		BADA46651DEDCF73004FE2C2 /* UserSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46641DEDCF73004FE2C2 /* UserSyncing.swift */; };
 		BADA46671DEDCF89004FE2C2 /* RestToCDUserSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46661DEDCF89004FE2C2 /* RestToCDUserSync.swift */; };
 		BADA46731DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */; };
-		BAE2A8A11DF425D700CD30A8 /* LocalStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A01DF425D700CD30A8 /* LocalStores.swift */; };
 		BAE2A8A41DF4267600CD30A8 /* PostDetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A31DF4267600CD30A8 /* PostDetailViewModelFactory.swift */; };
 		BAE2A8A71DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A61DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift */; };
 		BAE2A8A91DF4276F00CD30A8 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A81DF4276F00CD30A8 /* PostDetailViewModel.swift */; };
@@ -114,6 +118,7 @@
 		BAE2A8AE1DF430FF00CD30A8 /* RestUserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8AD1DF430FF00CD30A8 /* RestUserFactory.swift */; };
 		BAE2A8B01DF4327600CD30A8 /* RestPostFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8AF1DF4327600CD30A8 /* RestPostFactory.swift */; };
 		BAE2A8B21DF4337B00CD30A8 /* RestCommentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8B11DF4337B00CD30A8 /* RestCommentFactory.swift */; };
+		BAEA3E3B1DF469B70087150F /* StubPostDetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEA3E3A1DF469B70087150F /* StubPostDetailViewModelFactory.swift */; };
 		BAFE072B1DEDDCB1008509C0 /* PostSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE072A1DEDDCB1008509C0 /* PostSyncing.swift */; };
 		BAFE072D1DEDDD7C008509C0 /* RestToCDPostSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE072C1DEDDD7C008509C0 /* RestToCDPostSync.swift */; };
 		BAFE072F1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE072E1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift */; };
@@ -135,9 +140,6 @@
 		BA3954E81DEE19F600FC1720 /* CommentSyncing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSyncing.swift; sourceTree = "<group>"; };
 		BA3954EA1DEE1A5300FC1720 /* RestToCDCommentSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDCommentSync.swift; sourceTree = "<group>"; };
 		BA3954EC1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDCommentSyncTests.swift; sourceTree = "<group>"; };
-		BA3954EE1DEE2D2400FC1720 /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
-		BA3954F01DEE2D7200FC1720 /* RestToCoreDataSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCoreDataSync.swift; sourceTree = "<group>"; };
-		BA3954F41DEE2DD100FC1720 /* RestToCoreDataSyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCoreDataSyncTests.swift; sourceTree = "<group>"; };
 		BA3B815E1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonHealthDemo.xcdatamodel; sourceTree = "<group>"; };
 		BA3B81601DEADE2500B41A49 /* PostListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
 		BA3B81651DEAEB5F00B41A49 /* PostListLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLayout.swift; sourceTree = "<group>"; };
@@ -149,6 +151,14 @@
 		BA3B81781DEAF56000B41A49 /* FakePostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakePostListView.swift; sourceTree = "<group>"; };
 		BA3B817A1DEAF5B900B41A49 /* PostListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListController.swift; sourceTree = "<group>"; };
 		BA3B817C1DEAFA3100B41A49 /* PostListLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLoadingView.swift; sourceTree = "<group>"; };
+		BA50741C1DF4752D0057F70E /* RestToCoreDataSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCoreDataSync.swift; sourceTree = "<group>"; };
+		BA50741E1DF4752D0057F70E /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
+		BA5074211DF475460057F70E /* SyncEngineFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngineFactory.swift; sourceTree = "<group>"; };
+		BA5074231DF475840057F70E /* RestToCoreDataSyncEngineFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCoreDataSyncEngineFactory.swift; sourceTree = "<group>"; };
+		BA8D33321DF47241002BBD4B /* LocalStores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStores.swift; sourceTree = "<group>"; };
+		BA8D33341DF472AF002BBD4B /* LocalStoreFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStoreFactory.swift; sourceTree = "<group>"; };
+		BA8D33361DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataLocalStoreFactory.swift; sourceTree = "<group>"; };
+		BA8D33381DF4731A002BBD4B /* CoreDataLocalStoreFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataLocalStoreFactoryTests.swift; sourceTree = "<group>"; };
 		BA96A17E1DF3690A0082B66E /* StubSyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubSyncEngine.swift; sourceTree = "<group>"; };
 		BA96A1811DF36A5C0082B66E /* StubUserSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubUserSync.swift; sourceTree = "<group>"; };
 		BA96A1831DF36A650082B66E /* StubPostSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubPostSync.swift; sourceTree = "<group>"; };
@@ -234,7 +244,6 @@
 		BADA46641DEDCF73004FE2C2 /* UserSyncing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSyncing.swift; sourceTree = "<group>"; };
 		BADA46661DEDCF89004FE2C2 /* RestToCDUserSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDUserSync.swift; sourceTree = "<group>"; };
 		BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDUserSyncTests.swift; sourceTree = "<group>"; };
-		BAE2A8A01DF425D700CD30A8 /* LocalStores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStores.swift; sourceTree = "<group>"; };
 		BAE2A8A31DF4267600CD30A8 /* PostDetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewModelFactory.swift; sourceTree = "<group>"; };
 		BAE2A8A61DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcretePostDetailViewModelFactoryTests.swift; sourceTree = "<group>"; };
 		BAE2A8A81DF4276F00CD30A8 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
@@ -242,6 +251,7 @@
 		BAE2A8AD1DF430FF00CD30A8 /* RestUserFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestUserFactory.swift; sourceTree = "<group>"; };
 		BAE2A8AF1DF4327600CD30A8 /* RestPostFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostFactory.swift; sourceTree = "<group>"; };
 		BAE2A8B11DF4337B00CD30A8 /* RestCommentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCommentFactory.swift; sourceTree = "<group>"; };
+		BAEA3E3A1DF469B70087150F /* StubPostDetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubPostDetailViewModelFactory.swift; sourceTree = "<group>"; };
 		BAFE072A1DEDDCB1008509C0 /* PostSyncing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSyncing.swift; sourceTree = "<group>"; };
 		BAFE072C1DEDDD7C008509C0 /* RestToCDPostSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDPostSync.swift; sourceTree = "<group>"; };
 		BAFE072E1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDPostSyncTests.swift; sourceTree = "<group>"; };
@@ -347,6 +357,24 @@
 				BA3B81781DEAF56000B41A49 /* FakePostListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BA50741B1DF4752D0057F70E /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				BA50741C1DF4752D0057F70E /* RestToCoreDataSync.swift */,
+				BA5074231DF475840057F70E /* RestToCoreDataSyncEngineFactory.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		BA50741D1DF4752D0057F70E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BA50741E1DF4752D0057F70E /* SyncEngine.swift */,
+				BA5074211DF475460057F70E /* SyncEngineFactory.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		BA96A1801DF36A180082B66E /* Stubs */ = {
@@ -472,6 +500,7 @@
 				BAB48CB51DEBFA420039FB96 /* CoreDataStack.swift */,
 				BAB48CB61DEBFA420039FB96 /* Models */,
 				BAB48CD91DEBFC1C0039FB96 /* Stores */,
+				BA8D33361DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -501,7 +530,8 @@
 				BAB48CD31DEBFB7C0039FB96 /* UserLocalStore.swift */,
 				BAB48CD51DEBFB950039FB96 /* PostLocalStore.swift */,
 				BAB48CD71DEBFBB10039FB96 /* CommentLocalStore.swift */,
-				BAE2A8A01DF425D700CD30A8 /* LocalStores.swift */,
+				BA8D33321DF47241002BBD4B /* LocalStores.swift */,
+				BA8D33341DF472AF002BBD4B /* LocalStoreFactory.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -529,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB48CE21DEC09320039FB96 /* Stores */,
+				BA8D33381DF4731A002BBD4B /* CoreDataLocalStoreFactoryTests.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -791,8 +822,8 @@
 		BADA46681DEDD13E004FE2C2 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				BA3954EE1DEE2D2400FC1720 /* SyncEngine.swift */,
-				BA3954F01DEE2D7200FC1720 /* RestToCoreDataSync.swift */,
+				BA50741B1DF4752D0057F70E /* Implementation */,
+				BA50741D1DF4752D0057F70E /* Protocols */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -800,7 +831,6 @@
 		BADA466D1DEDD153004FE2C2 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				BA3954F41DEE2DD100FC1720 /* RestToCoreDataSyncTests.swift */,
 				BA96A17E1DF3690A0082B66E /* StubSyncEngine.swift */,
 			);
 			path = Engine;
@@ -839,6 +869,7 @@
 			isa = PBXGroup;
 			children = (
 				BAE2A8A61DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift */,
+				BAEA3E3A1DF469B70087150F /* StubPostDetailViewModelFactory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1012,6 +1043,7 @@
 			files = (
 				BA3B81691DEAEBB500B41A49 /* PostListHandler.swift in Sources */,
 				BAB48CC61DEBFA420039FB96 /* CDComment+CoreDataClass.swift in Sources */,
+				BA8D33371DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift in Sources */,
 				BAB48CCE1DEBFA420039FB96 /* CDUser+CoreDataClass.swift in Sources */,
 				BAB48CCB1DEBFA420039FB96 /* CDGeolocation+CoreDataProperties.swift in Sources */,
 				BAB48C1B1DEB5CF70039FB96 /* PostDetailViewController.swift in Sources */,
@@ -1024,9 +1056,9 @@
 				BAB48CC51DEBFA420039FB96 /* CDAddress+CoreDataProperties.swift in Sources */,
 				BADA46671DEDCF89004FE2C2 /* RestToCDUserSync.swift in Sources */,
 				BAB48CDD1DEBFC4D0039FB96 /* CDPostLocalStore.swift in Sources */,
-				BA3954EF1DEE2D2400FC1720 /* SyncEngine.swift in Sources */,
 				BADA460F1DECE30F004FE2C2 /* PostRemoteService.swift in Sources */,
 				BAB48CDF1DEBFC680039FB96 /* CDCommentLocalStore.swift in Sources */,
+				BA5074201DF4752D0057F70E /* SyncEngine.swift in Sources */,
 				BAB48CC91DEBFA420039FB96 /* CDCompany+CoreDataProperties.swift in Sources */,
 				BADA462C1DECE51A004FE2C2 /* Comment.swift in Sources */,
 				BADA46221DECE409004FE2C2 /* Geolocation.swift in Sources */,
@@ -1039,7 +1071,6 @@
 				BA3B81701DEAF1E500B41A49 /* NetworkManager.swift in Sources */,
 				BADA461E1DECE3C7004FE2C2 /* RestGeolocation.swift in Sources */,
 				BAFE072D1DEDDD7C008509C0 /* RestToCDPostSync.swift in Sources */,
-				BAE2A8A11DF425D700CD30A8 /* LocalStores.swift in Sources */,
 				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
 				BAE2A8AB1DF427C700CD30A8 /* ConcretePostDetailViewModelFactory.swift in Sources */,
@@ -1055,6 +1086,7 @@
 				BAE2A8A91DF4276F00CD30A8 /* PostDetailViewModel.swift in Sources */,
 				BADA463C1DEDC1A0004FE2C2 /* PostCommentLinker.swift in Sources */,
 				BAB48C231DEB66810039FB96 /* PostDetailController.swift in Sources */,
+				BA5074221DF475460057F70E /* SyncEngineFactory.swift in Sources */,
 				BADA46651DEDCF73004FE2C2 /* UserSyncing.swift in Sources */,
 				BADA46101DECE30F004FE2C2 /* UserRemoteService.swift in Sources */,
 				BADA461B1DECE3C7004FE2C2 /* RestAddress.swift in Sources */,
@@ -1062,26 +1094,29 @@
 				BADA461D1DECE3C7004FE2C2 /* RestCompany.swift in Sources */,
 				BAB48C781DEB7EB60039FB96 /* UserParser.swift in Sources */,
 				BAB48C251DEB669C0039FB96 /* PostDetailLayout.swift in Sources */,
+				BA5074241DF475840057F70E /* RestToCoreDataSyncEngineFactory.swift in Sources */,
 				BADA463E1DEDC202004FE2C2 /* RestPostCommentLinker.swift in Sources */,
 				BA3B816C1DEAEED700B41A49 /* Networking.swift in Sources */,
 				BADA460E1DECE30F004FE2C2 /* CommentRemoteService.swift in Sources */,
 				BAB48CC81DEBFA420039FB96 /* CDCompany+CoreDataClass.swift in Sources */,
 				BAB48CC31DEBFA420039FB96 /* CoreDataStack.swift in Sources */,
 				BAB48CCC1DEBFA420039FB96 /* CDPost+CoreDataClass.swift in Sources */,
+				BA8D33331DF47241002BBD4B /* LocalStores.swift in Sources */,
 				BADA46121DECE30F004FE2C2 /* RestPostRemoteService.swift in Sources */,
 				BADA461F1DECE3C7004FE2C2 /* RestPost.swift in Sources */,
 				BAB48CD81DEBFBB10039FB96 /* CommentLocalStore.swift in Sources */,
 				BA3954E91DEE19F600FC1720 /* CommentSyncing.swift in Sources */,
 				BAB48C751DEB7EB60039FB96 /* SwiftyJSONCommentParser.swift in Sources */,
 				BAB48C741DEB7EB60039FB96 /* PostParser.swift in Sources */,
+				BA8D33351DF472AF002BBD4B /* LocalStoreFactory.swift in Sources */,
 				BADA462A1DECE4DE004FE2C2 /* Post.swift in Sources */,
-				BA3954F11DEE2D7200FC1720 /* RestToCoreDataSync.swift in Sources */,
 				BAB48CCA1DEBFA420039FB96 /* CDGeolocation+CoreDataClass.swift in Sources */,
 				BAB48C211DEB66710039FB96 /* PostDetailHandler.swift in Sources */,
 				BADA46111DECE30F004FE2C2 /* RestCommentRemoteService.swift in Sources */,
 				BAB48C771DEB7EB60039FB96 /* SwiftyJSONUserParser.swift in Sources */,
 				BAB48CC41DEBFA420039FB96 /* CDAddress+CoreDataClass.swift in Sources */,
 				BADA46281DECE4AC004FE2C2 /* User.swift in Sources */,
+				BA50741F1DF4752D0057F70E /* RestToCoreDataSync.swift in Sources */,
 				BADA463A1DEDAC4C004FE2C2 /* RestUserPostLinker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1095,11 +1130,12 @@
 				BADA462E1DECFC25004FE2C2 /* CDPostLocalStoreTests.swift in Sources */,
 				BAB48CF51DEC12E90039FB96 /* RestUserRemoteServiceTests.swift in Sources */,
 				BAB48CF41DEC12E90039FB96 /* RestPostRemoteServiceTests.swift in Sources */,
+				BA8D33391DF4731A002BBD4B /* CoreDataLocalStoreFactoryTests.swift in Sources */,
 				BAB48CE41DEC09740039FB96 /* CDCommentLocalStoreTests.swift in Sources */,
 				BAB48CF91DEC133A0039FB96 /* StubUserRemoteService.swift in Sources */,
 				BADA46051DECCE02004FE2C2 /* CDUserLocalStoreTests.swift in Sources */,
-				BA3954F51DEE2DD100FC1720 /* RestToCoreDataSyncTests.swift in Sources */,
 				BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */,
+				BAEA3E3B1DF469B70087150F /* StubPostDetailViewModelFactory.swift in Sources */,
 				BAB48CFE1DEC14700039FB96 /* StubPostLocalStore.swift in Sources */,
 				BAB48CFC1DEC14620039FB96 /* StubUserLocalStore.swift in Sources */,
 				BAE2A8B01DF4327600CD30A8 /* RestPostFactory.swift in Sources */,

@@ -13,17 +13,16 @@ class PostListControllerTests: XCTestCase {
   
   var didHideLoadingExpectation: XCTestExpectation!
   
+  // First sync fails -> Blank page
   func test_givenFailingSync_whenDidLoad_expectBlankPage() {
     
     // GIVEN
     let syncEngine = givenFailingSync()
     let view = givenPostListView()
-    
-    let userStore = StubUserLocalStore()
     let postStore = StubPostLocalStore()
-    let commentStore = StubCommentLocalStore()
+    let postDetailViewModelFactory = StubPostDetailViewModelFactory()
     
-    let controller = PostListController(view: view, syncEngine: syncEngine, userStore: userStore, postStore: postStore, commentStore: commentStore)
+    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory)
     view.controller = controller
     
     // WHEN
@@ -33,17 +32,16 @@ class PostListControllerTests: XCTestCase {
     expectBlankPage(view: view)
   }
   
+  // First sync success -> Display posts
   func test_givenFailingSyncAndDataOffline_whenDidLoad_expectViewToDisplayPosts() {
     
     // GIVEN
     let syncEngine = givenFailingSyncButAlreadySynced()
     let view = givenPostListView()
-    
-    let userStore = StubUserLocalStore()
     let postStore = givenPostStorePrefilledWithTwoPost()
-    let commentStore = StubCommentLocalStore()
+    let postDetailViewModelFactory = StubPostDetailViewModelFactory()
     
-    let controller = PostListController(view: view, syncEngine: syncEngine, userStore: userStore, postStore: postStore, commentStore: commentStore)
+    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory)
     view.controller = controller
     
     // WHEN
@@ -53,18 +51,16 @@ class PostListControllerTests: XCTestCase {
     expectViewIsDisplayingPosts(view: view)
   }
   
-  
+  // Second sync fails -> Display old synced posts
   func test_givenSuccessfulSync_whenDidLoad_expectViewToDisplayPosts() {
     
     // GIVEN
     let syncEngine = givenSuccessfulSync()
     let view = givenPostListView()
-    
-    let userStore = StubUserLocalStore()
     let postStore = givenPostStorePrefilledWithTwoPost()
-    let commentStore = StubCommentLocalStore()
+    let postDetailViewModelFactory = StubPostDetailViewModelFactory()
     
-    let controller = PostListController(view: view, syncEngine: syncEngine, userStore: userStore, postStore: postStore, commentStore: commentStore)
+    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory)
     view.controller = controller
     
     // WHEN
@@ -72,6 +68,28 @@ class PostListControllerTests: XCTestCase {
     
     // EXPECT
     expectViewIsDisplayingPosts(view: view)
+  }
+  
+  func test_givenSomePosts_whenAskingToShowDetail_expectPostDetailPageCreated() {
+    
+    // GIVEN
+    let syncEngine = givenSuccessfulSync()
+    let view = givenPostListView()
+    let postStore = givenPostStorePrefilledWithTwoPost()
+    let postDetailViewModelFactory = StubPostDetailViewModelFactory()
+    
+    let postDetailViewModel = givenAPostDetailViewModel()
+    postDetailViewModelFactory.viewModelToReturn = postDetailViewModel
+    
+    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory)
+    view.controller = controller
+    
+    whenDidLoad(controller: controller)
+
+    // WHEN
+    controller.showDetail(of: givenFirstPost())
+    
+    // EXPECT
   }
 }
 
@@ -110,6 +128,14 @@ extension PostListControllerTests {
 
 // MARK: - given
 extension PostListControllerTests {
+  
+  func givenAPostDetailViewModel() -> PostDetailViewModel {
+    
+    let author = "Leanne Graham"
+    let description = "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    let commentsCount = 2
+    return PostDetailViewModel(author: author, description: description, commentsCount: commentsCount)
+  }
   
   func givenPostListView() -> FakePostListView {
     let view = FakePostListView()

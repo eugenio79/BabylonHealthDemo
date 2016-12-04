@@ -14,20 +14,19 @@ class PostListController: PostListHandler {
   
   fileprivate var posts: [Post] = []  // in memory model
   
-  fileprivate var syncEngine: SyncEngine
-  fileprivate var userStore: UserLocalStore
-  fileprivate var postStore: PostLocalStore
-  fileprivate var commentStore: CommentLocalStore
+  fileprivate let syncEngine: SyncEngine
+  fileprivate let postStore: PostLocalStore
+  fileprivate let postDetailViewModelFactory: PostDetailViewModelFactory
   
   fileprivate let queue = DispatchQueue(label: "PostListController")
   fileprivate let dispatchGroup = DispatchGroup() /// Used to execute sequentially async tasks
   
-  required init(view: PostListLayout, syncEngine: SyncEngine, userStore: UserLocalStore, postStore: PostLocalStore, commentStore: CommentLocalStore) {
+  required init(view: PostListLayout, syncEngine: SyncEngine, postStore: PostLocalStore, postDetailViewModelFactory: PostDetailViewModelFactory) {
+    
     self.view = view
     self.syncEngine = syncEngine
-    self.userStore = userStore
     self.postStore = postStore
-    self.commentStore = commentStore
+    self.postDetailViewModelFactory = postDetailViewModelFactory
   }
 
   func viewDidLoad() {
@@ -67,6 +66,9 @@ class PostListController: PostListHandler {
     return posts[index]
   }
   
+  func showDetail(of post: Post) {
+    
+  }
 }
 
 // MARK: - Private utils

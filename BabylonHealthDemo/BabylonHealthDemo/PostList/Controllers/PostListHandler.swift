@@ -13,7 +13,7 @@ protocol PostListHandler: class {
   
   var view: PostListLayout { get set }
   
-  init(view: PostListLayout, syncEngine: SyncEngine, userStore: UserLocalStore, postStore: PostLocalStore, commentStore: CommentLocalStore)
+  init(view: PostListLayout, syncEngine: SyncEngine, postStore: PostLocalStore, postDetailViewModelFactory: PostDetailViewModelFactory)
   
   /// Usually invoked by the view to let the controller know when the view is ready
   /// This should be called on UI thread
@@ -22,4 +22,6 @@ protocol PostListHandler: class {
   func postCount() -> Int
   
   func post(at index: Int) -> Post?
+  
+  func showDetail(of post: Post)
 }

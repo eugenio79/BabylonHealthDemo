@@ -15,11 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   // I'd take a ref, in order to don't let deallocate it
-  var networking: Networking!
-  var coreDataStack: CoreDataStack!
-  var userLocalStore: UserLocalStore!
-  var postLocalStore: PostLocalStore!
-  var commentLocalStore: CommentLocalStore!
+  var localStores: LocalStores!
   var syncEngine: SyncEngine!
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -29,39 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return true
     }
     
-    networking = NetworkManager()
-    configureStores()
-    syncEngine = configureSync()
-    configurePostListView()
+    startup()
     
     return true
   }
   
-  func configureStores() {
+  func startup() {
     
-    coreDataStack = CoreDataStack(modelName: "BabylonHealthDemo", storeType: .sqlite)
-    
-    userLocalStore = CDUserLocalStore(coreDataStack: coreDataStack)
-    postLocalStore = CDPostLocalStore(coreDataStack: coreDataStack)
-    commentLocalStore = CDCommentLocalStore(coreDataStack: coreDataStack)
-  }
-  
-  func configureSync() -> SyncEngine {
-    
-    let userParser = SwiftyJSONUserParser()
-    let userRemoteService = RestUserRemoteService(networking: networking, userParser: userParser)
-    
-    let postParser = SwiftyJSONPostParser()
-    let postRemoteService = RestPostRemoteService(networking: networking, postParser: postParser)
-    
-    let commentParser = SwiftyJSONCommentParser()
-    let commentRemoteService = RestCommentRemoteService(networking: networking, commentParser: commentParser)
-    
-    let userSync = RestToCDUserSync(remoteService: userRemoteService, localStore: userLocalStore)!
-    let postSync = RestToCDPostSync(remoteService: postRemoteService, postLocalStore: postLocalStore, userLocalStore: userLocalStore)!
-    let commentSync = RestToCDCommentSync(remoteService: commentRemoteService, commentLocalStore: commentLocalStore, postLocalStore: postLocalStore)!
-    
-    return RestToCoreDataSync(userSync: userSync, postSync: postSync, commentSync: commentSync)
+    let networking = NetworkManager()
+    localStores = CoreDataLocalStoreFactory().makeLocalStores()
+    syncEngine = RestToCoreDataSyncEngineFactory().makeEngine(networking: networking, localStores: localStores)
+    configurePostListView()
   }
   
   func configurePostListView() {
@@ -71,7 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return
     }
     
-    let controller = PostListController(view: postListView, syncEngine: syncEngine, userStore: userLocalStore, postStore: postLocalStore, commentStore: commentLocalStore)
+    let postDetailViewModelFactory = ConcretePostDetailViewModelFactory(postStore: localStores.post)
+    let controller = PostListController(view: postListView, syncEngine: syncEngine, postStore: localStores.post, postDetailViewModelFactory: postDetailViewModelFactory)
     postListView.controller = controller
   }
   

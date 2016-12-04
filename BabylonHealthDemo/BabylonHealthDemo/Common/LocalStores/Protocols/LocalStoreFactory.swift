@@ -1,5 +1,5 @@
 //
-//  LocalStores.swift
+//  LocalStoreFactory.swift
 //  BabylonHealthDemo
 //
 //  Created by Giuseppe Morana on 04/12/2016.
@@ -8,4 +8,7 @@
 
 import Foundation
 
-typealias LocalStores = (user: UserLocalStore, post: PostLocalStore, comment: CommentLocalStore)
+protocol LocalStoreFactory {
+  
+  func makeLocalStores() -> LocalStores
+}
