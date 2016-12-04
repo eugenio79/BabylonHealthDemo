@@ -51,7 +51,6 @@ class CDUserLocalStore: UserLocalStore {
     self.coreDataStack = coreDataStack
   }
   
-  
   func insert(users: [User], completion: @escaping (UserLocalStoreInsertCompletion) -> Void) {
     
     /// In a production code I'd do this operation in background

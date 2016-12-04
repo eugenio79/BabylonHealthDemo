@@ -106,6 +106,14 @@
 		BADA46651DEDCF73004FE2C2 /* UserSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46641DEDCF73004FE2C2 /* UserSyncing.swift */; };
 		BADA46671DEDCF89004FE2C2 /* RestToCDUserSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46661DEDCF89004FE2C2 /* RestToCDUserSync.swift */; };
 		BADA46731DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */; };
+		BAE2A8A11DF425D700CD30A8 /* LocalStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A01DF425D700CD30A8 /* LocalStores.swift */; };
+		BAE2A8A41DF4267600CD30A8 /* PostDetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A31DF4267600CD30A8 /* PostDetailViewModelFactory.swift */; };
+		BAE2A8A71DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A61DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift */; };
+		BAE2A8A91DF4276F00CD30A8 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A81DF4276F00CD30A8 /* PostDetailViewModel.swift */; };
+		BAE2A8AB1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8AA1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift */; };
+		BAE2A8AE1DF430FF00CD30A8 /* RestUserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8AD1DF430FF00CD30A8 /* RestUserFactory.swift */; };
+		BAE2A8B01DF4327600CD30A8 /* RestPostFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8AF1DF4327600CD30A8 /* RestPostFactory.swift */; };
+		BAE2A8B21DF4337B00CD30A8 /* RestCommentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8B11DF4337B00CD30A8 /* RestCommentFactory.swift */; };
 		BAFE072B1DEDDCB1008509C0 /* PostSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE072A1DEDDCB1008509C0 /* PostSyncing.swift */; };
 		BAFE072D1DEDDD7C008509C0 /* RestToCDPostSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE072C1DEDDD7C008509C0 /* RestToCDPostSync.swift */; };
 		BAFE072F1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE072E1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift */; };
@@ -226,6 +234,14 @@
 		BADA46641DEDCF73004FE2C2 /* UserSyncing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSyncing.swift; sourceTree = "<group>"; };
 		BADA46661DEDCF89004FE2C2 /* RestToCDUserSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDUserSync.swift; sourceTree = "<group>"; };
 		BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDUserSyncTests.swift; sourceTree = "<group>"; };
+		BAE2A8A01DF425D700CD30A8 /* LocalStores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStores.swift; sourceTree = "<group>"; };
+		BAE2A8A31DF4267600CD30A8 /* PostDetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewModelFactory.swift; sourceTree = "<group>"; };
+		BAE2A8A61DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPostDetailViewModelFactory.swift; sourceTree = "<group>"; };
+		BAE2A8A81DF4276F00CD30A8 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
+		BAE2A8AA1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPostDetailViewModelFactory.swift; sourceTree = "<group>"; };
+		BAE2A8AD1DF430FF00CD30A8 /* RestUserFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestUserFactory.swift; sourceTree = "<group>"; };
+		BAE2A8AF1DF4327600CD30A8 /* RestPostFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostFactory.swift; sourceTree = "<group>"; };
+		BAE2A8B11DF4337B00CD30A8 /* RestCommentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCommentFactory.swift; sourceTree = "<group>"; };
 		BAFE072A1DEDDCB1008509C0 /* PostSyncing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSyncing.swift; sourceTree = "<group>"; };
 		BAFE072C1DEDDD7C008509C0 /* RestToCDPostSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDPostSync.swift; sourceTree = "<group>"; };
 		BAFE072E1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDPostSyncTests.swift; sourceTree = "<group>"; };
@@ -289,6 +305,7 @@
 		BA3B816D1DEAF1CB00B41A49 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BAE2A8AC1DF430ED00CD30A8 /* Models */,
 				BAB48CE01DEC09320039FB96 /* LocalStores */,
 				BA3B816E1DEAF1CB00B41A49 /* Networking */,
 				BAB48C791DEB7F200039FB96 /* Parsers */,
@@ -309,6 +326,7 @@
 		BA3B81731DEAF48200B41A49 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				BAE2A8A51DF4269000CD30A8 /* Models */,
 				BA3B81771DEAF53B00B41A49 /* Views */,
 				BA3B81741DEAF48200B41A49 /* Controllers */,
 			);
@@ -483,6 +501,7 @@
 				BAB48CD31DEBFB7C0039FB96 /* UserLocalStore.swift */,
 				BAB48CD51DEBFB950039FB96 /* PostLocalStore.swift */,
 				BAB48CD71DEBFBB10039FB96 /* CommentLocalStore.swift */,
+				BAE2A8A01DF425D700CD30A8 /* LocalStores.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -644,6 +663,7 @@
 		BAD727251DE399FB00E83F32 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				BAE2A8A21DF4265C00CD30A8 /* Models */,
 				BA3B81671DEAEB9D00B41A49 /* Controllers */,
 				BAD727281DE39A3100E83F32 /* Views */,
 			);
@@ -803,6 +823,34 @@
 				BA3954EC1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift */,
 			);
 			path = Implementations;
+			sourceTree = "<group>";
+		};
+		BAE2A8A21DF4265C00CD30A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAE2A8A31DF4267600CD30A8 /* PostDetailViewModelFactory.swift */,
+				BAE2A8A81DF4276F00CD30A8 /* PostDetailViewModel.swift */,
+				BAE2A8AA1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BAE2A8A51DF4269000CD30A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAE2A8A61DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BAE2A8AC1DF430ED00CD30A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAE2A8AD1DF430FF00CD30A8 /* RestUserFactory.swift */,
+				BAE2A8AF1DF4327600CD30A8 /* RestPostFactory.swift */,
+				BAE2A8B11DF4337B00CD30A8 /* RestCommentFactory.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -991,8 +1039,10 @@
 				BA3B81701DEAF1E500B41A49 /* NetworkManager.swift in Sources */,
 				BADA461E1DECE3C7004FE2C2 /* RestGeolocation.swift in Sources */,
 				BAFE072D1DEDDD7C008509C0 /* RestToCDPostSync.swift in Sources */,
+				BAE2A8A11DF425D700CD30A8 /* LocalStores.swift in Sources */,
 				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
+				BAE2A8AB1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift in Sources */,
 				BADA461C1DECE3C7004FE2C2 /* RestComment.swift in Sources */,
 				BA3954EB1DEE1A5300FC1720 /* RestToCDCommentSync.swift in Sources */,
 				BAB48CD61DEBFB950039FB96 /* PostLocalStore.swift in Sources */,
@@ -1000,7 +1050,9 @@
 				BADA46351DEDABCE004FE2C2 /* UserPostLinker.swift in Sources */,
 				BAB48CD41DEBFB7C0039FB96 /* UserLocalStore.swift in Sources */,
 				BADA46201DECE3C7004FE2C2 /* RestUser.swift in Sources */,
+				BAE2A8A41DF4267600CD30A8 /* PostDetailViewModelFactory.swift in Sources */,
 				BAFE072B1DEDDCB1008509C0 /* PostSyncing.swift in Sources */,
+				BAE2A8A91DF4276F00CD30A8 /* PostDetailViewModel.swift in Sources */,
 				BADA463C1DEDC1A0004FE2C2 /* PostCommentLinker.swift in Sources */,
 				BAB48C231DEB66810039FB96 /* PostDetailController.swift in Sources */,
 				BADA46651DEDCF73004FE2C2 /* UserSyncing.swift in Sources */,
@@ -1050,16 +1102,20 @@
 				BA3B81791DEAF56000B41A49 /* FakePostListView.swift in Sources */,
 				BAB48CFE1DEC14700039FB96 /* StubPostLocalStore.swift in Sources */,
 				BAB48CFC1DEC14620039FB96 /* StubUserLocalStore.swift in Sources */,
+				BAE2A8B01DF4327600CD30A8 /* RestPostFactory.swift in Sources */,
 				BA96A1821DF36A5C0082B66E /* StubUserSync.swift in Sources */,
 				BA96A1861DF36A6D0082B66E /* StubCommentSync.swift in Sources */,
 				BAB48CF71DEC132D0039FB96 /* StubCommentRemoteService.swift in Sources */,
 				BAB48D001DEC14820039FB96 /* StubCommentLocalStore.swift in Sources */,
 				BAB48CF31DEC12E90039FB96 /* RestCommentRemoteServiceTests.swift in Sources */,
+				BAE2A8B21DF4337B00CD30A8 /* RestCommentFactory.swift in Sources */,
+				BAE2A8AE1DF430FF00CD30A8 /* RestUserFactory.swift in Sources */,
 				BA3B81721DEAF30100B41A49 /* StubNetworkManager.swift in Sources */,
 				BADA46381DEDAC16004FE2C2 /* RestUserPostLinkerTests.swift in Sources */,
 				BADA46731DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift in Sources */,
 				BA3B81761DEAF49300B41A49 /* PostListControllerTests.swift in Sources */,
 				BAB48CF21DEC12E90039FB96 /* StubPostRemoteService.swift in Sources */,
+				BAE2A8A71DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift in Sources */,
 				BAFE072F1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift in Sources */,
 				BA96A1841DF36A650082B66E /* StubPostSync.swift in Sources */,
 				BAB48C7E1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift in Sources */,

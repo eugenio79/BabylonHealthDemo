@@ -69,13 +69,18 @@ class CDPostLocalStoreTests: XCTestCase {
     // EXPECT
     XCTAssertEqual(count, 1)
   }
+  
+  func test_givenStoreWithOnePostWrittenByAnAuthor_whenFetchAuthor_expectCorrectAuthor() {
+    
+    // GIVEN
+  }
 }
 
 // MARK: - given, when, expect (common between tests)
 extension CDPostLocalStoreTests {
   
   func givenAPost() -> Post {
-    return RestPost(id: 1, userId: 1, title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit", body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto")
+    return RestPostFactory.createFirstSamplePost()
   }
   
   func whenInserting(posts: [Post], into postStore: PostLocalStore) -> PostLocalStoreInsertCompletion? {
@@ -155,11 +160,11 @@ extension CDPostLocalStoreTests {
   }
   
   func givenFirstComment() -> Comment {
-    return RestComment(postId: 1, id: 1, name: "id labore ex et quam laborum", email: "Eliseo@gardner.biz", body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium")
+    return RestCommentFactory.createFirstSampleComment()
   }
   
   func givenSecondComment() -> Comment {
-    return RestComment(postId: 1, id: 2, name: "quo vero reiciendis velit similique earum", email: "Jayne_Kuhic@sydney.com", body: "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et")
+    return RestCommentFactory.createSecondSampleComment()
   }
   
   func whenAdding(comments: [Comment], to post: Post, into postStore: PostLocalStore) -> PostLocalStoreAddCommentsResult? {

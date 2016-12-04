@@ -33,6 +33,26 @@ class PostListControllerTests: XCTestCase {
     expectBlankPage(view: view)
   }
   
+  func test_givenFailingSyncAndDataOffline_whenDidLoad_expectViewToDisplayPosts() {
+    
+    // GIVEN
+    let syncEngine = givenFailingSyncButAlreadySynced()
+    let view = givenPostListView()
+    
+    let userStore = StubUserLocalStore()
+    let postStore = givenPostStorePrefilledWithTwoPost()
+    let commentStore = StubCommentLocalStore()
+    
+    let controller = PostListController(view: view, syncEngine: syncEngine, userStore: userStore, postStore: postStore, commentStore: commentStore)
+    view.controller = controller
+    
+    // WHEN
+    whenDidLoad(controller: controller)
+    
+    // EXPECT
+    expectViewIsDisplayingPosts(view: view)
+  }
+  
   
   func test_givenSuccessfulSync_whenDidLoad_expectViewToDisplayPosts() {
     
@@ -53,12 +73,6 @@ class PostListControllerTests: XCTestCase {
     // EXPECT
     expectViewIsDisplayingPosts(view: view)
   }
-  
-  func expectViewIsDisplayingPosts(view: FakePostListView) {
-    view.didShowLoadingAtLeastOneTime = true
-    view.isLoading = false
-    view.numOfPostsDisplayed = 2
-  }
 }
 
 // MARK: - expect
@@ -69,6 +83,12 @@ extension PostListControllerTests {
     view.didShowLoadingAtLeastOneTime = true
     view.isLoading = false
     view.numOfPostsDisplayed = 0
+  }
+  
+  func expectViewIsDisplayingPosts(view: FakePostListView) {
+    view.didShowLoadingAtLeastOneTime = true
+    view.isLoading = false
+    view.numOfPostsDisplayed = 2
   }
 }
 
@@ -106,6 +126,15 @@ extension PostListControllerTests {
     return syncEngine
   }
   
+  func givenFailingSyncButAlreadySynced() -> SyncEngine {
+    
+    let syncEngine = StubSyncEngine()
+    syncEngine.syncResult = .failure
+    syncEngine.synced = true  // already synced one time in the past
+    
+    return syncEngine
+  }
+  
   func givenFailingSync() -> SyncEngine {
     
     let syncEngine = StubSyncEngine()
@@ -137,11 +166,11 @@ extension PostListControllerTests {
   }
   
   func givenFirstPost() -> Post {
-    return RestPost(id: 1, userId: 1, title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit", body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto")
+    return RestPostFactory.createFirstSamplePost()
   }
   
   func givenSecondPost() -> Post {
-    return RestPost(id: 2, userId: 1, title: "qui est esse", body: "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla")
+    return RestPostFactory.createSecondSamplePost()
   }
 }
 

@@ -36,6 +36,8 @@ protocol PostLocalStore {
   /// Fetch all posts
   func fetch(completion: @escaping (PostLocalStoreFetchCompletion) -> Void)
   
+  func fetchAuthor(of post: Post) -> User?
+  
   /// @return the number of posts in store
   func count() -> Int
 }

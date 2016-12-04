@@ -78,6 +78,11 @@ class CDPostLocalStore: PostLocalStore {
     }
   }
   
+  func fetchAuthor(of post: Post) -> User? {
+    guard let cdPost = fetchPost(post: post, context: self.coreDataStack.managedContext) else { return nil }
+    return cdPost.user
+  }
+  
   /// In a production code I'd do this operation in background
   func count() -> Int {
     do {
