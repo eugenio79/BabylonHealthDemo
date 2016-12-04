@@ -40,4 +40,7 @@ protocol PostLocalStore {
   
   /// @return the number of posts in store
   func count() -> Int
+  
+  /// @return the number of comments for a specific post
+  func commentCount(for post: Post) -> Int
 }

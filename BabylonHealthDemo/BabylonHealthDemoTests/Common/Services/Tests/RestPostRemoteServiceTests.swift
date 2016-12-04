@@ -48,7 +48,6 @@ class RestPostRemoteServiceTests: XCTestCase {
     }
   }
   
-  // TODO: implement it (waiting for parser)
   func test_givenSuccessfulResponse_whenFetch_expectParsedPosts() {
     
     // GIVEN

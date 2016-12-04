@@ -17,8 +17,6 @@ enum CommentRemoteFetchResult {
   case failure(error: CommentRemoteFetchError)
 }
 
-// Note: yeah, I know they're essentially copy-pasted from PostRemoteService
-// TODO: refactoring
 protocol CommentRemoteService {
   
   init(networking: Networking, commentParser: CommentParser)

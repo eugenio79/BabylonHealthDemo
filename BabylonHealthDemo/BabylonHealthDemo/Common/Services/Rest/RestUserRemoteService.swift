@@ -8,8 +8,6 @@
 
 import Foundation
 
-// Note: yeah, I know they're essentially copy-pasted from RestPostRemoteService
-// TODO: refactoring
 class RestUserRemoteService: UserRemoteService {
   
   // Warning: in order to work with http I had to change ATS settings

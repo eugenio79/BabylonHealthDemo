@@ -9,7 +9,7 @@
 import Foundation
 @testable import BabylonHealthDemo
 
-// TODO: rename it to FakeUserLocalStore
+// TODO: rename it to FakeUserLocalStore?
 // Subclassed from CoreData, so I can use in RestToCDUserSyncTests
 class StubUserLocalStore: CDUserLocalStore {
   

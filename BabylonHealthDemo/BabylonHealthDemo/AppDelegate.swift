@@ -9,10 +9,6 @@
 import UIKit
 import CoreData
 
-// TODO:
-// - PostsList
-// - Refactor CoreDataStack
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

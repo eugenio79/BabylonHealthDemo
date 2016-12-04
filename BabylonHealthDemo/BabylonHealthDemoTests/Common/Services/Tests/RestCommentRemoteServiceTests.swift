@@ -9,8 +9,6 @@
 import XCTest
 @testable import BabylonHealthDemo
 
-// Note: yeah, I know they're essentially copy-pasted from RestPostRemoteServiceTests
-// TODO: refactoring
 class RestCommentRemoteServiceTests: XCTestCase {
     
   func test_givenNoNetwork_whenFetch_expectFailure() {

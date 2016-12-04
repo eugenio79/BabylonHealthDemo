@@ -17,8 +17,6 @@ enum UserRemoteFetchResult {
   case failure(error: UserRemoteFetchError)
 }
 
-// Note: yeah, I know they're essentially copy-pasted from PostRemoteService
-// TODO: refactoring
 protocol UserRemoteService {
   
   init(networking: Networking, userParser: UserParser)

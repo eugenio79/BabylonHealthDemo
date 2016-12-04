@@ -73,14 +73,94 @@ class CDPostLocalStoreTests: XCTestCase {
   func test_givenStoreWithOnePostWrittenByAnAuthor_whenFetchAuthor_expectCorrectAuthor() {
     
     // GIVEN
+    let user = RestUserFactory.createFirstSampleUser()
+    let post = RestPostFactory.createFirstSamplePost()
+    
+    let userStore = CDUserLocalStore(coreDataStack: coreDataStack)
+    let insertResult = whenInserting(user: user, into: userStore)
+    let addResult = whenAdding(post: post, for: user, into: userStore)
+    let postStore = CDPostLocalStore(coreDataStack: coreDataStack)
+    
+    XCTAssertNotNil(insertResult)
+    XCTAssertNotNil(addResult)
+    
+    // WHEN
+    let author = postStore.fetchAuthor(of: post)
+    
+    // EXPECT
+    XCTAssertNotNil(author)
+    XCTAssertEqual(author?.id, user.id)
+  }
+  
+  func test_givenCommentsRelativeToAPost_whenCountForPost_expectCorrectNumber() {
+    
+    // GIVEN
+    let post = RestPostFactory.createFirstSamplePost()
+    let postStore = CDPostLocalStore(coreDataStack: coreDataStack)
+    let insertResult = whenInserting(posts: [post], into: postStore)
+    XCTAssertNotNil(insertResult)
+    
+    let comments = [RestCommentFactory.createFirstSampleComment(), RestCommentFactory.createSecondSampleComment()]
+    let addResult = whenAdding(comments: comments, to: post, into: postStore)
+    XCTAssertNotNil(addResult)
+    
+    // WHEN
+    let commentCount = postStore.commentCount(for: post)
+    
+    // EXPECT
+    XCTAssertEqual(commentCount, 2)
   }
 }
 
 // MARK: - given, when, expect (common between tests)
 extension CDPostLocalStoreTests {
   
-  func givenAPost() -> Post {
-    return RestPostFactory.createFirstSamplePost()
+  func whenAdding(comments: [Comment], to post: Post, into postStore: PostLocalStore) -> PostLocalStoreAddCommentsResult? {
+    
+    var addResult: PostLocalStoreAddCommentsResult?
+    let addExpectation = expectation(description: "Waiting for add to complete")
+    
+    postStore.addComments(comments: comments, to: post) { result in
+      addResult = result
+      addExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    return addResult
+  }
+  
+  func whenAdding(post: Post, for user: User, into store: UserLocalStore) -> UserLocalStoreAddPostsResult? {
+    
+    var resultToReturn: UserLocalStoreAddPostsResult?
+    let expect = expectation(description: "Waiting for add to complete")
+    
+    store.addPosts(posts: [post], to: user) { result in
+      resultToReturn = result
+      expect.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    return resultToReturn
+  }
+  
+  func whenInserting(user: User, into store: UserLocalStore) -> UserLocalStoreInsertCompletion? {
+    
+    var insertResult: UserLocalStoreInsertCompletion?
+    let insertExpectation = expectation(description: "Waiting for insert to complete")
+    
+    store.insert(users: [user]) { result in
+      insertResult = result
+      insertExpectation.fulfill()
+    }
+    
+    waitForExpectations(timeout: 0.1) { error in
+      XCTAssertNil(error, "Timeout")
+    }
+    return insertResult
   }
   
   func whenInserting(posts: [Post], into postStore: PostLocalStore) -> PostLocalStoreInsertCompletion? {
@@ -98,6 +178,10 @@ extension CDPostLocalStoreTests {
     }
     
     return insertResult
+  }
+  
+  func givenAPost() -> Post {
+    return RestPostFactory.createFirstSamplePost()
   }
 }
 
@@ -165,22 +249,6 @@ extension CDPostLocalStoreTests {
   
   func givenSecondComment() -> Comment {
     return RestCommentFactory.createSecondSampleComment()
-  }
-  
-  func whenAdding(comments: [Comment], to post: Post, into postStore: PostLocalStore) -> PostLocalStoreAddCommentsResult? {
-    
-    var addResult: PostLocalStoreAddCommentsResult?
-    let addExpectation = expectation(description: "Waiting for add to complete")
-    
-    postStore.addComments(comments: comments, to: post) { result in
-      addResult = result
-      addExpectation.fulfill()
-    }
-    
-    waitForExpectations(timeout: 0.1) { error in
-      XCTAssertNil(error, "Timeout")
-    }
-    return addResult
   }
   
   func expectAddSuccessful(addResult: PostLocalStoreAddCommentsResult?) {

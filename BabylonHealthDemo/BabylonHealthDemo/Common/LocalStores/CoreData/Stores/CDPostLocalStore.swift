@@ -93,6 +93,12 @@ class CDPostLocalStore: PostLocalStore {
       return 0  // for the purpose of this demo, I think it's enough
     }
   }
+  
+  /// In a production code I'd do this operation in background
+  func commentCount(for post: Post) -> Int {
+    guard let cdPost = fetchPost(post: post, context: coreDataStack.managedContext) else { return 0 }
+    return cdPost.cdComments?.count ?? 0
+  }
 }
 
 // MARK: - private methods
