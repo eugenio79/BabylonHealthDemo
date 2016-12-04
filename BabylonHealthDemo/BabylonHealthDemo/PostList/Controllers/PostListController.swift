@@ -11,7 +11,8 @@ import Foundation
 class PostListController: PostListHandler {
   
   unowned var view: PostListLayout
-  var posts: [Post] = []
+  
+  fileprivate var posts: [Post] = []  // in memory model
   
   fileprivate var syncEngine: SyncEngine
   fileprivate var userStore: UserLocalStore

@@ -13,8 +13,13 @@ import Foundation
 // Subclassed from CoreData, so I can use in RestToCDUserSyncTests
 class StubPostLocalStore: CDPostLocalStore {
   
-  var posts: [Post] = []
-  var commentStore: CommentLocalStore?  // injectable to simulate link between user store and post store
+  // MARK: - Stub properties - injectable
+  
+  var commentStore: CommentLocalStore?  // simulate link between user store and post store
+  var authorToReturn: User? // what to return when someone calls fetchAuthor
+  var commentCountToReturn: Int = 0   // what to return when someone calls commentCount
+  
+  fileprivate var posts: [Post] = []
   
   convenience init() {
     self.init(coreDataStack: CoreDataStack(modelName: "BabylonHealthDemo", storeType: .inMemory))
@@ -45,4 +50,16 @@ class StubPostLocalStore: CDPostLocalStore {
       }
     }
   }
+  
+  override func fetchAuthor(of post: Post) -> User? {
+    return authorToReturn ?? nil
+  }
+  
+  override func commentCount(for post: Post) -> Int {
+    return commentCountToReturn
+  }
+}
+
+extension StubPostLocalStore {
+  
 }

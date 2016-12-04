@@ -108,9 +108,9 @@
 		BADA46731DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */; };
 		BAE2A8A11DF425D700CD30A8 /* LocalStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A01DF425D700CD30A8 /* LocalStores.swift */; };
 		BAE2A8A41DF4267600CD30A8 /* PostDetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A31DF4267600CD30A8 /* PostDetailViewModelFactory.swift */; };
-		BAE2A8A71DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A61DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift */; };
+		BAE2A8A71DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A61DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift */; };
 		BAE2A8A91DF4276F00CD30A8 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8A81DF4276F00CD30A8 /* PostDetailViewModel.swift */; };
-		BAE2A8AB1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8AA1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift */; };
+		BAE2A8AB1DF427C700CD30A8 /* ConcretePostDetailViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8AA1DF427C700CD30A8 /* ConcretePostDetailViewModelFactory.swift */; };
 		BAE2A8AE1DF430FF00CD30A8 /* RestUserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8AD1DF430FF00CD30A8 /* RestUserFactory.swift */; };
 		BAE2A8B01DF4327600CD30A8 /* RestPostFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8AF1DF4327600CD30A8 /* RestPostFactory.swift */; };
 		BAE2A8B21DF4337B00CD30A8 /* RestCommentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE2A8B11DF4337B00CD30A8 /* RestCommentFactory.swift */; };
@@ -236,9 +236,9 @@
 		BADA46721DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCDUserSyncTests.swift; sourceTree = "<group>"; };
 		BAE2A8A01DF425D700CD30A8 /* LocalStores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStores.swift; sourceTree = "<group>"; };
 		BAE2A8A31DF4267600CD30A8 /* PostDetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewModelFactory.swift; sourceTree = "<group>"; };
-		BAE2A8A61DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPostDetailViewModelFactory.swift; sourceTree = "<group>"; };
+		BAE2A8A61DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcretePostDetailViewModelFactoryTests.swift; sourceTree = "<group>"; };
 		BAE2A8A81DF4276F00CD30A8 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
-		BAE2A8AA1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDPostDetailViewModelFactory.swift; sourceTree = "<group>"; };
+		BAE2A8AA1DF427C700CD30A8 /* ConcretePostDetailViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcretePostDetailViewModelFactory.swift; sourceTree = "<group>"; };
 		BAE2A8AD1DF430FF00CD30A8 /* RestUserFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestUserFactory.swift; sourceTree = "<group>"; };
 		BAE2A8AF1DF4327600CD30A8 /* RestPostFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestPostFactory.swift; sourceTree = "<group>"; };
 		BAE2A8B11DF4337B00CD30A8 /* RestCommentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCommentFactory.swift; sourceTree = "<group>"; };
@@ -830,7 +830,7 @@
 			children = (
 				BAE2A8A31DF4267600CD30A8 /* PostDetailViewModelFactory.swift */,
 				BAE2A8A81DF4276F00CD30A8 /* PostDetailViewModel.swift */,
-				BAE2A8AA1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift */,
+				BAE2A8AA1DF427C700CD30A8 /* ConcretePostDetailViewModelFactory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -838,7 +838,7 @@
 		BAE2A8A51DF4269000CD30A8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BAE2A8A61DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift */,
+				BAE2A8A61DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1042,7 +1042,7 @@
 				BAE2A8A11DF425D700CD30A8 /* LocalStores.swift in Sources */,
 				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
-				BAE2A8AB1DF427C700CD30A8 /* CDPostDetailViewModelFactory.swift in Sources */,
+				BAE2A8AB1DF427C700CD30A8 /* ConcretePostDetailViewModelFactory.swift in Sources */,
 				BADA461C1DECE3C7004FE2C2 /* RestComment.swift in Sources */,
 				BA3954EB1DEE1A5300FC1720 /* RestToCDCommentSync.swift in Sources */,
 				BAB48CD61DEBFB950039FB96 /* PostLocalStore.swift in Sources */,
@@ -1115,7 +1115,7 @@
 				BADA46731DEDD1A4004FE2C2 /* RestToCDUserSyncTests.swift in Sources */,
 				BA3B81761DEAF49300B41A49 /* PostListControllerTests.swift in Sources */,
 				BAB48CF21DEC12E90039FB96 /* StubPostRemoteService.swift in Sources */,
-				BAE2A8A71DF426A100CD30A8 /* CDPostDetailViewModelFactory.swift in Sources */,
+				BAE2A8A71DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift in Sources */,
 				BAFE072F1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift in Sources */,
 				BA96A1841DF36A650082B66E /* StubPostSync.swift in Sources */,
 				BAB48C7E1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift in Sources */,

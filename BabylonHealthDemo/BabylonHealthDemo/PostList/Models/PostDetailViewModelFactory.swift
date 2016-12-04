@@ -11,7 +11,7 @@ import Foundation
 /// Used to create PostDetail ViewModels
 protocol PostDetailViewModelFactory {
   
-  init(stores: LocalStores)
+  init(postStore: PostLocalStore)
   
-  func viewModel(at index: Int) -> PostDetailViewModel?
+  func makeViewModel(for post: Post) -> PostDetailViewModel?
 }
