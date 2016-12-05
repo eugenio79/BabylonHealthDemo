@@ -23,6 +23,7 @@ class StubNavigableConfigurator: NavigableConfigurator {
   }
   
   func configure(postDetailNavigable: Navigable, viewModel: PostDetailViewModel, router: Router) {
-    // TODO: implement it
+    guard let postDetailView = postDetailNavigable as? FakePostDetailView else { return }
+    postDetailView.refresh(viewModel: viewModel)
   }
 }

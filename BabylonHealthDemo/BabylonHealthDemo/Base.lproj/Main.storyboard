@@ -26,24 +26,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostListCell" rowHeight="150" id="deY-Ze-eum" userLabel="tableViewCell" customClass="PostListCell" customModule="BabylonHealthDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostListCell" rowHeight="180" id="deY-Ze-eum" userLabel="tableViewCell" customClass="PostListCell" customModule="BabylonHealthDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="deY-Ze-eum" id="W9E-Yw-MqP" userLabel="contentView">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZC-jD-bUI" userLabel="containerView">
-                                                    <rect key="frame" x="0.0" y="8" width="375" height="133.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="sunt aut facere repellat provident occaecati excepturi optio reprehenderit" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="529-fx-dE2" userLabel="titleLabel">
-                                                            <rect key="frame" x="8" y="8" width="359" height="43"/>
+                                                            <rect key="frame" x="20" y="8" width="335" height="64.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikb-fR-tIt" userLabel="contentLabel">
-                                                            <rect key="frame" x="8" y="59" width="359" height="67"/>
+                                                            <rect key="frame" x="20" y="81" width="335" height="53"/>
                                                             <string key="text">quia et suscipit
 suscipit recusandae consequuntur expedita et cum
 reprehenderit molestiae ut ut quas totam
@@ -52,16 +52,28 @@ nostrum rerum est autem sunt rem eveniet architecto</string>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUK-oT-8Cy">
+                                                            <rect key="frame" x="260" y="141" width="95" height="23"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="23" id="Sba-eV-ZyT"/>
+                                                                <constraint firstAttribute="width" constant="95" id="g1x-qv-fpc"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <state key="normal" title="Read more"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="ikb-fR-tIt" secondAttribute="bottom" constant="7.5" id="9OJ-D7-5mj"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ikb-fR-tIt" secondAttribute="trailing" constant="8" id="Bkg-GZ-Nfb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TUK-oT-8Cy" secondAttribute="trailing" constant="20" id="0Xx-4t-Cjf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ikb-fR-tIt" secondAttribute="trailing" constant="20" id="Bkg-GZ-Nfb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="TUK-oT-8Cy" secondAttribute="bottom" constant="8" id="CPi-Ws-KYe"/>
+                                                        <constraint firstItem="TUK-oT-8Cy" firstAttribute="top" secondItem="ikb-fR-tIt" secondAttribute="bottom" constant="7" id="LnM-JQ-smo"/>
                                                         <constraint firstItem="529-fx-dE2" firstAttribute="top" secondItem="vZC-jD-bUI" secondAttribute="top" constant="8" id="ZsY-rh-L3j"/>
-                                                        <constraint firstAttribute="trailing" secondItem="529-fx-dE2" secondAttribute="trailing" constant="8" id="dUP-om-vzt"/>
-                                                        <constraint firstItem="ikb-fR-tIt" firstAttribute="leading" secondItem="vZC-jD-bUI" secondAttribute="leading" constant="8" id="jJ5-8w-SLt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="529-fx-dE2" secondAttribute="trailing" constant="20" id="dUP-om-vzt"/>
+                                                        <constraint firstItem="ikb-fR-tIt" firstAttribute="leading" secondItem="vZC-jD-bUI" secondAttribute="leading" constant="20" id="jJ5-8w-SLt"/>
                                                         <constraint firstItem="ikb-fR-tIt" firstAttribute="top" secondItem="529-fx-dE2" secondAttribute="bottom" constant="8" id="krV-xF-wnQ"/>
-                                                        <constraint firstItem="529-fx-dE2" firstAttribute="leading" secondItem="vZC-jD-bUI" secondAttribute="leading" constant="8" id="nbY-kX-1h7"/>
+                                                        <constraint firstItem="529-fx-dE2" firstAttribute="leading" secondItem="vZC-jD-bUI" secondAttribute="leading" constant="20" id="nbY-kX-1h7"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -69,7 +81,7 @@ nostrum rerum est autem sunt rem eveniet architecto</string>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="vZC-jD-bUI" secondAttribute="trailing" constant="-8" id="QdG-c9-xQ0"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="vZC-jD-bUI" secondAttribute="bottom" id="UKM-T5-dLe"/>
-                                                <constraint firstAttribute="topMargin" secondItem="vZC-jD-bUI" secondAttribute="top" id="ijn-1h-BOZ"/>
+                                                <constraint firstAttribute="topMargin" secondItem="vZC-jD-bUI" secondAttribute="top" constant="8" id="ijn-1h-BOZ"/>
                                                 <constraint firstItem="vZC-jD-bUI" firstAttribute="leading" secondItem="W9E-Yw-MqP" secondAttribute="leadingMargin" constant="-8" id="qRZ-Ld-ErF"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -154,7 +166,7 @@ nostrum rerum est autem sunt rem eveniet architecto</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7Y-Ep-oUk" userLabel="container">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leanne Graham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Je-so-b49" userLabel="authorLabel">
                                                 <rect key="frame" x="20" y="20" width="343" height="22"/>
@@ -194,6 +206,7 @@ perferendis recusandae assumenda consectetur porro architecto ipsum ipsam</strin
                                             <constraint firstItem="5B3-jj-Nsp" firstAttribute="top" secondItem="6Je-so-b49" secondAttribute="bottom" constant="20" id="9B4-Sy-Bbz"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="6Je-so-b49" secondAttribute="trailing" constant="4" id="Be0-8d-Ten"/>
                                             <constraint firstItem="de3-IZ-oGW" firstAttribute="leading" secondItem="d62-4c-0mP" secondAttribute="trailing" constant="8" id="G0C-sn-fjy"/>
+                                            <constraint firstAttribute="bottom" secondItem="de3-IZ-oGW" secondAttribute="bottom" constant="20.5" id="N1d-ca-kjE"/>
                                             <constraint firstItem="d62-4c-0mP" firstAttribute="top" secondItem="5B3-jj-Nsp" secondAttribute="bottom" constant="20" id="PN3-Al-8mv"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="6Je-so-b49" secondAttribute="leading" constant="-12" id="ccX-yV-qS1"/>
                                             <constraint firstItem="d62-4c-0mP" firstAttribute="top" secondItem="de3-IZ-oGW" secondAttribute="top" id="g7k-xW-blk"/>
@@ -208,46 +221,12 @@ perferendis recusandae assumenda consectetur porro architecto ipsum ipsam</strin
                                     <constraint firstAttribute="bottom" secondItem="K7Y-Ep-oUk" secondAttribute="bottom" id="CCi-uK-hgJ"/>
                                     <constraint firstAttribute="trailing" secondItem="K7Y-Ep-oUk" secondAttribute="trailing" id="Hn5-Zt-R5Y"/>
                                     <constraint firstItem="K7Y-Ep-oUk" firstAttribute="leading" secondItem="TMk-7p-Jed" secondAttribute="leading" id="UwZ-Fq-K7Y"/>
-                                    <constraint firstItem="K7Y-Ep-oUk" firstAttribute="centerY" secondItem="TMk-7p-Jed" secondAttribute="centerY" id="kf8-Dq-ZcG"/>
                                     <constraint firstItem="K7Y-Ep-oUk" firstAttribute="top" secondItem="TMk-7p-Jed" secondAttribute="top" id="oqS-Jj-ZZz"/>
                                 </constraints>
                             </scrollView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHI-Re-Wqe" userLabel="loadingView" customClass="PostListLoadingView" customModule="BabylonHealthDemo" customModuleProvider="target">
-                                <rect key="frame" x="123" y="286" width="129" height="94"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="scx-Iq-G6D" userLabel="indicator">
-                                        <rect key="frame" x="46" y="8" width="37" height="37"/>
-                                        <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-PQ-WyD" userLabel="label">
-                                        <rect key="frame" x="8" y="53" width="101" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="dR8-P5-rwg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="fRu-PQ-WyD" secondAttribute="trailing" constant="20" id="FG0-f3-21D"/>
-                                    <constraint firstItem="fRu-PQ-WyD" firstAttribute="top" secondItem="scx-Iq-G6D" secondAttribute="bottom" constant="8" id="GSb-xG-8A9"/>
-                                    <constraint firstItem="scx-Iq-G6D" firstAttribute="top" secondItem="kHI-Re-Wqe" secondAttribute="top" constant="8" id="MP4-wX-5Fi"/>
-                                    <constraint firstItem="scx-Iq-G6D" firstAttribute="centerX" secondItem="kHI-Re-Wqe" secondAttribute="centerX" id="QmM-3c-GfJ"/>
-                                    <constraint firstAttribute="width" constant="129" id="WVK-P6-uy7"/>
-                                    <constraint firstAttribute="height" constant="94" id="heU-Om-Oyl"/>
-                                    <constraint firstItem="fRu-PQ-WyD" firstAttribute="leading" secondItem="kHI-Re-Wqe" secondAttribute="leading" constant="8" id="mqj-I4-px1"/>
-                                    <constraint firstAttribute="bottom" secondItem="fRu-PQ-WyD" secondAttribute="bottom" constant="20" id="qrV-h7-0HJ"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="indicator" destination="scx-Iq-G6D" id="ldl-ZD-RCP"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kHI-Re-Wqe" firstAttribute="centerY" secondItem="Wan-Vv-i4I" secondAttribute="centerY" id="4RM-CP-YZ3"/>
-                            <constraint firstItem="kHI-Re-Wqe" firstAttribute="centerX" secondItem="Wan-Vv-i4I" secondAttribute="centerX" id="CSe-qd-r5E"/>
                             <constraint firstItem="TMk-7p-Jed" firstAttribute="leading" secondItem="Wan-Vv-i4I" secondAttribute="leadingMargin" constant="-16" id="RVq-9W-2mX"/>
                             <constraint firstItem="TMk-7p-Jed" firstAttribute="top" secondItem="2NV-LC-VsK" secondAttribute="bottom" constant="-64" id="av9-B6-Gbv"/>
                             <constraint firstItem="EZs-CS-KHL" firstAttribute="top" secondItem="TMk-7p-Jed" secondAttribute="bottom" id="dPY-ds-rV0"/>
@@ -259,7 +238,6 @@ perferendis recusandae assumenda consectetur porro architecto ipsum ipsam</strin
                         <outlet property="authorLabel" destination="6Je-so-b49" id="hSs-sq-czZ"/>
                         <outlet property="commentsNumberLabel" destination="de3-IZ-oGW" id="mPo-Q8-Cac"/>
                         <outlet property="descriptionLabel" destination="5B3-jj-Nsp" id="Hiq-MS-xqX"/>
-                        <outlet property="loadingView" destination="kHI-Re-Wqe" id="EqG-gH-5w8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3sC-8x-nH8" userLabel="First Responder" sceneMemberID="firstResponder"/>

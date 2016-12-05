@@ -11,7 +11,7 @@ import Foundation
 
 class StubRouter: Router {
   
-  var currentNavigable: Navigable!
+  fileprivate var currentNavigable: Navigable!
   fileprivate let navigableConfigurator: NavigableConfigurator
   
   required init(navigableConfigurator: NavigableConfigurator) {
@@ -26,11 +26,18 @@ class StubRouter: Router {
   func navigate(to navigableId: String) {
     
     if navigableId == "PostDetail" {
-        
+      guard let postListView = currentNavigable as? FakePostListView else { return }
+      postListView.fakeShowPostDetail()
     }
   }
   
   func prepareToNavigate(to navigable: Navigable, with params: Any? = nil) {
-    // TODO: implement it
+    
+    currentNavigable = navigable
+    
+    if navigable.identifier() == "PostDetail" {
+      guard let viewModel = params as? PostDetailViewModel else { return }
+      navigableConfigurator.configure(postDetailNavigable: navigable, viewModel: viewModel, router: self)
+    }
   }
 }

@@ -30,7 +30,7 @@ class NetworkManager: Networking {
         
       } else if let httpResponse = response as? HTTPURLResponse {
         if httpResponse.statusCode == 200 {
-          print("ok")
+          print("network response: ok")
           if let data = data {
             responseToReturn = .success(data: data)
           } else {
@@ -38,7 +38,7 @@ class NetworkManager: Networking {
             responseToReturn = .failure
           }
         } else {
-          print("error \(httpResponse.statusCode)")
+          print("network response: error \(httpResponse.statusCode)")
           responseToReturn = .failure
         }
       }

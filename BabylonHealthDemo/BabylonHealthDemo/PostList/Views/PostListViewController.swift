@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - PostListViewController
 class PostListViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
@@ -35,6 +36,7 @@ class PostListViewController: UIViewController {
   }
 }
 
+// MARK: - PostListLayout
 extension PostListViewController: PostListLayout {
   
   func showLoading(_ show: Bool) {
@@ -50,7 +52,7 @@ extension PostListViewController: PostListLayout {
   }
 }
 
-// MARK: - PostListViewController
+// MARK: - UITableViewDataSource
 extension PostListViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,6 +62,7 @@ extension PostListViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: PostListCell.reuseIdentifier, for: indexPath) as! PostListCell
+    cell.selectionStyle = .none
     
     if let post = controller?.post(at: indexPath.row) {
       cell.update(with: post)
@@ -69,3 +72,11 @@ extension PostListViewController: UITableViewDataSource {
   }
 }
 
+// MARK: - UITableViewDelegate
+extension PostListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let post = controller?.post(at: indexPath.row) else { return }
+        controller?.showDetail(of: post)
+    }
+}

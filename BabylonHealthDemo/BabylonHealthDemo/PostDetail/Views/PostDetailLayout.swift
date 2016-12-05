@@ -8,9 +8,11 @@
 
 import Foundation
 
-protocol PostDetailLayout: class {
+protocol PostDetailLayout: class, Navigable {
   
   var controller: PostDetailHandler? { get set }
+  
+  var title: String? { get set }
   
   func refresh(viewModel: PostDetailViewModel)
 }

@@ -19,6 +19,7 @@ class PostDetailController: PostDetailHandler {
   }
   
   func viewDidLoad() {
+    view.title = "Post details"
     view.refresh(viewModel: viewModel)
   }
 }

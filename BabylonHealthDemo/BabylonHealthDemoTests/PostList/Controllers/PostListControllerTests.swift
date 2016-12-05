@@ -103,19 +103,14 @@ class PostListControllerTests: XCTestCase {
     let postToDisplay = givenFirstPost()
     controller.showDetail(of: postToDisplay)
     
-    //XCTAssertEqual(router.visibleNavigable().identifier(), "PostDetail")
+    XCTAssertEqual(router.visibleNavigable().identifier(), "PostDetail")
     
-    // EXPECT
-    // 1. Current visible page should be PostDetail
-    //  1.1 I need some object who is aware of which page is currently visible
-    //    e.g. XCTAssertEqual(router.visiblePage.id, PostDetailLayout.id)
-    // 2. PostDetail should display the info of the correct post
-    //    e.g.
-    //
-    //    let postDetail = router.visiblePage as! FakePostDetailLayout
-    //    postDetail.authorDisplayed = postDetailViewModel.author
-    //    postDetail.descriptionDisplayed = postDetailViewModel.description
-    //    postDetail.commentCountDisplayed = postDetailViewModel.commentsCount
+    if let postDetailView = router.visibleNavigable() as? FakePostDetailView {
+      
+      XCTAssertEqual(postDetailView.authorDidSet, postDetailViewModel.author)
+      XCTAssertEqual(postDetailView.descriptionDidSet, postDetailViewModel.description)
+      XCTAssertEqual(postDetailView.commentsCountDidSet, postDetailViewModel.commentsCount)
+    }
   }
 }
 

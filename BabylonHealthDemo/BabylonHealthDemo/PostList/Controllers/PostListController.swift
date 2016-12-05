@@ -35,6 +35,8 @@ class PostListController: PostListHandler {
 
   func viewDidLoad() {
     
+    view.title = "Post list"
+    
     queue.async { [weak self] in
       
       guard let strongSelf = self else { return }

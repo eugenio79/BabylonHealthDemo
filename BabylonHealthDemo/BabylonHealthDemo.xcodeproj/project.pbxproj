@@ -30,8 +30,9 @@
 		BA5074291DF478E40057F70E /* ConcreteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5074281DF478E40057F70E /* ConcreteRouter.swift */; };
 		BA50742B1DF479BE0057F70E /* ViewControllerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50742A1DF479BE0057F70E /* ViewControllerConfigurator.swift */; };
 		BA50742D1DF482BF0057F70E /* NavigableConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50742C1DF482BF0057F70E /* NavigableConfigurator.swift */; };
-		BA5074301DF484AC0057F70E /* StubNavigableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50742F1DF484AC0057F70E /* StubNavigableFactory.swift */; };
+		BA5074301DF484AC0057F70E /* StubNavigableConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50742F1DF484AC0057F70E /* StubNavigableConfigurator.swift */; };
 		BA5074321DF487570057F70E /* StubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5074311DF487570057F70E /* StubRouter.swift */; };
+		BA5B67B21DF5A9D100AFFAF8 /* FakePostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B67B11DF5A9D100AFFAF8 /* FakePostDetailView.swift */; };
 		BA8D33331DF47241002BBD4B /* LocalStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33321DF47241002BBD4B /* LocalStores.swift */; };
 		BA8D33351DF472AF002BBD4B /* LocalStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33341DF472AF002BBD4B /* LocalStoreFactory.swift */; };
 		BA8D33371DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33361DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift */; };
@@ -165,8 +166,9 @@
 		BA5074281DF478E40057F70E /* ConcreteRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcreteRouter.swift; sourceTree = "<group>"; };
 		BA50742A1DF479BE0057F70E /* ViewControllerConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerConfigurator.swift; sourceTree = "<group>"; };
 		BA50742C1DF482BF0057F70E /* NavigableConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigableConfigurator.swift; sourceTree = "<group>"; };
-		BA50742F1DF484AC0057F70E /* StubNavigableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubNavigableFactory.swift; sourceTree = "<group>"; };
+		BA50742F1DF484AC0057F70E /* StubNavigableConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubNavigableConfigurator.swift; sourceTree = "<group>"; };
 		BA5074311DF487570057F70E /* StubRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubRouter.swift; sourceTree = "<group>"; };
+		BA5B67B11DF5A9D100AFFAF8 /* FakePostDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakePostDetailView.swift; sourceTree = "<group>"; };
 		BA8D33321DF47241002BBD4B /* LocalStores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStores.swift; sourceTree = "<group>"; };
 		BA8D33341DF472AF002BBD4B /* LocalStoreFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStoreFactory.swift; sourceTree = "<group>"; };
 		BA8D33361DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataLocalStoreFactory.swift; sourceTree = "<group>"; };
@@ -404,7 +406,7 @@
 		BA50742E1DF484940057F70E /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				BA50742F1DF484AC0057F70E /* StubNavigableFactory.swift */,
+				BA50742F1DF484AC0057F70E /* StubNavigableConfigurator.swift */,
 				BA5074311DF487570057F70E /* StubRouter.swift */,
 			);
 			path = Router;
@@ -449,6 +451,7 @@
 		BAB48C1E1DEB66500039FB96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA5B67B11DF5A9D100AFFAF8 /* FakePostDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1182,6 +1185,7 @@
 				BAB48CF71DEC132D0039FB96 /* StubCommentRemoteService.swift in Sources */,
 				BAB48D001DEC14820039FB96 /* StubCommentLocalStore.swift in Sources */,
 				BA5074321DF487570057F70E /* StubRouter.swift in Sources */,
+				BA5B67B21DF5A9D100AFFAF8 /* FakePostDetailView.swift in Sources */,
 				BAB48CF31DEC12E90039FB96 /* RestCommentRemoteServiceTests.swift in Sources */,
 				BAE2A8B21DF4337B00CD30A8 /* RestCommentFactory.swift in Sources */,
 				BAE2A8AE1DF430FF00CD30A8 /* RestUserFactory.swift in Sources */,
@@ -1193,7 +1197,7 @@
 				BAE2A8A71DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift in Sources */,
 				BAFE072F1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift in Sources */,
 				BA96A1841DF36A650082B66E /* StubPostSync.swift in Sources */,
-				BA5074301DF484AC0057F70E /* StubNavigableFactory.swift in Sources */,
+				BA5074301DF484AC0057F70E /* StubNavigableConfigurator.swift in Sources */,
 				BAB48C7E1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift in Sources */,
 				BADA46401DEDC21D004FE2C2 /* RestPostCommentLinkerTests.swift in Sources */,
 				BA3954ED1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift in Sources */,

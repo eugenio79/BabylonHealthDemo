@@ -14,6 +14,8 @@ protocol PostListLayout: class, Navigable {
   
   var controller: PostListHandler? { get set }
   
+  var title: String? { get set }
+  
   /// If param is true, it should display a loading view (false should hide it)
   func showLoading(_ show: Bool)
   

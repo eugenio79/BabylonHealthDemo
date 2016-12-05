@@ -18,6 +18,7 @@ protocol FakePostListViewDelegate: class {
 class FakePostListView: PostListLayout {
   
   var controller: PostListHandler?
+  var title: String?
 
   // fake properties
   weak var delegate: FakePostListViewDelegate?
@@ -40,5 +41,15 @@ class FakePostListView: PostListLayout {
   
   func identifier() -> String {
     return "PostListViewController"
+  }
+}
+
+// MARK: - Fake behaviour
+extension FakePostListView {
+  
+  /// simulates performSegue
+  func fakeShowPostDetail() {
+    let postDetailView = FakePostDetailView()
+    controller?.willShow(navigable: postDetailView)
   }
 }
