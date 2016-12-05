@@ -8,7 +8,6 @@
 
 import Foundation
 
-// TODO: move this definition outside?
 /// Every screen/page/view handled by Router should conform to this protocol
 protocol Navigable {
   

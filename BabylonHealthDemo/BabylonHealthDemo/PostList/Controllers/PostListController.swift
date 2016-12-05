@@ -52,11 +52,11 @@ class PostListController: PostListHandler {
         strongSelf.posts = strongSelf.fetchPostsFromStore()
         
         DispatchQueue.main.async {
-          strongSelf.view.displayError(description: "Can't fetch data right now. Retry later")
+          strongSelf.view.reload()
         }
       } else {
         DispatchQueue.main.async {
-          strongSelf.view.reload()
+          strongSelf.view.displayError(description: "Can't fetch data right now. Retry later")
         }
       }
       

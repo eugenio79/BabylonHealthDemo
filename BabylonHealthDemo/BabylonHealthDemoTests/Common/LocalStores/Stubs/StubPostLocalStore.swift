@@ -9,7 +9,6 @@
 import Foundation
 @testable import BabylonHealthDemo
 
-// TODO: rename it to FakePostLocalStore?
 // Subclassed from CoreData, so I can use in RestToCDUserSyncTests
 class StubPostLocalStore: CDPostLocalStore {
   
