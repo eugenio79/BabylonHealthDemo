@@ -37,6 +37,8 @@ class PostListController: PostListHandler {
     
     view.title = "Post list"
     
+    // Note: in a production code, this should be probably moved into viewWillAppear
+    // or on app resume instead, in this way it'll retry to fetch fresh data each time
     queue.async { [weak self] in
       
       guard let strongSelf = self else { return }
@@ -50,10 +52,12 @@ class PostListController: PostListHandler {
         strongSelf.posts = strongSelf.fetchPostsFromStore()
         
         DispatchQueue.main.async {
-          strongSelf.view.reload()
+          strongSelf.view.displayError(description: "Can't fetch data right now. Retry later")
         }
       } else {
-        // TODO: display blank page and an alert to notify the user
+        DispatchQueue.main.async {
+          strongSelf.view.reload()
+        }
       }
       
       // no matter if success or failure, hide the loading

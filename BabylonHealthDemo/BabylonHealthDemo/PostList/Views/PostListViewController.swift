@@ -43,6 +43,14 @@ extension PostListViewController: PostListLayout {
     show ? loadingView.show() : loadingView.hide()
   }
   
+  func displayError(description: String) {
+    
+    let alert = UIAlertController(title: "Error", message: description, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default)
+    alert.addAction(okAction)
+    present(alert, animated: true)
+  }
+  
   func reload() {
     tableView.reloadData()
   }

@@ -10,9 +10,11 @@ import Foundation
 
 class CoreDataLocalStoreFactory: LocalStoreFactory {
   
+  var coreDataStack: CoreDataStack!
+  
   func makeLocalStores() -> LocalStores {
     
-    let coreDataStack = CoreDataStack(modelName: "BabylonHealthDemo", storeType: .sqlite)
+    coreDataStack = CoreDataStack(modelName: "BabylonHealthDemo", storeType: .sqlite)
     
     let userLocalStore = CDUserLocalStore(coreDataStack: coreDataStack)
     let postLocalStore = CDPostLocalStore(coreDataStack: coreDataStack)

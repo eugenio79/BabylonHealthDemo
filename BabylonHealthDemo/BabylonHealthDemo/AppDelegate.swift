@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    print("documentsPath: \(documentsPath)")
+    
     if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
       // Skipping initialization when tests are running
       return true

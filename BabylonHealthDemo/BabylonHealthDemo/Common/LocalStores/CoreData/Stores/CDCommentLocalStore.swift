@@ -26,14 +26,16 @@ class CDCommentLocalStore: CommentLocalStore {
       for comment in comments {
         self.insert(comment: comment, context: self.coreDataStack.managedContext)
       }
+      self.coreDataStack.saveContext()
+      completion(.success)
       
-      do {
-        try self.coreDataStack.managedContext.save()
-        completion(.success)
-      } catch let error as NSError {
-        print("Could not save \(error), \(error.userInfo)")
-        completion(.failure(error: .generic))
-      }
+//      do {
+//        try self.coreDataStack.managedContext.save()
+//        completion(.success)
+//      } catch let error as NSError {
+//        print("Could not save \(error), \(error.userInfo)")
+//        completion(.failure(error: .generic))
+//      }
     }
   }
   

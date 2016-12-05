@@ -34,12 +34,15 @@ class CoreDataStack {
   
   lazy var storeContainer: NSPersistentContainer = {
     
-    let persistentStoreDescription = NSPersistentStoreDescription()
-    persistentStoreDescription.type = self.storeDescriptionType(for: self.storeType)
-    
     let container = NSPersistentContainer(name: self.modelName)
-    container.persistentStoreDescriptions =
-      [persistentStoreDescription]
+    
+    if self.storeType == .inMemory {
+      let persistentStoreDescription = NSPersistentStoreDescription()
+      persistentStoreDescription.type = self.storeDescriptionType(for: self.storeType)
+      container.persistentStoreDescriptions =
+        [persistentStoreDescription]
+    }
+    
     container.loadPersistentStores {
       (storeDescription, error) in
       if let error = error as NSError? {
@@ -58,6 +61,7 @@ class CoreDataStack {
     
     do {
       try managedContext.save()
+      print("db saved to: \(storeContainer.persistentStoreCoordinator.persistentStores.first?.url)")
     } catch let error as NSError {
       print("Error saving context: \(error), \(error.userInfo)")
     }

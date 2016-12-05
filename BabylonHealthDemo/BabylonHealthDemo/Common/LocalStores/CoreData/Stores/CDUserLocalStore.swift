@@ -59,13 +59,15 @@ class CDUserLocalStore: UserLocalStore {
         self.insert(user: user, context: self.coreDataStack.managedContext)
       }
       
-      do {
-        try self.coreDataStack.managedContext.save()
-        completion(.success)
-      } catch let error as NSError {
-        print("Could not save \(error), \(error.userInfo)")
-        completion(.failure(error: .generic))
-      }
+      self.coreDataStack.saveContext()
+      completion(.success)
+//      do {
+//        try
+//        completion(.success)
+//      } catch let error as NSError {
+//        print("Could not save \(error), \(error.userInfo)")
+//        completion(.failure(error: .generic))
+//      }
     }
   }
   
@@ -84,13 +86,15 @@ class CDUserLocalStore: UserLocalStore {
       let postInserted = self.insertPostList(posts: posts, context: self.coreDataStack.managedContext)
       cdUser.addToPosts(postInserted)
       
-      do {
-        try self.coreDataStack.managedContext.save()
-        completion(.success)
-      } catch let error as NSError {
-        print("Could not save \(error), \(error.userInfo)")
-        completion(.failure)
-      }
+      self.coreDataStack.saveContext()
+      completion(.success)
+//      do {
+//        try self.coreDataStack.managedContext.save()
+//        completion(.success)
+//      } catch let error as NSError {
+//        print("Could not save \(error), \(error.userInfo)")
+//        completion(.failure)
+//      }
     }
   }
   

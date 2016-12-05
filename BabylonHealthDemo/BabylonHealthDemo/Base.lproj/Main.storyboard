@@ -249,9 +249,9 @@ perferendis recusandae assumenda consectetur porro architecto ipsum ipsam</strin
         <!--Navigation Controller-->
         <scene sceneID="f6N-FU-KKm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E0k-TP-pbA" sceneMemberID="viewController">
+                <navigationController id="E0k-TP-pbA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NIO-ah-8ZG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NIO-ah-8ZG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

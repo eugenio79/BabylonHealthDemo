@@ -19,6 +19,9 @@ protocol PostListLayout: class, Navigable {
   /// If param is true, it should display a loading view (false should hide it)
   func showLoading(_ show: Bool)
   
+  /// Notify the user about an error
+  func displayError(description: String)
+  
   /// It'll refresh the UI
   func reload()
 }

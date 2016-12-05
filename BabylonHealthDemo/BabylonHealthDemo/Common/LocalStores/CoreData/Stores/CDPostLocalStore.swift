@@ -27,13 +27,15 @@ class CDPostLocalStore: PostLocalStore {
         self.insert(post: post, context: self.coreDataStack.managedContext)
       }
       
-      do {
-        try self.coreDataStack.managedContext.save()
-        completion(.success)
-      } catch let error as NSError {
-        print("Could not save \(error), \(error.userInfo)")
-        completion(.failure(error: .generic))
-      }
+      self.coreDataStack.saveContext()
+      completion(.success)
+//      do {
+//        try self.coreDataStack.managedContext.save()
+//        completion(.success)
+//      } catch let error as NSError {
+//        print("Could not save \(error), \(error.userInfo)")
+//        completion(.failure(error: .generic))
+//      }
     }
   }
   
@@ -53,13 +55,15 @@ class CDPostLocalStore: PostLocalStore {
       let commentsInserted = self.insertCommentList(comments: comments, context: self.coreDataStack.managedContext)
       cdPost.addToCdComments(commentsInserted)
       
-      do {
-        try self.coreDataStack.managedContext.save()
-        completion(.success)
-      } catch let error as NSError {
-        print("Could not save \(error), \(error.userInfo)")
-        completion(.failure)
-      }
+      self.coreDataStack.saveContext()
+      completion(.success)
+//      do {
+//        try self.coreDataStack.managedContext.save()
+//        completion(.success)
+//      } catch let error as NSError {
+//        print("Could not save \(error), \(error.userInfo)")
+//        completion(.failure)
+//      }
     }
   }
   
