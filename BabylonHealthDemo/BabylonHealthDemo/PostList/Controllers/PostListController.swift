@@ -11,8 +11,11 @@ import Foundation
 class PostListController: PostListHandler {
   
   unowned var view: PostListLayout
+  var router: Router
   
   fileprivate var posts: [Post] = []  // in memory model
+  
+  fileprivate var postIsAboutToShow: Post?  // The opening of the detail is a two-phase process, so I need to store it
   
   fileprivate let syncEngine: SyncEngine
   fileprivate let postStore: PostLocalStore
@@ -21,12 +24,13 @@ class PostListController: PostListHandler {
   fileprivate let queue = DispatchQueue(label: "PostListController")
   fileprivate let dispatchGroup = DispatchGroup() /// Used to execute sequentially async tasks
   
-  required init(view: PostListLayout, syncEngine: SyncEngine, postStore: PostLocalStore, postDetailViewModelFactory: PostDetailViewModelFactory) {
+  required init(view: PostListLayout, syncEngine: SyncEngine, postStore: PostLocalStore, postDetailViewModelFactory: PostDetailViewModelFactory, router: Router) {
     
     self.view = view
     self.syncEngine = syncEngine
     self.postStore = postStore
     self.postDetailViewModelFactory = postDetailViewModelFactory
+    self.router = router
   }
 
   func viewDidLoad() {
@@ -67,7 +71,14 @@ class PostListController: PostListHandler {
   }
   
   func showDetail(of post: Post) {
-    
+    postIsAboutToShow = post
+    router.navigate(to: "PostDetail")
+  }
+  
+  func willShow(navigable: Navigable) {
+    guard postIsAboutToShow != nil else { return }
+    let detailViewModel = postDetailViewModelFactory.makeViewModel(for: postIsAboutToShow!)
+    router.prepareToNavigate(to: navigable, with: detailViewModel)
   }
 }
 

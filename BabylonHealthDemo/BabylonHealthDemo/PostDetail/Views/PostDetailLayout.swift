@@ -10,4 +10,7 @@ import Foundation
 
 protocol PostDetailLayout: class {
   
+  var controller: PostDetailHandler? { get set }
+  
+  func refresh(viewModel: PostDetailViewModel)
 }

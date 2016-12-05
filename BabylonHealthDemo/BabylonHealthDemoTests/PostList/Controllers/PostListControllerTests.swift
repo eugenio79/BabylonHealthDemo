@@ -22,7 +22,10 @@ class PostListControllerTests: XCTestCase {
     let postStore = StubPostLocalStore()
     let postDetailViewModelFactory = StubPostDetailViewModelFactory()
     
-    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory)
+    let navigableConfigurator = StubNavigableConfigurator(root: view)
+    let router = StubRouter(navigableConfigurator: navigableConfigurator)
+    
+    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory, router: router)
     view.controller = controller
     
     // WHEN
@@ -41,7 +44,10 @@ class PostListControllerTests: XCTestCase {
     let postStore = givenPostStorePrefilledWithTwoPost()
     let postDetailViewModelFactory = StubPostDetailViewModelFactory()
     
-    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory)
+    let navigableConfigurator = StubNavigableConfigurator(root: view)
+    let router = StubRouter(navigableConfigurator: navigableConfigurator)
+    
+    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory, router: router)
     view.controller = controller
     
     // WHEN
@@ -60,7 +66,10 @@ class PostListControllerTests: XCTestCase {
     let postStore = givenPostStorePrefilledWithTwoPost()
     let postDetailViewModelFactory = StubPostDetailViewModelFactory()
     
-    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory)
+    let navigableConfigurator = StubNavigableConfigurator(root: view)
+    let router = StubRouter(navigableConfigurator: navigableConfigurator)
+    
+    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory, router: router)
     view.controller = controller
     
     // WHEN
@@ -81,15 +90,32 @@ class PostListControllerTests: XCTestCase {
     let postDetailViewModel = givenAPostDetailViewModel()
     postDetailViewModelFactory.viewModelToReturn = postDetailViewModel
     
-    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory)
+    let navigableConfigurator = StubNavigableConfigurator(root: view)
+    //let router = StubRouter(rootNavigable: view)
+    let router = StubRouter(navigableConfigurator: navigableConfigurator)
+    
+    let controller = PostListController(view: view, syncEngine: syncEngine, postStore: postStore, postDetailViewModelFactory: postDetailViewModelFactory, router: router)
     view.controller = controller
     
     whenDidLoad(controller: controller)
 
     // WHEN
-    controller.showDetail(of: givenFirstPost())
+    let postToDisplay = givenFirstPost()
+    controller.showDetail(of: postToDisplay)
+    
+    //XCTAssertEqual(router.visibleNavigable().identifier(), "PostDetail")
     
     // EXPECT
+    // 1. Current visible page should be PostDetail
+    //  1.1 I need some object who is aware of which page is currently visible
+    //    e.g. XCTAssertEqual(router.visiblePage.id, PostDetailLayout.id)
+    // 2. PostDetail should display the info of the correct post
+    //    e.g.
+    //
+    //    let postDetail = router.visiblePage as! FakePostDetailLayout
+    //    postDetail.authorDisplayed = postDetailViewModel.author
+    //    postDetail.descriptionDisplayed = postDetailViewModel.description
+    //    postDetail.commentCountDisplayed = postDetailViewModel.commentsCount
   }
 }
 

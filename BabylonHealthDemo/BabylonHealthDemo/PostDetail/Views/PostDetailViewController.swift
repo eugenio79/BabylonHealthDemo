@@ -16,14 +16,21 @@ class PostDetailViewController: UIViewController {
   @IBOutlet weak var commentsNumberLabel: UILabel!
   @IBOutlet weak var loadingView: PostListLoadingView!
   
+  var controller: PostDetailHandler?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    controller?.viewDidLoad()
   }
 }
 
 // MARK - PostDetailLayout
 extension PostDetailViewController: PostDetailLayout {
   
+  func refresh(viewModel: PostDetailViewModel) {
+    authorLabel.text = viewModel.author
+    descriptionLabel.text = viewModel.description
+    commentsNumberLabel.text = "\(viewModel.commentsCount)" // TODO: the format should be chosen by viewModel!
+  }
 }

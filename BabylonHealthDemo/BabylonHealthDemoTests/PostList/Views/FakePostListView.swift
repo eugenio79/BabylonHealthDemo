@@ -37,4 +37,8 @@ class FakePostListView: PostListLayout {
   func reload() {
     numOfPostsDisplayed = controller?.postCount() ?? 0
   }
+  
+  func identifier() -> String {
+    return "PostListViewController"
+  }
 }

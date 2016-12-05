@@ -12,8 +12,9 @@ import Foundation
 protocol PostListHandler: class {
   
   var view: PostListLayout { get set }
+  var router: Router { get set }
   
-  init(view: PostListLayout, syncEngine: SyncEngine, postStore: PostLocalStore, postDetailViewModelFactory: PostDetailViewModelFactory)
+  init(view: PostListLayout, syncEngine: SyncEngine, postStore: PostLocalStore, postDetailViewModelFactory: PostDetailViewModelFactory, router: Router)
   
   /// Usually invoked by the view to let the controller know when the view is ready
   /// This should be called on UI thread
@@ -24,4 +25,7 @@ protocol PostListHandler: class {
   func post(at index: Int) -> Post?
   
   func showDetail(of post: Post)
+  
+  /// When the view is about to display another view
+  func willShow(navigable: Navigable)
 }

@@ -11,8 +11,14 @@ import Foundation
 class PostDetailController: PostDetailHandler {
   
   unowned var view: PostDetailLayout
+  fileprivate var viewModel: PostDetailViewModel
   
-  init(view: PostDetailLayout) {
+  required init(view: PostDetailLayout, viewModel: PostDetailViewModel) {
     self.view = view
+    self.viewModel = viewModel
+  }
+  
+  func viewDidLoad() {
+    view.refresh(viewModel: viewModel)
   }
 }

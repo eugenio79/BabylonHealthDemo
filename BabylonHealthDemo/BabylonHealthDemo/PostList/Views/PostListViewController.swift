@@ -21,6 +21,18 @@ class PostListViewController: UIViewController {
     
     controller?.viewDidLoad()
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    guard segue.identifier == "showDetail" else {
+      // unable to handle this segue
+      return
+    }
+    guard let navigable = segue.destination as? Navigable else {
+      return
+    }
+    controller?.willShow(navigable: navigable)
+  }
 }
 
 extension PostListViewController: PostListLayout {
@@ -31,6 +43,10 @@ extension PostListViewController: PostListLayout {
   
   func reload() {
     tableView.reloadData()
+  }
+  
+  func identifier() -> String {
+    return "PostList"
   }
 }
 

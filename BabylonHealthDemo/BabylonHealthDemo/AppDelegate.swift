@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // I'd take a ref, in order to don't let deallocate it
   var localStores: LocalStores!
   var syncEngine: SyncEngine!
+  var router: Router!
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
@@ -35,24 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let networking = NetworkManager()
     localStores = CoreDataLocalStoreFactory().makeLocalStores()
     syncEngine = RestToCoreDataSyncEngineFactory().makeEngine(networking: networking, localStores: localStores)
-    configurePostListView()
-  }
-  
-  func configurePostListView() {
     
-    // IMHO a ViewController is a View in the MVC
-    guard let postListView = postListView() else {
-      return
-    }
+    let navigableConfigurator = ViewControllerConfigurator(mainWindow: window!)
+    router = ConcreteRouter(navigableConfigurator: navigableConfigurator)
     
-    let postDetailViewModelFactory = ConcretePostDetailViewModelFactory(postStore: localStores.post)
-    let controller = PostListController(view: postListView, syncEngine: syncEngine, postStore: localStores.post, postDetailViewModelFactory: postDetailViewModelFactory)
-    postListView.controller = controller
-  }
-  
-  func postListView() -> PostListViewController? {
-    let navigationController = window?.rootViewController as! UINavigationController
-    return navigationController.topViewController as? PostListViewController
+    navigableConfigurator.configurePostList(localStores: localStores, syncEngine: syncEngine, router: router)
   }
 }
 

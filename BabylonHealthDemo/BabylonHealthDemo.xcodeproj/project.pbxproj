@@ -26,6 +26,12 @@
 		BA5074201DF4752D0057F70E /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50741E1DF4752D0057F70E /* SyncEngine.swift */; };
 		BA5074221DF475460057F70E /* SyncEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5074211DF475460057F70E /* SyncEngineFactory.swift */; };
 		BA5074241DF475840057F70E /* RestToCoreDataSyncEngineFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5074231DF475840057F70E /* RestToCoreDataSyncEngineFactory.swift */; };
+		BA5074271DF478530057F70E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5074261DF478530057F70E /* Router.swift */; };
+		BA5074291DF478E40057F70E /* ConcreteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5074281DF478E40057F70E /* ConcreteRouter.swift */; };
+		BA50742B1DF479BE0057F70E /* ViewControllerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50742A1DF479BE0057F70E /* ViewControllerConfigurator.swift */; };
+		BA50742D1DF482BF0057F70E /* NavigableConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50742C1DF482BF0057F70E /* NavigableConfigurator.swift */; };
+		BA5074301DF484AC0057F70E /* StubNavigableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA50742F1DF484AC0057F70E /* StubNavigableFactory.swift */; };
+		BA5074321DF487570057F70E /* StubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5074311DF487570057F70E /* StubRouter.swift */; };
 		BA8D33331DF47241002BBD4B /* LocalStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33321DF47241002BBD4B /* LocalStores.swift */; };
 		BA8D33351DF472AF002BBD4B /* LocalStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33341DF472AF002BBD4B /* LocalStoreFactory.swift */; };
 		BA8D33371DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8D33361DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift */; };
@@ -155,6 +161,12 @@
 		BA50741E1DF4752D0057F70E /* SyncEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
 		BA5074211DF475460057F70E /* SyncEngineFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncEngineFactory.swift; sourceTree = "<group>"; };
 		BA5074231DF475840057F70E /* RestToCoreDataSyncEngineFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestToCoreDataSyncEngineFactory.swift; sourceTree = "<group>"; };
+		BA5074261DF478530057F70E /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		BA5074281DF478E40057F70E /* ConcreteRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcreteRouter.swift; sourceTree = "<group>"; };
+		BA50742A1DF479BE0057F70E /* ViewControllerConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerConfigurator.swift; sourceTree = "<group>"; };
+		BA50742C1DF482BF0057F70E /* NavigableConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigableConfigurator.swift; sourceTree = "<group>"; };
+		BA50742F1DF484AC0057F70E /* StubNavigableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubNavigableFactory.swift; sourceTree = "<group>"; };
+		BA5074311DF487570057F70E /* StubRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubRouter.swift; sourceTree = "<group>"; };
 		BA8D33321DF47241002BBD4B /* LocalStores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStores.swift; sourceTree = "<group>"; };
 		BA8D33341DF472AF002BBD4B /* LocalStoreFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStoreFactory.swift; sourceTree = "<group>"; };
 		BA8D33361DF472F7002BBD4B /* CoreDataLocalStoreFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataLocalStoreFactory.swift; sourceTree = "<group>"; };
@@ -315,10 +327,11 @@
 		BA3B816D1DEAF1CB00B41A49 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BAE2A8AC1DF430ED00CD30A8 /* Models */,
 				BAB48CE01DEC09320039FB96 /* LocalStores */,
+				BAE2A8AC1DF430ED00CD30A8 /* Models */,
 				BA3B816E1DEAF1CB00B41A49 /* Networking */,
 				BAB48C791DEB7F200039FB96 /* Parsers */,
+				BA50742E1DF484940057F70E /* Router */,
 				BAB48C8D1DEB7FA20039FB96 /* Services */,
 				BAB48CE51DEC103B0039FB96 /* SyncEngine */,
 			);
@@ -375,6 +388,26 @@
 				BA5074211DF475460057F70E /* SyncEngineFactory.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BA5074251DF478490057F70E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BA5074261DF478530057F70E /* Router.swift */,
+				BA5074281DF478E40057F70E /* ConcreteRouter.swift */,
+				BA50742A1DF479BE0057F70E /* ViewControllerConfigurator.swift */,
+				BA50742C1DF482BF0057F70E /* NavigableConfigurator.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BA50742E1DF484940057F70E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BA50742F1DF484AC0057F70E /* StubNavigableFactory.swift */,
+				BA5074311DF487570057F70E /* StubRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		BA96A1801DF36A180082B66E /* Stubs */ = {
@@ -672,11 +705,12 @@
 		BAD727231DE399FB00E83F32 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BAD7272B1DE3A41E00E83F32 /* LocalStores */,
 				BAB48C5F1DEB7E4C0039FB96 /* Models */,
 				BA3B816A1DEAEECC00B41A49 /* Networking */,
 				BAB48C6C1DEB7EB60039FB96 /* Parsers */,
+				BA5074251DF478490057F70E /* Router */,
 				BAB48C801DEB7F6C0039FB96 /* Services */,
-				BAD7272B1DE3A41E00E83F32 /* LocalStores */,
 				BAB48CB11DEBF96F0039FB96 /* SyncEngine */,
 			);
 			path = Common;
@@ -1074,6 +1108,7 @@
 				BA3B817B1DEAF5B900B41A49 /* PostListController.swift in Sources */,
 				BA3B815F1DEAD4C900B41A49 /* BabylonHealthDemo.xcdatamodeld in Sources */,
 				BAE2A8AB1DF427C700CD30A8 /* ConcretePostDetailViewModelFactory.swift in Sources */,
+				BA5074291DF478E40057F70E /* ConcreteRouter.swift in Sources */,
 				BADA461C1DECE3C7004FE2C2 /* RestComment.swift in Sources */,
 				BA3954EB1DEE1A5300FC1720 /* RestToCDCommentSync.swift in Sources */,
 				BAB48CD61DEBFB950039FB96 /* PostLocalStore.swift in Sources */,
@@ -1101,10 +1136,12 @@
 				BAB48CC81DEBFA420039FB96 /* CDCompany+CoreDataClass.swift in Sources */,
 				BAB48CC31DEBFA420039FB96 /* CoreDataStack.swift in Sources */,
 				BAB48CCC1DEBFA420039FB96 /* CDPost+CoreDataClass.swift in Sources */,
+				BA50742B1DF479BE0057F70E /* ViewControllerConfigurator.swift in Sources */,
 				BA8D33331DF47241002BBD4B /* LocalStores.swift in Sources */,
 				BADA46121DECE30F004FE2C2 /* RestPostRemoteService.swift in Sources */,
 				BADA461F1DECE3C7004FE2C2 /* RestPost.swift in Sources */,
 				BAB48CD81DEBFBB10039FB96 /* CommentLocalStore.swift in Sources */,
+				BA5074271DF478530057F70E /* Router.swift in Sources */,
 				BA3954E91DEE19F600FC1720 /* CommentSyncing.swift in Sources */,
 				BAB48C751DEB7EB60039FB96 /* SwiftyJSONCommentParser.swift in Sources */,
 				BAB48C741DEB7EB60039FB96 /* PostParser.swift in Sources */,
@@ -1112,6 +1149,7 @@
 				BADA462A1DECE4DE004FE2C2 /* Post.swift in Sources */,
 				BAB48CCA1DEBFA420039FB96 /* CDGeolocation+CoreDataClass.swift in Sources */,
 				BAB48C211DEB66710039FB96 /* PostDetailHandler.swift in Sources */,
+				BA50742D1DF482BF0057F70E /* NavigableConfigurator.swift in Sources */,
 				BADA46111DECE30F004FE2C2 /* RestCommentRemoteService.swift in Sources */,
 				BAB48C771DEB7EB60039FB96 /* SwiftyJSONUserParser.swift in Sources */,
 				BAB48CC41DEBFA420039FB96 /* CDAddress+CoreDataClass.swift in Sources */,
@@ -1143,6 +1181,7 @@
 				BA96A1861DF36A6D0082B66E /* StubCommentSync.swift in Sources */,
 				BAB48CF71DEC132D0039FB96 /* StubCommentRemoteService.swift in Sources */,
 				BAB48D001DEC14820039FB96 /* StubCommentLocalStore.swift in Sources */,
+				BA5074321DF487570057F70E /* StubRouter.swift in Sources */,
 				BAB48CF31DEC12E90039FB96 /* RestCommentRemoteServiceTests.swift in Sources */,
 				BAE2A8B21DF4337B00CD30A8 /* RestCommentFactory.swift in Sources */,
 				BAE2A8AE1DF430FF00CD30A8 /* RestUserFactory.swift in Sources */,
@@ -1154,6 +1193,7 @@
 				BAE2A8A71DF426A100CD30A8 /* ConcretePostDetailViewModelFactoryTests.swift in Sources */,
 				BAFE072F1DEDDEE5008509C0 /* RestToCDPostSyncTests.swift in Sources */,
 				BA96A1841DF36A650082B66E /* StubPostSync.swift in Sources */,
+				BA5074301DF484AC0057F70E /* StubNavigableFactory.swift in Sources */,
 				BAB48C7E1DEB7F200039FB96 /* SwiftyJSONPostParserTests.swift in Sources */,
 				BADA46401DEDC21D004FE2C2 /* RestPostCommentLinkerTests.swift in Sources */,
 				BA3954ED1DEE1C1600FC1720 /* RestToCDCommentSyncTests.swift in Sources */,
