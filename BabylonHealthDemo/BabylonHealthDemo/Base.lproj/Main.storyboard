@@ -60,7 +60,9 @@ nostrum rerum est autem sunt rem eveniet architecto</string>
                                                                 <constraint firstAttribute="width" constant="95" id="g1x-qv-fpc"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <state key="normal" title="Read more"/>
+                                                            <state key="normal" title="Read more">
+                                                                <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -169,13 +171,13 @@ nostrum rerum est autem sunt rem eveniet architecto</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leanne Graham" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Je-so-b49" userLabel="authorLabel">
-                                                <rect key="frame" x="20" y="20" width="343" height="22"/>
+                                                <rect key="frame" x="20" y="20" width="327" height="22"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5B3-jj-Nsp" userLabel="descriptionLabel">
-                                                <rect key="frame" x="20" y="62" width="343" height="142.5"/>
+                                                <rect key="frame" x="20" y="62" width="327" height="142.5"/>
                                                 <string key="text">aut dicta possimus sint mollitia voluptas commodi quo doloremque
 iste corrupti reiciendis voluptatem eius rerum
 sit cumque quod eligendi laborum minima
@@ -185,7 +187,7 @@ perferendis recusandae assumenda consectetur porro architecto ipsum ipsam</strin
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d62-4c-0mP" userLabel="commentsLabel">
-                                                <rect key="frame" x="226" y="224.5" width="109" height="21"/>
+                                                <rect key="frame" x="210" y="224.5" width="109" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="109" id="ooo-CC-DdT"/>
                                                 </constraints>
@@ -194,7 +196,7 @@ perferendis recusandae assumenda consectetur porro architecto ipsum ipsam</strin
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="91" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de3-IZ-oGW" userLabel="commentsNumberLabel">
-                                                <rect key="frame" x="343" y="224.5" width="20" height="21"/>
+                                                <rect key="frame" x="327" y="224.5" width="20" height="21"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -202,9 +204,9 @@ perferendis recusandae assumenda consectetur porro architecto ipsum ipsam</strin
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="5B3-jj-Nsp" secondAttribute="trailing" constant="4" id="39a-yX-DaW"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="5B3-jj-Nsp" secondAttribute="trailing" constant="20" id="39a-yX-DaW"/>
                                             <constraint firstItem="5B3-jj-Nsp" firstAttribute="top" secondItem="6Je-so-b49" secondAttribute="bottom" constant="20" id="9B4-Sy-Bbz"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="6Je-so-b49" secondAttribute="trailing" constant="4" id="Be0-8d-Ten"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="6Je-so-b49" secondAttribute="trailing" constant="20" id="Be0-8d-Ten"/>
                                             <constraint firstItem="de3-IZ-oGW" firstAttribute="leading" secondItem="d62-4c-0mP" secondAttribute="trailing" constant="8" id="G0C-sn-fjy"/>
                                             <constraint firstAttribute="bottom" secondItem="de3-IZ-oGW" secondAttribute="bottom" constant="20.5" id="N1d-ca-kjE"/>
                                             <constraint firstItem="d62-4c-0mP" firstAttribute="top" secondItem="5B3-jj-Nsp" secondAttribute="bottom" constant="20" id="PN3-Al-8mv"/>
@@ -212,7 +214,7 @@ perferendis recusandae assumenda consectetur porro architecto ipsum ipsam</strin
                                             <constraint firstItem="d62-4c-0mP" firstAttribute="top" secondItem="de3-IZ-oGW" secondAttribute="top" id="g7k-xW-blk"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="5B3-jj-Nsp" secondAttribute="leading" constant="-12" id="rFj-Gq-FVn"/>
                                             <constraint firstItem="6Je-so-b49" firstAttribute="top" secondItem="K7Y-Ep-oUk" secondAttribute="top" constant="20" id="tqd-oq-sth"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="de3-IZ-oGW" secondAttribute="trailing" constant="4" id="vG2-fH-gk7"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="de3-IZ-oGW" secondAttribute="trailing" constant="20" id="vG2-fH-gk7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -249,9 +251,13 @@ perferendis recusandae assumenda consectetur porro architecto ipsum ipsam</strin
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E0k-TP-pbA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NIO-ah-8ZG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NIO-ah-8ZG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
